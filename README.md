@@ -1,3 +1,4 @@
 # baiduzhe
 springcloud实战
 基于springcloud的一整套单机版配置后期仍然会做更新，敬请期待哦
+如果用问题请在 issues中进行提问哦，第一时间尽快解决，或者问题发到个人邮箱
