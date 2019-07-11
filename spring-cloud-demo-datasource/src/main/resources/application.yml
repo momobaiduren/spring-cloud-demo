@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    druid:
+      stat-view-servlet:
+        loginUsername: admin
+        loginPassword: 123456
+    dynamic:
+      druid: #以下是全局默认值，可以全局更改
+        initial-size:
+        max-active:
+        min-idle:
+        max-wait:
+        time-between-eviction-runs-millis:
+        connection-errorretry-attempts:
+        break-after-acquire-failure:
+        filters: stat,wall # 注意这个值和druid原生不一致，默认启动了stat,wall
+        wall:
+          noneBaseStatementAllow:
+          completeInsertValuesCheck:
+          insertValuesCheckSize:
+          selectLimit:
+        stat:
+          merge-sql:
+          log-slow-sql:
+          slow-sql-millis:
+      datasource:
+        master:
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://xx.xx.xx.xx:3306/dynamic?characterEncoding=utf8&useSSL=false
+          druid: # 以下参数针对每个库可以重新设置druid参数
+            initial-size:
+            validation-query: select 1 FROM DUAL #比如oracle就需要重新设置这个
+            public-key: #（非全局参数）设置即表示启用加密,底层会自动帮你配置相关的连接参数和filter。

@@ -1,0 +1,2 @@
+com/springcloud/provider/IAddressFeignClientApi.class
+com/springcloud/provider/hystrix/AddressFeignHystrix.class

@@ -1,0 +1,21 @@
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: zhanglong
+    password: zl123456
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1000
+          # 最大尝试次数
+          max-attempts: 3
+          max-interval: 10000
+          multiplier: 2.0
+          stateless: true
+  application:
+    name: spring-cloud-demo-tranctionmanager
+server:
+  port: 5050

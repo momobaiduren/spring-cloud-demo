@@ -1,0 +1,31 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: spring-cloud-demo-gateway
+  cloud:
+    config:
+      discovery:
+        service-id: spring-cloud-demo-config
+        enabled: true
+      profile: master
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+  #      defaultZone: http://39.98.245.101:9000/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+
+
+#自定义路由映射
+zuul:
+  routes:
+    spring-cloud-demo-provider-ba: /**
+    #zheshuokeji-system-model2-service: /zheshuo/model2/**
+  #统一入口为上面的配置，其他入口忽略
+  ignored-patterns: /spring-cloud-demo-provider-*/**
+  #处理http请求头为空的问题
+  sensitive-headers:

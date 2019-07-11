@@ -1,0 +1,49 @@
+server:
+  port: 8000
+
+#指定注册中心地址 服务器上更换成内网IP了172.26.28.239  公网Ip 39.98.245.101
+#eureka: # 开发使用
+#  client:
+#    serviceUrl:
+#      defaultZone: http://39.98.245.101:9000/eureka/
+#  instance:
+#    instance-id: ${eureka.instance.ip-address}:${server.port}
+#    prefer-ip-address: false #不设可自己指定，true会自动获取本地ipv4地址
+#    #${eureka.instance.ip-address} 决定服务跳转host，必须指定
+#    #instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+#    hostname: ${eureka.instance.ip-address}
+#    #ip-address: 192.168.1.1 #强制指定IP地址，默认会获取本机的IP地址 决定Eureka服务显示host
+#    #以IP地址注册到服务中心 生产环境要注释掉
+#    ip-address: 39.98.245.101
+eureka:  #生产使用更换为内网ip
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+    #    instance-id: ${eureka.instance.ip-address}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true #不设可自己指定，true会自动获取本地ipv4地址
+#    #${eureka.instance.ip-address} 决定服务跳转host，必须指定
+#    #instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+#    hostname: ${eureka.instance.ip-address}
+#    #ip-address: 192.168.1.1 #强制指定IP地址，默认会获取本机的IP地址 决定Eureka服务显示host
+#    #以IP地址注册到服务中心 生产环境要注释掉
+#    ip-address: 39.98.245.101
+
+spring:
+  application:
+    name: spring-cloud-demo-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/runkeyun/springcloud
+          username: 718168633@qq.com
+          password: zl123456
+          timeout: 5
+          default-label: master
+
+
+
+
+
