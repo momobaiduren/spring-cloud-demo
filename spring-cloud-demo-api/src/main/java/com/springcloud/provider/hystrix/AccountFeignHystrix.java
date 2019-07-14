@@ -16,6 +16,7 @@ public class AccountFeignHystrix implements IAccountInfoFeignClientApi {
 
   @Override
   public AccountInfo jianAccount(AccountInfo accountInfo) {
-    return null;
+    System.out.println(accountInfo);
+    return accountInfo;
   }
 }
