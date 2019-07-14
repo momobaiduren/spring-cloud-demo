@@ -1,0 +1,119 @@
+spring:
+  #设置默认加载druid的数据源
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  #设置boot2.1之后在使用feignclient情况下不被覆盖
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: spring-cloud-demo-provider-ba
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        loginUsername: admin
+        loginPassword: 123456
+    dynamic:
+      druid:
+        initial-size: 5
+        min-idle: 5
+        max-active: 20
+        # 配置获取连接等待超时的时间
+        max-wait: 60000
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        time-between-eviction-runs-millis: 60000
+        #max-evictable-idle-time-millis: 360000
+        #time-between-eviction-runs-millis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        min-evictable-idle-time-millis: 300000
+        # Oracle请使用select 1 from dual
+        validation-query: SELECT X FROM DUAL
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+        filters: stat,wall,config
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+        test-while-idle: true
+        #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+        connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      datasource:
+        master:
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/jta_stu-tea?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
+          username: root
+          password: zl12345
+          druid:
+            initial-size: 5
+            min-idle: 5
+            max-active: 20
+            # 配置获取连接等待超时的时间
+            max-wait: 60000
+            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            time-between-eviction-runs-millis: 60000
+            #max-evictable-idle-time-millis: 360000
+            #time-between-eviction-runs-millis: 60000
+            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            min-evictable-idle-time-millis: 300000
+            # Oracle请使用select 1 from dual
+            validation-query: SELECT X FROM DUAL
+            test-on-borrow: false
+            test-on-return: false
+            pool-prepared-statements: true
+            max-pool-prepared-statement-per-connection-size: 20
+            # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+            filters: stat,wall
+            connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+            useGlobalDataSourceStat: true
+            test-while-idle: true
+            #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+            connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        salve:
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/jta_stu-tea?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
+          username: root
+          password: zl12345
+          druid:
+            initial-size: 5
+            min-idle: 5
+            max-active: 20
+            # 配置获取连接等待超时的时间
+            max-wait: 60000
+            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            time-between-eviction-runs-millis: 60000
+            #max-evictable-idle-time-millis: 360000
+            #time-between-eviction-runs-millis: 60000
+            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            min-evictable-idle-time-millis: 300000
+            # Oracle请使用select 1 from dual
+            validation-query: SELECT X FROM DUAL
+            test-on-borrow: false
+            test-on-return: false
+            pool-prepared-statements: true
+            max-pool-prepared-statement-per-connection-size: 20
+            # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+            filters: stat,wall
+            connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+            useGlobalDataSourceStat: true
+            test-while-idle: true
+            #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+            connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+server:
+  port: 7100
+
+logging:
+  level:
+    com.springcloud.auto: info
+
+feign:
+  hystrix:
+    enabled: true
