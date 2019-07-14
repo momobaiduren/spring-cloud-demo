@@ -18,5 +18,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(value = "spring-cloud-demo-provider-rpc",url = "http://localhost:7200", fallback = StockFeignHystrix.class)
 public interface IStockInfoFeignClientApi {
   @PostMapping("/api/stock/jianStock")
-  StockInfo jianStock(StockInfo stockInfo);
+  StockInfo jianStock(@RequestBody  StockInfo stockInfo);
 }

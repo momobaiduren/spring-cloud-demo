@@ -1,5 +1,7 @@
 package com.springcloud.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springcloud.auto.entity.AccountInfo;
 import com.springcloud.auto.mapper.AccountInfoMapper;
 import com.springcloud.service.IAccountInfoService;
@@ -20,9 +22,11 @@ public class AccountInfoServiceImpl implements IAccountInfoService {
   private AccountInfoMapper accountInfoMapper;
   @Override
   public AccountInfo jianAccount(AccountInfo accountInfo) {
-    AccountInfo userAccountInfo = accountInfoMapper.selectById(accountInfo.getUserName());
+    QueryWrapper<AccountInfo> qw = new QueryWrapper<>();
+    qw.eq("user_Name",accountInfo.getUserName());
+    AccountInfo userAccountInfo = accountInfoMapper.selectOne(qw);
     userAccountInfo.setAccountTotal(userAccountInfo.getAccountTotal() - accountInfo.getAccountTotal());
-    accountInfoMapper.updateById(userAccountInfo);
+    accountInfoMapper.update(userAccountInfo,qw);
     return userAccountInfo;
   }
 }
