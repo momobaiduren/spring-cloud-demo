@@ -17,6 +17,7 @@ public class StockFeignHystrix implements IStockInfoFeignClientApi {
 
   @Override
   public StockInfo jianStock(StockInfo stockInfo) {
-    return null;
+    System.out.println(stockInfo);
+    return stockInfo;
   }
 }

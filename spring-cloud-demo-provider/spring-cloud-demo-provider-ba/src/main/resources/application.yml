@@ -1,4 +1,5 @@
 spring:
+  #设置默认加载druid的数据源
   autoconfigure:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
   #设置boot2.1之后在使用feignclient情况下不被覆盖

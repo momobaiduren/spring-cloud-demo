@@ -30,8 +30,12 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
   @Override
   public OrderInfo createAndPayOrder(OrderInfo orderInfo) {
     AccountInfo accountInfo = new AccountInfo();
+    accountInfo.setAccountTotal(orderInfo.getProductTotal());
+    accountInfo.setUserName(orderInfo.getUserName());
     iAccountInfoFeignClientApi.jianAccount(accountInfo);
     StockInfo stockInfo = new StockInfo();
+    stockInfo.setProductId(orderInfo.getProductId());
+    stockInfo.setStockNum(orderInfo.getProductNum());
     iStockInfoFeignClientApi.jianStock(stockInfo);
     orderInfoMapper.insert(orderInfo);
     return orderInfo;

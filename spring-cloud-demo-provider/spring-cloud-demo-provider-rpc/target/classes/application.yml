@@ -45,7 +45,6 @@ spring:
       datasource:
         master:
           driver-class-name: com.mysql.jdbc.Driver
-          #          url: jdbc:mysql://cq-cdb-2tinkehp.sql.tencentcdb.com:63984/ZHESHUO_PRO_DB?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
           url: jdbc:mysql://localhost:3306/jta_stu-tea?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
           username: root
           password: zl12345
