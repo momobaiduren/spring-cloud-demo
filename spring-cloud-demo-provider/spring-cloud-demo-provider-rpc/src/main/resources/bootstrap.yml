@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-cloud-demo-provider-ba
+    name: spring-cloud-demo-provider-rpc
   cloud:
     config:
       discovery:
@@ -15,3 +15,4 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+

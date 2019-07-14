@@ -37,6 +37,7 @@ spring:
     config:
       server:
         git:
+          #由于github网络原因，使用码云下面是对应的配置
           uri: https://gitee.com/runkeyun/springcloud
           username: 718168633@qq.com
           password: zl123456
