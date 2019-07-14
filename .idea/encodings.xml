@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-aspect-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-config" charset="UTF-8" />
@@ -14,6 +15,7 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-service1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-task" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-transactionmanager" charset="UTF-8" />
   </component>

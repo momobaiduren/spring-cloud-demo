@@ -13,6 +13,11 @@
   <dependencies>
     <dependency>
       <groupId>com.springcloud</groupId>
+      <artifactId>spring-cloud-demo-api</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-persist</artifactId>
       <version>1.0</version>
     </dependency>

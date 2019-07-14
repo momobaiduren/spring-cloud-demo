@@ -23,7 +23,7 @@
     </dependency>
     <dependency>
       <groupId>com.springcloud</groupId>
-      <artifactId>spring-cloud-demo-service</artifactId>
+      <artifactId>spring-cloud-demo-service1</artifactId>
       <version>1.0</version>
     </dependency>
 <!--    <dependency>-->

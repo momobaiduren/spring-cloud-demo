@@ -11,12 +11,14 @@
         <module name="spring-cloud-demo-consumer" />
         <module name="spring-cloud-demo-provider-rpc" />
         <module name="spring-boot-xxl-job-admin" />
+        <module name="spring-cloud-demo-service1" />
         <module name="spring-cloud-demo-task" />
         <module name="spring-cloud-demo-datasource" />
         <module name="spring-cloud-demo-persist" />
         <module name="spring-cloud-demo-provider-ba" />
         <module name="spring-cloud-demo-api" />
         <module name="spring-cloud-demo-transactionmanager" />
+        <module name="spring-aspect-demo" />
         <module name="spring-cloud-demo-gateway" />
         <module name="spring-cloud-demo-service" />
         <module name="spring-cloud-demo-eureka" />
@@ -33,6 +35,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-aspect-demo" options="-parameters" />
       <module name="spring-boot-xxl-job" options="-parameters" />
       <module name="spring-boot-xxl-job-admin" options="-parameters" />
       <module name="spring-boot-xxl-job-core" options="-parameters" />
@@ -50,6 +53,7 @@
       <module name="spring-cloud-demo-provider-ba" options="-parameters" />
       <module name="spring-cloud-demo-provider-rpc" options="-parameters" />
       <module name="spring-cloud-demo-service" options="-parameters" />
+      <module name="spring-cloud-demo-service1" options="-parameters" />
       <module name="spring-cloud-demo-task" options="-parameters" />
       <module name="spring-cloud-demo-transactionmanager" options="-parameters" />
     </option>

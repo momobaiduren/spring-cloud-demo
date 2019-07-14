@@ -32,9 +32,12 @@ public class MysqlGenerator {
     /**
      * 连接地址  10.252.193.29:3306  root  yh2018b2b
      */
-    private static String url = "jdbc:mysql://10.252.193.29:3306/csx_b2b_settle?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8";
+//    private static String url = "jdbc:mysql://10.252.193.29:3306/csx_b2b_settle?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8";
 
-    //private static String url = "jdbc:mysql://cq-cdb-2tinkehp.sql.tencentcdb.com:63984/ZHESHUO_PRO_DB?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8";
+//    private static String url = "jdbc:mysql://cq-cdb-2tinkehp.sql.tencentcdb.com:63984/ZHESHUO_PRO_DB?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8";
+
+    private static String url = "jdbc:mysql://localhost:3306/jta_stu-tea?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8";
+
     /**
      * 驱动
      */
@@ -46,7 +49,9 @@ public class MysqlGenerator {
     /**
      * 数据库密码  zskj123!
      */
-    private static String password = "yh2018b2b";
+    private static String password = "zl12345";
+
+//    private static String password = "yh2018b2b";
 
     private static String parentpackage = "com.springcloud";
     /**
@@ -57,7 +62,7 @@ public class MysqlGenerator {
      * 生的表名
      */
     private static String[] tableNames = new String[]{
-        "statement_source_bill"
+        "order_info","stock_info","account_info"
     };
 
     public static String scanner(String tip) {

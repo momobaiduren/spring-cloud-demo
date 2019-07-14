@@ -12,6 +12,7 @@
   <artifactId>spring-cloud-demo-datasource</artifactId>
 
   <dependencies>
+
     <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
     <dependency>
       <groupId>com.alibaba</groupId>

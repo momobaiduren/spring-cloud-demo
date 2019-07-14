@@ -12,7 +12,9 @@
   <packaging>pom</packaging>
 
   <modules>
+<!--    提供远程调用-->
     <module>spring-cloud-demo-provider-rpc</module>
+<!--    提供本地服务数据业务对外开发-->
     <module>spring-cloud-demo-provider-ba</module>
   </modules>
 

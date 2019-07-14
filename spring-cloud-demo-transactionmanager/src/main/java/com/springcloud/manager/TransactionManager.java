@@ -100,10 +100,8 @@ public class TransactionManager {
    * 回滚事务.
    */
   public void rollback() {
-
     Transaction transaction = getCurrentTransaction();
     transaction.changeStatus(TransactionStatus.CANCELLING);
-
     transactionConfigurator.getTransactionRepository().update(transaction);
 
     try {

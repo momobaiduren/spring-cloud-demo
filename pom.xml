@@ -19,7 +19,7 @@
     <module>spring-cloud-demo-persist</module>
 <!--    表现层暴露到网关-->
     <module>spring-cloud-demo-provider</module>
-<!--    业务处理-->
+<!--    业务2处理-->
     <module>spring-cloud-demo-service</module>
 <!--    公共类-->
     <module>spring-cloud-demo-common</module>
@@ -29,6 +29,10 @@
     <module>spring-cloud-demo-datasource</module>
 <!--    分布式事务tcc-->
     <module>spring-cloud-demo-transactionmanager</module>
+<!--    spring Tcc @Around 样例-->
+    <module>spring-aspect-demo</module>
+<!--    模块1业务类-->
+    <module>spring-cloud-demo-service1</module>
 
   </modules>
   <parent>

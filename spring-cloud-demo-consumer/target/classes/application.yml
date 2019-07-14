@@ -1,6 +1,8 @@
 spring:
   application:
     name: spring-cloud-demo-consumer
+  main:
+    allow-bean-definition-overriding: true
 #  cloud:
 #    config:
 #      discovery:

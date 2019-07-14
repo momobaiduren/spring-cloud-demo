@@ -1,8 +1,9 @@
-
 spring:
   autoconfigure:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
-
+  #设置boot2.1之后在使用feignclient情况下不被覆盖
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: spring-cloud-demo-provider-ba
 #  cloud:
@@ -46,9 +47,9 @@ spring:
       datasource:
         master:
           driver-class-name: com.mysql.jdbc.Driver
-          url: jdbc:mysql://cq-cdb-2tinkehp.sql.tencentcdb.com:63984/ZHESHUO_PRO_DB?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
+          url: jdbc:mysql://localhost:3306/jta_stu-tea?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
           username: root
-          password: zskj123!
+          password: zl12345
           druid:
             initial-size: 5
             min-idle: 5
@@ -76,9 +77,9 @@ spring:
             connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
         salve:
           driver-class-name: com.mysql.jdbc.Driver
-          url: jdbc:mysql://cq-cdb-2tinkehp.sql.tencentcdb.com:63984/ZHESHUO_PRO_DB?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
+          url: jdbc:mysql://localhost:3306/jta_stu-tea?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
           username: root
-          password: zskj123!
+          password: zl12345
           druid:
             initial-size: 5
             min-idle: 5
@@ -118,3 +119,7 @@ server:
 logging:
   level:
     com.springcloud.auto: info
+
+feign:
+  hystrix:
+    enabled: true

@@ -6,7 +6,9 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
+import org.springframework.stereotype.Component;
 
 /**
  * @title: TccCompensableAspect
@@ -16,7 +18,7 @@ import org.springframework.core.Ordered;
  * @date 2019-07-1020:09
  */
 
-
+@Component
 public class TccCompensableAspect implements Ordered {
 
   static final Logger LOG = LoggerFactory.getLogger(TccCompensableAspect.class.getSimpleName());
@@ -36,8 +38,9 @@ public class TccCompensableAspect implements Ordered {
   }
 
   /**
-   * 可补偿事务拦截器
+   * 设置可补偿事务拦截器.
    */
+  @Autowired
   private CompensableTransactionInterceptor compensableTransactionInterceptor;
 
   /**
@@ -57,14 +60,6 @@ public class TccCompensableAspect implements Ordered {
   public Object interceptCompensableMethod(ProceedingJoinPoint pjp) throws Throwable {
     LOG.debug("==>interceptCompensableMethod");
     return compensableTransactionInterceptor.interceptCompensableMethod(pjp);
-  }
-
-  /**
-   * 设置可补偿事务拦截器.
-   * @param compensableTransactionInterceptor
-   */
-  public void setCompensableTransactionInterceptor(CompensableTransactionInterceptor compensableTransactionInterceptor) {
-    this.compensableTransactionInterceptor = compensableTransactionInterceptor;
   }
 
 }

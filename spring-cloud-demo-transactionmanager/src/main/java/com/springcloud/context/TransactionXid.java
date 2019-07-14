@@ -90,4 +90,5 @@ public class TransactionXid implements Xid, Serializable {
     long secondLong = bb.getLong();
     return new UUID(firstLong, secondLong);
   }
+
 }
