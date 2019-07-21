@@ -1,6 +1,5 @@
 package com.springcloud.datasource.annotation;
 
-import com.springcloud.datasource.enums.DataSourceEnum;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

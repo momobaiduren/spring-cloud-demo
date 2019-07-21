@@ -9,7 +9,24 @@ spring:
         service-id: spring-cloud-demo-config
         enabled: true
       profile: master
-
+      label: master
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
+  #用于消息总线
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: zhanglong
+    password: zl123456
+#用于消息总线暴漏信息给MQ
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 eureka:
   client:
