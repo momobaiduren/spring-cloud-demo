@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>spring-cloud-demo</artifactId>
+    <groupId>com.springcloud</groupId>
+    <version>1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>spring-cloud-demo-seata</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>spring-cloud-demo-seata-order</module>
+    <module>spring-cloud-demo-seata-business</module>
+    <module>spring-cloud-demo-seata-storage</module>
+    <module>spring-cloud-demo-seata-account</module>
+  </modules>
+  <dependencies>
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-alibaba-seata</artifactId>-->
+<!--      <version>0.9.0</version>-->
+<!--      <exclusions>-->
+<!--        <exclusion>-->
+<!--          <groupId>io.seata</groupId>-->
+<!--          <artifactId>seata-spring</artifactId>-->
+<!--        </exclusion>-->
+<!--      </exclusions>-->
+<!--    </dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-alibaba-seata -->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-alibaba-seata</artifactId>-->
+<!--      <version>0.9.0.RELEASE</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-openfeign</artifactId>-->
+<!--    </dependency>-->
+  </dependencies>
+  <repositories>
+    <repository>
+      <id>spring-snapshot</id>
+      <name>Spring Snapshot Repository</name>
+      <url>https://repo.spring.io/snapshot</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>mvnrepository</id>
+      <name>mvnrepository</name>
+      <url>http://www.mvnrepository.com/</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>sonatype</id>
+      <name>sonatype</name>
+      <url>http://oss.sonatype.org/</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+</project>

@@ -14,9 +14,15 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-seata" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-account" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-business" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-storage" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-service1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-task" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-transactionmanager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-zipkin" charset="UTF-8" />
   </component>
 </project>

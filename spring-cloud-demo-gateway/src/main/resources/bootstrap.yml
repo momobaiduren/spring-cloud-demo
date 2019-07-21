@@ -1,15 +1,12 @@
 spring:
   application:
-    name: spring-cloud-demo-provider-ba
-  main:
-    allow-bean-definition-overriding: true
+    name: spring-cloud-demo-gateway
   cloud:
     config:
       discovery:
         service-id: spring-cloud-demo-config
         enabled: true
       profile: master
-
 
 eureka:
   client:
@@ -18,3 +15,6 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+
+
+

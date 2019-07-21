@@ -8,17 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-xxl-job-core" />
         <module name="spring-cloud-demo-common" />
-        <module name="spring-cloud-demo-consumer" />
         <module name="spring-cloud-demo-provider-rpc" />
         <module name="spring-boot-xxl-job-admin" />
         <module name="spring-cloud-demo-service1" />
+        <module name="spring-cloud-demo-seata-account" />
+        <module name="spring-cloud-demo-seata-order" />
         <module name="spring-cloud-demo-task" />
         <module name="spring-cloud-demo-datasource" />
         <module name="spring-cloud-demo-persist" />
         <module name="spring-cloud-demo-provider-ba" />
         <module name="spring-cloud-demo-api" />
-        <module name="spring-cloud-demo-transactionmanager" />
+        <module name="spring-cloud-demo-seata-storage" />
         <module name="spring-aspect-demo" />
+        <module name="spring-cloud-demo-seata-business" />
         <module name="spring-cloud-demo-gateway" />
         <module name="spring-cloud-demo-service" />
         <module name="spring-cloud-demo-eureka" />
@@ -30,7 +32,13 @@
       <module name="spring-boot-xxl-job-admin" target="1.7" />
       <module name="spring-boot-xxl-job-core" target="1.8" />
       <module name="spring-boot-xxl-job-demo" target="1.7" />
+      <module name="spring-cloud-demo-account" target="1.8" />
+      <module name="spring-cloud-demo-consumer" target="1.8" />
+      <module name="spring-cloud-demo-order" target="1.8" />
       <module name="spring-cloud-demo-provider" target="1.8" />
+      <module name="spring-cloud-demo-storage" target="1.8" />
+      <module name="spring-cloud-demo-transactionmanager" target="1.8" />
+      <module name="spring-cloud-demo-zipkin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -41,6 +49,7 @@
       <module name="spring-boot-xxl-job-core" options="-parameters" />
       <module name="spring-boot-xxl-job-demo" options="-parameters" />
       <module name="spring-cloud-demo" options="-parameters" />
+      <module name="spring-cloud-demo-account" options="-parameters" />
       <module name="spring-cloud-demo-api" options="-parameters" />
       <module name="spring-cloud-demo-common" options="-parameters" />
       <module name="spring-cloud-demo-config" options="-parameters" />
@@ -48,14 +57,21 @@
       <module name="spring-cloud-demo-datasource" options="-parameters" />
       <module name="spring-cloud-demo-eureka" options="-parameters" />
       <module name="spring-cloud-demo-gateway" options="-parameters" />
+      <module name="spring-cloud-demo-order" options="-parameters" />
       <module name="spring-cloud-demo-persist" options="-parameters" />
       <module name="spring-cloud-demo-provider" options="-parameters" />
       <module name="spring-cloud-demo-provider-ba" options="-parameters" />
       <module name="spring-cloud-demo-provider-rpc" options="-parameters" />
+      <module name="spring-cloud-demo-seata-account" options="-parameters" />
+      <module name="spring-cloud-demo-seata-business" options="-parameters" />
+      <module name="spring-cloud-demo-seata-order" options="-parameters" />
+      <module name="spring-cloud-demo-seata-storage" options="-parameters" />
       <module name="spring-cloud-demo-service" options="-parameters" />
       <module name="spring-cloud-demo-service1" options="-parameters" />
+      <module name="spring-cloud-demo-storage" options="-parameters" />
       <module name="spring-cloud-demo-task" options="-parameters" />
       <module name="spring-cloud-demo-transactionmanager" options="-parameters" />
+      <module name="spring-cloud-demo-zipkin" options="-parameters" />
     </option>
   </component>
 </project>

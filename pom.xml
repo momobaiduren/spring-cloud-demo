@@ -33,7 +33,9 @@
     <module>spring-aspect-demo</module>
 <!--    模块1业务类-->
     <module>spring-cloud-demo-service1</module>
-
+<!--    阿里云蚂蚁金服开源分布式事务框架-->
+    <module>spring-cloud-demo-seata</module>
+    <module>spring-cloud-demo-zipkin</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
