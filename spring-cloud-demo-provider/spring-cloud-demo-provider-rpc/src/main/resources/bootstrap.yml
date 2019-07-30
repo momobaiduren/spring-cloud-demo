@@ -25,9 +25,17 @@ management:
     web:
       exposure:
         include: "*"
+datasource:
+  read:
+    readSource: read
+  write:
+    writeSource: write
+  other:
+    otherSource: read
 
-
-
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 eureka:
   client:
     serviceUrl:
