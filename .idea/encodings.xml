@@ -6,7 +6,6 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-config" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring-cloud-demo-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-datasource" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-gateway" charset="UTF-8" />
@@ -22,7 +21,7 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-service1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-task" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring-cloud-demo-transactionmanager" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring-cloud-demo-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core" charset="UTF-8" />
   </component>
 </project>

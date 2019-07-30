@@ -23,6 +23,8 @@
         <option value="$PROJECT_DIR$/spring-cloud-demo-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-provider/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-storage/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-demo/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-transactionmanager/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/pom.xml" />
       </set>

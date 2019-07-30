@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author zhanglong
  * @date 2019-07-1412:52
  */
-@FeignClient(value = "spring-cloud-demo-provider-rpc",url = "http://localhost:7200", fallback = AccountFeignHystrix.class)
+@FeignClient(value = "spring-cloud-demo-provider-rpc", fallback = AccountFeignHystrix.class)
 public interface IAccountInfoFeignClientApi {
   @PostMapping("api/account/jianAccount")
   AccountInfo jianAccount(@RequestBody AccountInfo accountInfo);

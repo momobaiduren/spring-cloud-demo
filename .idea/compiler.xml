@@ -13,16 +13,17 @@
         <module name="spring-cloud-demo-service1" />
         <module name="spring-cloud-demo-seata-account" />
         <module name="spring-cloud-demo-seata-order" />
-        <module name="spring-cloud-demo-task" />
         <module name="spring-cloud-demo-datasource" />
         <module name="spring-cloud-demo-persist" />
+        <module name="spring-cloud-demo-seata-storage" />
         <module name="spring-cloud-demo-provider-ba" />
         <module name="spring-cloud-demo-api" />
-        <module name="spring-cloud-demo-seata-storage" />
+        <module name="xxl-job-admin" />
         <module name="spring-aspect-demo" />
         <module name="spring-cloud-demo-seata-business" />
         <module name="spring-cloud-demo-gateway" />
         <module name="spring-cloud-demo-service" />
+        <module name="xxl-job-core" />
         <module name="spring-cloud-demo-eureka" />
         <module name="spring-cloud-demo-config" />
       </profile>
@@ -39,6 +40,8 @@
       <module name="spring-cloud-demo-storage" target="1.8" />
       <module name="spring-cloud-demo-transactionmanager" target="1.8" />
       <module name="spring-cloud-demo-zipkin" target="1.8" />
+      <module name="xxl-admin" target="1.8" />
+      <module name="xxl-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -72,6 +75,10 @@
       <module name="spring-cloud-demo-task" options="-parameters" />
       <module name="spring-cloud-demo-transactionmanager" options="-parameters" />
       <module name="spring-cloud-demo-zipkin" options="-parameters" />
+      <module name="xxl-admin" options="-parameters" />
+      <module name="xxl-demo" options="-parameters" />
+      <module name="xxl-job-admin" options="-parameters" />
+      <module name="xxl-job-core" options="-parameters" />
     </option>
   </component>
 </project>

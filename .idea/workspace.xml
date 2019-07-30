@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="695d6be4-e7b1-4a40-a698-3f14157f6885" name="Default Changelist" comment="">
+    <list default="true" id="695d6be4-e7b1-4a40-a698-3f14157f6885" name="Default Changelist" comment="修改POJO参数绑定问题">
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ILineChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ReadModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewHighQualityCustomers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewVIPClients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/PersonalFinancialAssets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/xxl-job-admin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/xxl-job-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IStockInfoFeignClientApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IStockInfoFeignClientApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/AccountInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/AccountInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-aspect-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aspect-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-datasource/target/classes/com/springcloud/mybatis/generator/MysqlGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-datasource/target/classes/com/springcloud/mybatis/generator/MysqlGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-task/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/SpringCloudDemoTaskApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/config/XxlJobConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/handler/DemoJobHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/handler/ExJobHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/test/java/com/springcloud/SpringCloudDemoTaskApplicationTests.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,6 +71,19 @@
     <ignored path="$PROJECT_DIR$/spring-cloud-demo-transactionmanager/target/" />
     <ignored path="$PROJECT_DIR$/spring-aspect-demo/target/" />
     <ignored path="$PROJECT_DIR$/spring-cloud-demo-service1/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-storage/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-order/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-account/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-business/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-order/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-seata/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-storage/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-account/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-zipkin/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-demo/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-admin/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,46 +110,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/AccountInfoFeignClient.java">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/OrderInfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service1/src/main/java/com/springcloud/service/IOrderInfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service1/src/main/java/com/springcloud/service/impl/OrderInfoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/StockFeignHystrix.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="260">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,57 +122,90 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IStockInfoFeignClientApi.java">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/StockInfoFeignClient.java">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="48" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="48" />
+            <state relative-caret-position="-89">
+              <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#896#897#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="90">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3851#3852#0" expanded="true" />
+                <element signature="e#3872#3873#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/AccountInfoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/StockInfoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -189,71 +241,78 @@
       <find>SystemException</find>
       <find>providerMethodProceed</find>
       <find>transactionConfigurator</find>
-      <find>Compensable</find>
       <find>byteArrayToUUID</find>
       <find>api</find>
       <find>IAccountInfoFeignClientApi</find>
       <find>OrderInfoServiceImpl</find>
       <find>stock/jianStock</find>
+      <find>Compensable</find>
+      <find>ResourceCoordinatorInterceptor</find>
+      <find>main</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/annotation/Compensable.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/DemoController.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/around/DemoController.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/SpringCloudDemoProviderBaApplication.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/test/java/com/demo/aspect/AroundTest.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/test/java/com/demo/AroundTest.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/test/java/com/demo/AroundAspectTest.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/SpringDemoApplication.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/aspect/AroundAspect.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/around/AroundDemo.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-transactionmanager/src/main/java/com/springcloud/RabbitController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-transactionmanager/src/main/java/com/springcloud/DtsRabbitApplication.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-transactionmanager/src/main/java/com/springcloud/RabbitReceiver.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-transactionmanager/src/main/java/com/springcloud/context/TransactionXid.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/AddressInfoTb.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/AdminInfoTb.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/OrderInfoController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/AccountInfoController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/StockInfoController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/controller/AccountInfoController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/IAccountInfoService.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/AccountInfo.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/IOrderInfoService.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/IStockInfoService.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/StockInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/SpringCloudDemoProviderBaApplication.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/OrderInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service1/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service1/src/main/java/com/springcloud/service/IOrderInfoService.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/proxy/interceptor/CglibProxy.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/proxy/ExecuteMain.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-account/src/main/java/com/springcloud.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-config/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/java/com/springcloud/SpringCloudDemoZipkinApplication.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/enums/DataSourceEnum.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/aspect/ChoiceDBAspect.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/holder/DataSourceContextHolder.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-order/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-seata/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/OrderInfoController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service1/src/main/java/com/springcloud/service/impl/OrderInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/AccountFeignHystrix.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-consumer/src/main/java/com/springcloud/cotroller/RpcDemoController.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/StockFeignHystrix.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/provider/FeignProvider.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/annotation/ChoiceDB.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-gateway/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/BusTestController.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-consumer/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/StockInfo.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/StockInfoFeignClient.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/AccountInfoFeignClient.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/AccountInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IStockInfoFeignClientApi.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-core/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/StatementStatementAccount.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ReadModel.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ILineChecker.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelEventListener.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverterDemoEntity.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoEntity.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/AverageDailyDeposit.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/PersonalFinancialAssets.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewVIPClients.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewHighQualityCustomers.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java" />
+        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java" />
       </list>
     </option>
   </component>
@@ -275,7 +334,7 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="spring-aspect-demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="spring-cloud-demo-seata-business" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
       </expand>
       <select />
@@ -296,7 +355,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,70 +365,25 @@
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-api" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-api" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-              <item name="hystrix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-consumer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -378,176 +391,42 @@
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-ba" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-rpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-rpc" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="excel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-provider-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-service1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-service1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-service1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-service1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-service1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-service1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-persist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -560,7 +439,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -574,25 +453,28 @@
       <recent name="com.demo" />
       <recent name="com.demo.aspect" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.springcloud.provider.hystrix" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.springcloud.service.impl" />
-      <recent name="com.springcloud.service" />
-      <recent name="com.springcloud.controller" />
-      <recent name="com.demo" />
-      <recent name="com.demo.annotation" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources" />
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-gateway/src/main/resources" />
       <recent name="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl" />
       <recent name="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service" />
       <recent name="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc" />
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/config" />
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-consumer/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo.excel" />
+      <recent name="com.springcloud" />
+      <recent name="com.demo.proxy.handler" />
+      <recent name="com.springcloud.service.impl" />
+      <recent name="com.springcloud.service" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.demo.excel.entity" />
+      <recent name="com.demo.excel" />
+      <recent name="com.demo.proxy.interceptor" />
+      <recent name="com.springcloud.provider.hystrix" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -607,8 +489,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringCloudDemoEurekaApplication">
-    <configuration name="MysqlGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.MysqlGenerator">
+    <configuration name="ExecuteMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.proxy.ExecuteMain" />
+      <module name="spring-aspect-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.proxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MysqlGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.springcloud.mybatis.generator.MysqlGenerator" />
       <module name="spring-cloud-demo-datasource" />
       <extension name="coverage">
@@ -621,70 +516,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionXid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.springcloud.context.TransactionXid" />
-      <module name="spring-cloud-demo-transactionmanager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.springcloud.context.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AroundAspectTest.testAroud" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RedisTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.redis.RedisTest" />
       <module name="spring-aspect-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.demo.*" />
+          <option name="PATTERN" value="com.demo.redis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.demo.AroundAspectTest" />
-      <option name="METHOD_NAME" value="testAroud" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AroundTest.testAroud (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.proxy.interceptor.SampleClass" />
       <module name="spring-aspect-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.demo.*" />
+          <option name="PATTERN" value="com.demo.proxy.interceptor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.demo.AroundTest" />
-      <option name="METHOD_NAME" value="testAroud" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AroundTest.testAroud" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SetStr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.collection.SetStr" />
       <module name="spring-aspect-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.demo.aspect.*" />
+          <option name="PATTERN" value="com.demo.collection.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.demo.aspect" />
-      <option name="MAIN_CLASS_NAME" value="com.demo.aspect.AroundTest" />
-      <option name="METHOD_NAME" value="testAroud" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DtsRabbitApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="spring-cloud-demo-transactionmanager" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.springcloud.DtsRabbitApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -692,13 +558,6 @@
     <configuration name="SpringCloudDemoConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-cloud-demo-config" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.springcloud.SpringCloudDemoConfigApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpringCloudDemoConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="spring-cloud-demo-consumer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.springcloud.SpringCloudDemoConsumerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -745,13 +604,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ExecuteMain" />
+      <item itemvalue="Application.SampleClass" />
+      <item itemvalue="Application.SetStr" />
+      <item itemvalue="Application.RedisTest" />
+      <item itemvalue="Application.MysqlGenerator" />
+      <item itemvalue="Spring Boot.SpringCloudDemoConfigApplication" />
+      <item itemvalue="Spring Boot.SpringCloudDemoEurekaApplication" />
+      <item itemvalue="Spring Boot.SpringCloudDemoGatewayApplication" />
+      <item itemvalue="Spring Boot.SpringCloudDemoProviderBaApplication" />
+      <item itemvalue="Spring Boot.SpringCloudDemoProviderRpcApplication" />
+      <item itemvalue="Spring Boot.SpringCloudDemoTaskApplication" />
+      <item itemvalue="Spring Boot.SpringDemoApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MysqlGenerator (1)" />
-        <item itemvalue="Application.TransactionXid" />
-        <item itemvalue="JUnit.AroundAspectTest.testAroud" />
-        <item itemvalue="JUnit.AroundTest.testAroud (1)" />
-        <item itemvalue="JUnit.AroundTest.testAroud" />
+        <item itemvalue="Application.MysqlGenerator" />
+        <item itemvalue="Application.RedisTest" />
+        <item itemvalue="Application.SetStr" />
+        <item itemvalue="Application.ExecuteMain" />
+        <item itemvalue="Application.SampleClass" />
       </list>
     </recent_temporary>
   </component>
@@ -787,7 +660,34 @@
       <workItem from="1562854596532" duration="4461000" />
       <workItem from="1562917643846" duration="1975000" />
       <workItem from="1563023716650" duration="7632000" />
-      <workItem from="1563069380222" duration="16476000" />
+      <workItem from="1563069380222" duration="20915000" />
+      <workItem from="1563202382560" duration="1639000" />
+      <workItem from="1563237895575" duration="421000" />
+      <workItem from="1563497600901" duration="6372000" />
+      <workItem from="1563530499222" duration="602000" />
+      <workItem from="1563540397142" duration="4784000" />
+      <workItem from="1563551169852" duration="150000" />
+      <workItem from="1563585961444" duration="432000" />
+      <workItem from="1563590660867" duration="462000" />
+      <workItem from="1563601126193" duration="2937000" />
+      <workItem from="1563631534435" duration="335000" />
+      <workItem from="1563676099685" duration="206000" />
+      <workItem from="1563678879458" duration="3601000" />
+      <workItem from="1563687514767" duration="7600000" />
+      <workItem from="1563722829654" duration="928000" />
+      <workItem from="1563760165080" duration="598000" />
+      <workItem from="1563844010297" duration="1916000" />
+      <workItem from="1563892161526" duration="378000" />
+      <workItem from="1563931186631" duration="939000" />
+      <workItem from="1564008953233" duration="924000" />
+      <workItem from="1564043376779" duration="1724000" />
+      <workItem from="1564061886985" duration="347000" />
+      <workItem from="1564138507268" duration="3295000" />
+      <workItem from="1564150338665" duration="92000" />
+      <workItem from="1564190327241" duration="51000" />
+      <workItem from="1564215628011" duration="2310000" />
+      <workItem from="1564381385285" duration="1723000" />
+      <workItem from="1564469783338" duration="5160000" />
     </task>
     <task id="LOCAL-00001" summary="修改实体">
       <created>1563018953497</created>
@@ -831,7 +731,42 @@
       <option name="project" value="LOCAL" />
       <updated>1563097580375</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修改POJO参数绑定问题">
+      <created>1563098589371</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563098589371</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ba、rpc应用配置中心">
+      <created>1563100606965</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563100606965</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加配置中心配置、引入蚂蚁金服分布式事务组件seata（暂未实现）">
+      <created>1563689394320</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1563689394321</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加消息总线bus">
+      <created>1563696528874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1563696528874</updated>
+    </task>
+    <task id="LOCAL-00011" summary="java基础测试">
+      <created>1563881557462</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563881557462</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -861,13 +796,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96054000" />
+    <option name="totallyTimeSpent" value="150419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24096386" visible="true" weight="0.28898427" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24096386" visible="true" weight="0.4041488" />
       <window_info id="Structure" order="1" sideWeight="0.7590361" side_tool="true" weight="0.3104435" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -875,9 +809,9 @@
       <window_info id="Alibaba Cloud Explorer" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286908" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.88125896" weight="0.44457832" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6130186" visible="true" weight="0.29638556" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.88125896" weight="0.39518073" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6130186" weight="0.29638556" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -889,29 +823,30 @@
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49928468" weight="0.32650602" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.28433734" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32771084" />
       <window_info anchor="bottom" id="Alibaba Cloud View" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.22174536" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21244635" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info anchor="right" id="Alibaba Log Console" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24096386" visible="true" weight="0.39842632" />
+      <window_info id="Structure" order="1" sideWeight="0.7590361" side_tool="true" weight="0.3104435" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Alibaba Cloud Explorer" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44096386" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46144578" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.88125896" weight="0.39635035" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6130186" weight="0.29638556" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -919,20 +854,21 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32650602" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.11874106" side_tool="true" weight="0.44096386" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49928468" weight="0.32650602" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="15" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Alibaba Cloud View" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.22174536" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21244635" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info anchor="right" id="Alibaba Log Console" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -942,7 +878,12 @@
     <MESSAGE value="修改实体" />
     <MESSAGE value="结构修改" />
     <MESSAGE value="同name多feignclient定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="同name多feignclient定义" />
+    <MESSAGE value="修改POJO参数绑定问题" />
+    <MESSAGE value="ba、rpc应用配置中心" />
+    <MESSAGE value="添加配置中心配置、引入蚂蚁金服分布式事务组件seata（暂未实现）" />
+    <MESSAGE value="添加消息总线bus" />
+    <MESSAGE value="java基础测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="java基础测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -966,385 +907,361 @@
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/StockInfoFeignClient.java</url>
-          <line>27</line>
+          <url>file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java</url>
+          <line>17</line>
           <properties />
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/AddressFeignHystrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/AddressFeignClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/DemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/AddressService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/AddressServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/controller/AccountInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/mapper/OrderInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAddressFeignClientApi.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/BusTestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/mapper/AccountInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/IOrderInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/OrderInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="31" column="11" selection-start-line="29" selection-start-column="6" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="33" column="17" selection-start-line="12" selection-start-column="2" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service1/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/SpringCloudDemoProviderBaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-consumer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="1424" selection-start-line="1424" selection-end-line="1424" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.8.RELEASE/spring-web-5.1.8.RELEASE-sources.jar!/org/springframework/web/bind/annotation/RequestMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-277">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/IAccountInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-367">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/OrderInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/IStockInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/SpringCloudDemoProviderRpcApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/annotation/RetentionPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-openfeign-core/2.1.1.RELEASE/spring-cloud-openfeign-core-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/openfeign/FeignClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-consumer/src/main/java/com/springcloud/SpringCloudDemoConsumerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-openfeign-core/2.1.1.RELEASE/spring-cloud-openfeign-core-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/openfeign/EnableFeignClients.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-openfeign-core/2.1.1.RELEASE/spring-cloud-openfeign-core-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/openfeign/FeignClientsRegistrar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200">
-          <caret line="167" column="29" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/provider/FeignProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-consumer/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" selection-start-line="3" selection-start-column="1" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/StockInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-consumer/src/main/java/com/springcloud/cotroller/RpcDemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/holder/DataSourceContextHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/AccountFeignHystrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/AccountInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/AccountInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="240">
+          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/AccountInfoFeignClient.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-sleuth-zipkin/2.1.1.RELEASE/spring-cloud-sleuth-zipkin-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/sleuth/zipkin2/ZipkinProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="50" />
+          <folding>
+            <element signature="e#2172#2173#0" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service1/src/main/java/com/springcloud/service/IOrderInfoService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/HostAndPort.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="90">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/StockFeignHystrix.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-admin/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-core/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-demo/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/commands/JedisCommands.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="385">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/BinaryJedis.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/OrderInfoController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/Jedis.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="90">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service1/src/main/java/com/springcloud/service/impl/OrderInfoServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/StockInfoFeignClient.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="20" selection-start-line="17" selection-start-column="2" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="48" />
+          <caret line="26" column="11" selection-start-line="15" selection-start-column="2" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="17" selection-start-line="35" selection-end-line="43" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/StatementStatementAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="192" column="5" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl/StockInfoServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="133">
+          <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IStockInfoFeignClientApi.java">
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        <state relative-caret-position="195">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/SpringDemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+          <folding>
+            <element signature="e#2406#2407#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ReadModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ILineChecker.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar!/org/slf4j/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="656" column="16" selection-start-line="656" selection-start-column="16" selection-end-line="656" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="17" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.2-beat1/easyexcel-1.1.2-beat1.jar!/com/alibaba/excel/annotation/ExcelProperty.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/PersonalFinancialAssets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewVIPClients.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewHighQualityCustomers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3851#3852#0" expanded="true" />
+            <element signature="e#3872#3873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java">
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="-89">
+          <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1398,7 +1315,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>spring-cloud-demo-provider-ba</last-edited>
+          <last-edited>spring-aspect-demo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

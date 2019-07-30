@@ -23,19 +23,14 @@
     <module>spring-cloud-demo-service</module>
 <!--    公共类-->
     <module>spring-cloud-demo-common</module>
-<!--    消费demo-->
-    <module>spring-cloud-demo-consumer</module>
 <!--    数据源读写分离-->
     <module>spring-cloud-demo-datasource</module>
-<!--    分布式事务tcc-->
-    <module>spring-cloud-demo-transactionmanager</module>
 <!--    spring Tcc @Around 样例-->
     <module>spring-aspect-demo</module>
 <!--    模块1业务类-->
     <module>spring-cloud-demo-service1</module>
 <!--    阿里云蚂蚁金服开源分布式事务框架-->
     <module>spring-cloud-demo-seata</module>
-    <module>spring-cloud-demo-zipkin</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -50,6 +45,7 @@
   <properties>
     <java.version>1.8</java.version>
     <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+    <commons-exec.version>1.3</commons-exec.version>
   </properties>
 
   <dependencyManagement>
