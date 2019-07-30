@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="xxl-job-executor-samples" />
         <module name="spring-boot-xxl-job-core" />
         <module name="spring-cloud-demo-common" />
         <module name="spring-cloud-demo-provider-rpc" />
@@ -79,6 +80,7 @@
       <module name="xxl-demo" options="-parameters" />
       <module name="xxl-job-admin" options="-parameters" />
       <module name="xxl-job-core" options="-parameters" />
+      <module name="xxl-job-executor-samples" options="-parameters" />
     </option>
   </component>
 </project>

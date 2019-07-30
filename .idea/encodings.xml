@@ -23,5 +23,6 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-task" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples" charset="UTF-8" />
   </component>
 </project>

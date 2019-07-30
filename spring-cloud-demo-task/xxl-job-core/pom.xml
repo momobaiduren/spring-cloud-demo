@@ -10,6 +10,37 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>xxl-job-core</artifactId>
+  <dependencies>
 
+    <!-- xxl-rpc-core -->
+    <dependency>
+      <groupId>com.xuxueli</groupId>
+      <artifactId>xxl-rpc-core</artifactId>
+      <version>${xxl-rpc.version}</version>
+    </dependency>
+
+    <!-- groovy-all -->
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy</artifactId>
+      <version>${groovy.version}</version>
+    </dependency>
+
+    <!-- commons-exec -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-exec</artifactId>
+      <version>${commons-exec.version}</version>
+    </dependency>
+
+    <!-- spring-context -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
 
 </project>

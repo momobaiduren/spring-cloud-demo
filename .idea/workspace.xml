@@ -2,51 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="695d6be4-e7b1-4a40-a698-3f14157f6885" name="Default Changelist" comment="修改POJO参数绑定问题">
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ILineChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ReadModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewHighQualityCustomers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewVIPClients.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/PersonalFinancialAssets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/xxl-job-admin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/xxl-job-core.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/AdminBiz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/ExecutorBiz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/impl/ExecutorBizImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/HandleCallbackParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/LogResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/RegistryParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/ReturnT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/TriggerParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/ExecutorBlockStrategyEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/RegistryConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/XxlJobExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/impl/XxlJobSpringExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/impl/SpringGlueFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/IJobHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/annotation/JobHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/GlueJobHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/ScriptJobHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/ExecutorRegistryThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobLogFileCleanThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/TriggerCallbackThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ScriptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ShardingUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aspect-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aspect-demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-datasource/target/classes/com/springcloud/mybatis/generator/MysqlGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-datasource/target/classes/com/springcloud/mybatis/generator/MysqlGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/mvnw.cmd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-task/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/SpringCloudDemoTaskApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/config/XxlJobConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/handler/DemoJobHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/java/com/springcloud/handler/ExJobHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/src/test/java/com/springcloud/SpringCloudDemoTaskApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/xxl-job-admin.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/xxl-job-core.iml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,6 +76,7 @@
     <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-admin/target/" />
     <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/target/" />
     <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/target/" />
+    <ignored path="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,102 +103,71 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/src/test/java/com/xxl/job/adminbiz/AdminBizTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-89">
-              <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+            <state relative-caret-position="292">
+              <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobLogFileCleanThread.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/FileUtil.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ScriptUtil.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ShardingUtil.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/XxlJobExecutorApplication1.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java">
+        <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/service/jobhandler/CommandJobHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3851#3852#0" expanded="true" />
-                <element signature="e#3872#3873#0" expanded="true" />
-              </folding>
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -249,6 +211,8 @@
       <find>Compensable</find>
       <find>ResourceCoordinatorInterceptor</find>
       <find>main</find>
+      <find>LoadBalance</find>
+      <find>.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -262,57 +226,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/proxy/interceptor/CglibProxy.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/proxy/ExecuteMain.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-account/src/main/java/com/springcloud.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-config/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/java/com/springcloud/SpringCloudDemoZipkinApplication.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-zipkin/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/enums/DataSourceEnum.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/aspect/ChoiceDBAspect.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/holder/DataSourceContextHolder.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-seata/spring-cloud-demo-seata-order/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-seata/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/annotation/ChoiceDB.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-api/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-gateway/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/BusTestController.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/AdminBiz1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/ExecutorBiz1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/HandleCallbackParam1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/LogResult1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/RegistryParam1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/ReturnT1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/TriggerParam1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/TriggerParam.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/impl/ExecutorBizImpl1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/ExecutorBlockStrategyEnum1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/RegistryConfig1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/RegistryConfig.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/impl/XxlJobSpringExecutor1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/XxlJobExecutor1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/impl/SpringGlueFactory1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueFactory1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueTypeEnum1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueTypeEnum.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/IJobHandler1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/ScriptJobHandler1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/GlueJobHandler1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/annotation/JobHandler1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/annotation/JobHandler.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/XxlJobExecutor.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueFactory.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/impl/SpringGlueFactory.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/ExecutorRegistryThread.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/ExecutorBiz.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/IJobHandler.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobThread.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/GlueJobHandler.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/ScriptJobHandler.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/impl/ExecutorBizImpl.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/log/XxlJobFileAppender.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/AdminBiz.java" />
         <option value="$PROJECT_DIR$/spring-cloud-demo-task/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-core/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-demo/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java" />
-        <option value="$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/StatementStatementAccount.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ReadModel.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ILineChecker.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelEventListener.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverterDemoEntity.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoEntity.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/AverageDailyDeposit.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/PersonalFinancialAssets.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewVIPClients.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewHighQualityCustomers.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java" />
-        <option value="$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/ExecutorRegistryThread1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobLogFileCleanThread1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobThread1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/TriggerCallbackThread1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/TriggerCallbackThread.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/DateUtil1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/FileUtil1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ScriptUtil1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ShardingUtil1.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ShardingUtil.java" />
+        <option value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/XxlJobExecutorApplication1.java" />
       </list>
     </option>
   </component>
@@ -331,12 +295,7 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="spring-cloud-demo-seata-business" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
@@ -354,7 +313,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,25 +324,87 @@
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-executor-samples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-executor-samples" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-executor-samples" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-executor-samples" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -391,42 +412,18 @@
             <path>
               <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-cloud-demo-task" type="462c0819:PsiDirectoryNode" />
+              <item name="xxl-job-executor-samples" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-aspect-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="excel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-cloud-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-cloud-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-cloud-demo-persist" type="462c0819:PsiDirectoryNode" />
+              <item name="executor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,7 +436,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/mvc/controller" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -453,28 +450,28 @@
       <recent name="com.demo" />
       <recent name="com.demo.aspect" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources" />
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-gateway/src/main/resources" />
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl" />
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service" />
-      <recent name="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.demo.excel" />
-      <recent name="com.springcloud" />
-      <recent name="com.demo.proxy.handler" />
-      <recent name="com.springcloud.service.impl" />
-      <recent name="com.springcloud.service" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.demo.excel.entity" />
       <recent name="com.demo.excel" />
       <recent name="com.demo.proxy.interceptor" />
       <recent name="com.springcloud.provider.hystrix" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xxl.job.executor" />
+      <recent name="com.xxl.job.core.util" />
+      <recent name="com.xxl.job.core.thread" />
+      <recent name="com.xxl.job.core.handler.annotation" />
+      <recent name="com.xxl.job.core.handler.impl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources" />
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/mvc/controller" />
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-zipkin/src/main/resources" />
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-gateway/src/main/resources" />
+      <recent name="$PROJECT_DIR$/spring-cloud-demo-service/src/main/java/com/springcloud/service/impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -489,7 +486,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MysqlGenerator">
+  <component name="RunManager" selected="Spring Boot.SpringDemoApplication">
     <configuration name="ExecuteMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.proxy.ExecuteMain" />
       <module name="spring-aspect-demo" />
@@ -604,6 +601,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XxlJobAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xxl-job-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxl.job.admin.XxlJobAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XxlJobExecutorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xxl-job-executor-samples" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxl.job.executor.XxlJobExecutorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ExecuteMain" />
       <item itemvalue="Application.SampleClass" />
@@ -617,6 +628,8 @@
       <item itemvalue="Spring Boot.SpringCloudDemoProviderRpcApplication" />
       <item itemvalue="Spring Boot.SpringCloudDemoTaskApplication" />
       <item itemvalue="Spring Boot.SpringDemoApplication" />
+      <item itemvalue="Spring Boot.XxlJobExecutorApplication" />
+      <item itemvalue="Spring Boot.XxlJobAdminApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -687,7 +700,10 @@
       <workItem from="1564190327241" duration="51000" />
       <workItem from="1564215628011" duration="2310000" />
       <workItem from="1564381385285" duration="1723000" />
-      <workItem from="1564469783338" duration="5160000" />
+      <workItem from="1564469783338" duration="5622000" />
+      <workItem from="1564475652733" duration="272000" />
+      <workItem from="1564478159407" duration="1500000" />
+      <workItem from="1564493953581" duration="4124000" />
     </task>
     <task id="LOCAL-00001" summary="修改实体">
       <created>1563018953497</created>
@@ -766,7 +782,28 @@
       <option name="project" value="LOCAL" />
       <updated>1563881557462</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="多对象导入">
+      <created>1564474999663</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1564474999663</updated>
+    </task>
+    <task id="LOCAL-00013" summary="加入XXl-job 携程开源调度中心，可集成分布式，仪表盘">
+      <created>1564475108170</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1564475108170</updated>
+    </task>
+    <task id="LOCAL-00014" summary="集成XLL调度中心">
+      <created>1564494265051</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564494265051</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -796,12 +833,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150419000" />
+    <option name="totallyTimeSpent" value="156777000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24096386" visible="true" weight="0.4041488" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24096386" visible="true" weight="0.4155937" />
       <window_info id="Structure" order="1" sideWeight="0.7590361" side_tool="true" weight="0.3104435" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -814,9 +860,9 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6130186" weight="0.29638556" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Thumbnails" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.11874106" side_tool="true" weight="0.44096386" />
@@ -828,7 +874,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21244635" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21173105" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
@@ -883,7 +929,10 @@
     <MESSAGE value="添加配置中心配置、引入蚂蚁金服分布式事务组件seata（暂未实现）" />
     <MESSAGE value="添加消息总线bus" />
     <MESSAGE value="java基础测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="java基础测试" />
+    <MESSAGE value="多对象导入" />
+    <MESSAGE value="加入XXl-job 携程开源调度中心，可集成分布式，仪表盘" />
+    <MESSAGE value="集成XLL调度中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="集成XLL调度中心" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -916,354 +965,302 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/java/com/springcloud/controller/BusTestController.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/core/config/XxlJobConfig.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/mvc/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/RegistryParam.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/ReturnT.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/TriggerParam.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/ExecutorBlockStrategyEnum.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/enums/RegistryConfig.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/impl/XxlJobSpringExecutor.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueTypeEnum.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/annotation/JobHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/GlueFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/datasource/holder/DataSourceContextHolder.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/glue/impl/SpringGlueFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        <state relative-caret-position="105">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/collection/SetStr.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/ExecutorBiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/IAccountInfoFeignClientApi.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/LogResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/src/main/java/com/springcloud/provider/hystrix/AccountFeignHystrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/java/com/springcloud/provider/rpc/AccountInfoFeignClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-sleuth-zipkin/2.1.1.RELEASE/spring-cloud-sleuth-zipkin-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/sleuth/zipkin2/ZipkinProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" column="50" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="50" />
-          <folding>
-            <element signature="e#2172#2173#0" expanded="true" />
-            <element signature="e#2201#2202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/HostAndPort.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-admin/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-core/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-demo/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/commands/JedisCommands.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/BinaryJedis.class">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/IJobHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/redis/RedisTest.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/executor/XxlJobExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        <state relative-caret-position="188">
+          <caret line="242" column="41" selection-start-line="242" selection-start-column="41" selection-end-line="242" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.1.0/jedis-3.1.0.jar!/redis/clients/jedis/Jedis.class">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ScriptUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ShardingUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/GlueJobHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/handler/impl/ScriptJobHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/impl/ExecutorBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/log/XxlJobFileAppender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/ExecutorRegistryThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/AdminBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/HandleCallbackParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/TriggerCallbackThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#938#959#0" expanded="true" />
+            <element signature="e#2102#2123#0" expanded="true" />
+            <element signature="e#2904#2925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="186" column="74" selection-start-line="186" selection-start-column="74" selection-end-line="186" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobLogFileCleanThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/xxl-job-admin.iml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-admin/src/test/java/com/xxl/job/adminbiz/AdminBizTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="292">
+          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-ba/src/main/resources/bootstrap.yml">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/XxlJobExecutorApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="20" selection-start-line="17" selection-start-column="2" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="120">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider-rpc/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="11" selection-start-line="15" selection-start-column="2" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="17" selection-start-line="35" selection-end-line="43" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-gateway/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/src/main/java/com/springcloud/auto/entity/StatementStatementAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="192" column="5" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-datasource/src/main/java/com/springcloud/mybatis/generator/MysqlGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/SpringDemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
-          <folding>
-            <element signature="e#2406#2407#0" expanded="true" />
-            <element signature="e#2443#2444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ReadModel.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/service/jobhandler/CommandJobHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ILineChecker.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="31" lean-forward="true" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar!/org/slf4j/Logger.java">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="656" column="16" selection-start-line="656" selection-start-column="16" selection-end-line="656" selection-end-column="16" />
+        <state relative-caret-position="271">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-persist/pom.xml">
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="17" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/ExecutorRegistryThread.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.2-beat1/easyexcel-1.1.2-beat1.jar!/com/alibaba/excel/annotation/ExcelProperty.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobLogFileCleanThread.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/PersonalFinancialAssets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/JobThread.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewVIPClients.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/thread/TriggerCallbackThread.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/NewHighQualityCustomers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/IntermediateBusinessIncome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/BusinessIncome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ScriptUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/AverageDailyDeposit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-core/src/main/java/com/xxl/job/core/util/ShardingUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/CreditCardOpeningQuantity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoImportModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3851#3852#0" expanded="true" />
-            <element signature="e#3872#3873#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/ExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89">
-          <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/controller/ExcelDemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/entity/DemoEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/Converter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-aspect-demo/src/main/java/com/demo/excel/DemoModelConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-job-executor-samples/src/main/java/com/xxl/job/executor/XxlJobExecutorApplication1.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
@@ -1315,7 +1312,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>spring-aspect-demo</last-edited>
+          <last-edited>xxl-job-core</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
