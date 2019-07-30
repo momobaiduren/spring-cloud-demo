@@ -12,5 +12,13 @@ import lombok.Data;
 
 @Data
 public class AverageDailyDeposit {
+  private String averageDailyDeposit_jishu;
 
+  private String averageDailyDeposit_one;
+
+  private String averageDailyDeposit_two;
+
+  private String averageDailyDeposit_three;
+
+  private String averageDailyDeposit_four;
 }

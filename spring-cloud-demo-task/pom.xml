@@ -17,11 +17,9 @@
   <description>定时任务</description>
 
   <modules>
-    <module>xxl-admin</module>
-    <module>xxl-core</module>
-    <module>xxl-demo</module>
     <module>xxl-job-core</module>
     <module>xxl-job-admin</module>
+    <module>xxl-job-executor-samples</module>
   </modules>
 
   <dependencies>

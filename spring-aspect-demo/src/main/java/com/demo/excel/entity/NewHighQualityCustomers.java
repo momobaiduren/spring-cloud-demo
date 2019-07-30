@@ -12,5 +12,13 @@ import lombok.Data;
 
 @Data
 public class NewHighQualityCustomers {
+  private String newHighQualityCustomers_jishu;
 
+  private String newHighQualityCustomers_one;
+
+  private String newHighQualityCustomers_two;
+
+  private String newHighQualityCustomers_three;
+
+  private String newHighQualityCustomers_four;
 }

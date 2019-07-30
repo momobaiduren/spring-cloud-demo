@@ -12,4 +12,11 @@ import lombok.Data;
 @Data
 public class IntermediateBusinessIncome {
 
+  private String intermediateBusinessIncome_one;
+
+  private String intermediateBusinessIncome_two;
+
+  private String intermediateBusinessIncome_three;
+
+  private String intermediateBusinessIncome_four;
 }

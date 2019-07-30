@@ -11,5 +11,11 @@ import lombok.Data;
  */
 @Data
 public class BusinessIncome {
+  private String businessIncome_one;
 
+  private String businessIncome_two;
+
+  private String businessIncome_three;
+
+  private String businessIncome_four;
 }

@@ -11,5 +11,11 @@ import lombok.Data;
  */
 @Data
 public class CreditCardOpeningQuantity {
+  private String creditCardOpeningQuantity_one;
 
+  private String creditCardOpeningQuantity_two;
+
+  private String creditCardOpeningQuantity_three;
+
+  private String creditCardOpeningQuantity_four;
 }
