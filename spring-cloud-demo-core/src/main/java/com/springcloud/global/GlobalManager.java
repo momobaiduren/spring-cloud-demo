@@ -1,13 +1,18 @@
-package com.springcloud.global;/**
+package com.springcloud.global;
+
+/**
  * @title: GlobalManager
  * @projectName spring-cloud-demo
  * @description: TODO
  * @author zhanglong
  * @date 2019-08-0200:13
+ * swagger:
+ *   springcloud:
+ *
  */
 
 public interface GlobalManager {
-  String ROOT_PREFIX = "settle.boot";
+  String ROOT_PREFIX = "swagger.springcloud";
 
    String TIME_BEGIN = " 00:00:00";
 

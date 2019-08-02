@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spring-boot-xxl-job/spring-boot-xxl-job-admin/spring-boot-xxl-job-admin.iml" filepath="$PROJECT_DIR$/spring-boot-xxl-job/spring-boot-xxl-job-admin/spring-boot-xxl-job-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-xxl-job/spring-boot-xxl-job-core/spring-boot-xxl-job-core.iml" filepath="$PROJECT_DIR$/spring-boot-xxl-job/spring-boot-xxl-job-core/spring-boot-xxl-job-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo-common/spring-cloud-demo-common.iml" filepath="$PROJECT_DIR$/spring-cloud-demo-common/spring-cloud-demo-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider.iml" filepath="$PROJECT_DIR$/spring-cloud-demo-provider/spring-cloud-demo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo-task/xxl-core/xxl-core.iml" filepath="$PROJECT_DIR$/spring-cloud-demo-task/xxl-core/xxl-core.iml" />
     </modules>

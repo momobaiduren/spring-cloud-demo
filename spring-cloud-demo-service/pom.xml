@@ -11,6 +11,11 @@
 
   <artifactId>spring-cloud-demo-service</artifactId>
   <dependencies>
+<!--    <dependency>-->
+<!--      <groupId>com.springcloud</groupId>-->
+<!--      <artifactId>spring-cloud-demo-core</artifactId>-->
+<!--      <version>1.0</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-api</artifactId>

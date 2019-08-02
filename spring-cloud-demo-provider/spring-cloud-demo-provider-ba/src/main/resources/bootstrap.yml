@@ -10,24 +10,7 @@ spring:
         enabled: true
       profile: master
       label: master
-  #用于消息总线
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: zhanglong
-    password: zl123456
 
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-datasource:
-  read:
-    readSource: read
-  write:
-    writeSource: write
-  other:
-    otherSource: read
 
 eureka:
   client:

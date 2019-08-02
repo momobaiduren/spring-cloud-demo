@@ -1,7 +1,11 @@
 package com.springcloud.configuration;
 
 import com.springcloud.global.GlobalManager;
+import com.springcloud.properties.SwaggerProperties;
 import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
 ;
 
 /**
@@ -16,5 +20,7 @@ import lombok.Data;
 @Configuration
 @ConfigurationProperties(prefix = GlobalManager.ROOT_PREFIX)
 public class ConfigurationProp {
+
+  private SwaggerProperties swagger;
 
 }
