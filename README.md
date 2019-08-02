@@ -3,32 +3,32 @@
 如果用问题请在 issues中进行提问哦，第一时间尽快解决，或者问题发到个人邮箱
 ## 在spring-cloud-demo的pom中分为以下结构
  <modules>
-    注册中心
-    <module>spring-cloud-demo-eureka</module>
-    配置中心
-    <module>spring-cloud-demo-config</module>
-    网关
-    <module>spring-cloud-demo-gateway</module>
-    xxl调度中心
-    <module>spring-cloud-demo-task</module>
-    提供方APi
-    <module>spring-cloud-demo-api</module>
-    实体类
-    <module>spring-cloud-demo-persist</module>
-    表现层暴露到网关
-    <module>spring-cloud-demo-provider</module>
-    业务2处理
-    <module>spring-cloud-demo-service</module>
-    公共类、核心类
-    <module>spring-cloud-demo-common</module>
-    数据源读写分离
-    <module>spring-cloud-demo-datasource</module>
-    spring Tcc @Around 样例
-    <module>spring-aspect-demo</module>
-    模块1业务类
-    <module>spring-cloud-demo-service1</module>
-    阿里云蚂蚁金服开源分布式事务框架
-    <module>spring-cloud-demo-seata</module>
+<!--     注册中心
+    <module>spring-cloud-demo-eureka</module> -->
+<!--     配置中心
+    <module>spring-cloud-demo-config</module> -->
+<!--     网关
+    <module>spring-cloud-demo-gateway</module> -->
+<!--     xxl调度中心
+    <module>spring-cloud-demo-task</module> -->
+<!--     提供方APi
+    <module>spring-cloud-demo-api</module> -->
+<!--     实体类
+    <module>spring-cloud-demo-persist</module> -->
+<!--     表现层暴露到网关
+    <module>spring-cloud-demo-provider</module> -->
+<!--     业务2处理
+    <module>spring-cloud-demo-service</module> -->
+<!--     公共类、核心类
+    <module>spring-cloud-demo-common</module> -->
+<!--     数据源读写分离
+    <module>spring-cloud-demo-datasource</module> -->
+<!--     spring Tcc @Around 样例
+    <module>spring-aspect-demo</module> -->
+<!--     模块1业务类
+    <module>spring-cloud-demo-service1</module> -->
+<!--     阿里云蚂蚁金服开源分布式事务框架
+    <module>spring-cloud-demo-seata</module> -->
   </modules>
   
  * 1.注册中心使用Eureka
