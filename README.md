@@ -1,7 +1,7 @@
-## springcloud实战 作者:zhanglong 
+# springcloud实战 作者:zhanglong 
 基于springcloud的一整套单机版配置后期仍然会做更新，敬请期待哦
 如果用问题请在 issues中进行提问哦，第一时间尽快解决，或者问题发到个人邮箱
-# 在spring-cloud-demo的pom中分为以下结构
+## 在spring-cloud-demo的pom中分为以下结构
  <modules>
     注册中心
     <module>spring-cloud-demo-eureka</module>
@@ -44,20 +44,20 @@
       <module>xxl-job-executor-samples</module>
     </modules>
   * 5.对外提供的api 配置feignclient的restful配置包含hystrix断路器，来进行对应接口流量监控，服务降级，熔断降级
-   6.DAO实体类操作生成
-   7.提供方
+  * 6.DAO实体类操作生成
+  * 7.提供方
     <modules>
-    系统内对外提供远程调用服务
-    <module>spring-cloud-demo-provider-rpc</module>
-    提供本地服务数据业务对外开发
-    <module>spring-cloud-demo-provider-ba</module>
-  </modules>
+     系统内对外提供远程调用服务
+     <module>spring-cloud-demo-provider-rpc</module>
+     提供本地服务数据业务对外开发
+     <module>spring-cloud-demo-provider-ba</module>
+    </modules>
  * 8.业务2业务层实现
-  9.公共类全局统一utils工具以及一些封装函数方法
-  10.数据源目前使用mybatis-plus的动态数据源进行读写分离，后期会研究加入mycat分表分库、读写分离组件
-  11.一些样例编写使用（自己练习使用）
-  12.业务1业务层实现
-  13.蚂蚁金服开源分布式事务框架样例(目前正在研究源码过程中，后期会添加注释分享给大家哦)
+ * 9.公共类全局统一utils工具以及一些封装函数方法
+ * 10.数据源目前使用mybatis-plus的动态数据源进行读写分离，后期会研究加入mycat分表分库、读写分离组件
+ * 11.一些样例编写使用（自己练习使用）
+ * 12.业务1业务层实现
+ * 13.蚂蚁金服开源分布式事务框架样例(目前正在研究源码过程中，后期会添加注释分享给大家哦)
   <modules>
     订单模块
     <module>spring-cloud-demo-seata-order</module>
