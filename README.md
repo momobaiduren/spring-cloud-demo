@@ -1,7 +1,7 @@
 # springcloud实战 作者:zhanglong 
 基于springcloud的一整套单机版配置后期仍然会做更新，敬请期待哦
 如果用问题请在 issues中进行提问哦，第一时间尽快解决，或者问题发到个人邮箱
-## 在spring-cloud-demo的pom中分为以下结构 ......
+## 在spring-cloud-demo的pom中分为以下结构
 ...
  <modules>
     注册中心
@@ -35,7 +35,7 @@
  * 1.注册中心使用Eureka
  * 2.配置中心使用config 配置动态更新使用的bus+rabiitmq（消息总线）
  * 3.网关使用zuul
- * 4.调度中心使用携程xxl ......
+ * 4.调度中心使用携程xxl
   ...
     <modules>
       xxl的核心类
@@ -48,7 +48,7 @@
   ...
   * 5.对外提供的api 配置feignclient的restful配置包含hystrix断路器，来进行对应接口流量监控，服务降级，熔断降级
   * 6.DAO实体类操作生成
-  * 7.提供方 ......
+  * 7.提供方
   ...
     <modules>
      系统内对外提供远程调用服务
