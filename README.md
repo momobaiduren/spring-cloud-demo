@@ -2,6 +2,7 @@
 基于springcloud的一整套单机版配置后期仍然会做更新，敬请期待哦
 如果用问题请在 issues中进行提问哦，第一时间尽快解决，或者问题发到个人邮箱
 ## 在spring-cloud-demo的pom中分为以下结构
+...
  <modules>
 <!--     注册中心
     <module>spring-cloud-demo-eureka</module> -->
@@ -27,10 +28,10 @@
     <module>spring-aspect-demo</module> -->
 <!--     模块1业务类
     <module>spring-cloud-demo-service1</module> -->
-<!--     阿里云蚂蚁金服开源分布式事务框架
-    <module>spring-cloud-demo-seata</module> -->
+    阿里云蚂蚁金服开源分布式事务框架
+    <module>spring-cloud-demo-seata</module>
   </modules>
-  
+ ...
  * 1.注册中心使用Eureka
  * 2.配置中心使用config 配置动态更新使用的bus+rabiitmq（消息总线）
  * 3.网关使用zuul
