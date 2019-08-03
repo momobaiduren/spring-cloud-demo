@@ -9,14 +9,14 @@
         <module name="spring-boot-xxl-job-core" />
         <module name="spring-cloud-demo-common" />
         <module name="spring-cloud-demo-provider-rpc" />
-        <module name="spring-cloud-demo-service" />
         <module name="spring-boot-xxl-job-admin" />
         <module name="xxl-job-core" />
         <module name="spring-cloud-demo-seata-account" />
         <module name="spring-cloud-demo-seata-order" />
+        <module name="spring-cloud-demo-persist" />
         <module name="spring-cloud-demo-datasource" />
         <module name="spring-cloud-demo-core" />
-        <module name="spring-cloud-demo-persist" />
+        <module name="spring-cloud-demo-service" />
         <module name="spring-cloud-demo-provider-ba" />
         <module name="spring-cloud-demo-api" />
         <module name="xxl-job-admin" />
