@@ -23,8 +23,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-target/*
-
 logs/
 dependency-reduced-pom.xml
 disconf/
