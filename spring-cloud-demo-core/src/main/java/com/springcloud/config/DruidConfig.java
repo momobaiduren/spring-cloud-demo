@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @title: DruidConfig
  * @projectName spring-cloud-demo
- * @description: TODO
+ * @description: 数据源监控配置
  * @author zhanglong
  * @date 2019-08-0222:21
  */
