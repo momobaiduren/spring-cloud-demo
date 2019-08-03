@@ -2,18 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.springcloud</groupId>
     <artifactId>spring-cloud-demo</artifactId>
+    <groupId>com.springcloud</groupId>
     <version>1.0</version>
   </parent>
-  <groupId>com.springcloud</groupId>
-  <artifactId>spring-cloud-demo-eureka</artifactId>
-  <version>1.0</version>
-  <name>spring-cloud-demo-eureka</name>
-  <description>注册中心</description>
+  <modelVersion>4.0.0</modelVersion>
 
+  <artifactId>spring-cloud-boot-admin</artifactId>
   <dependencies>
     <!--表示为web工程-->
     <dependency>
@@ -25,10 +21,10 @@
       <artifactId>spring-boot-starter-test</artifactId>
     </dependency>
     <!-- 安全认证 -->
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-starter-security</artifactId>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
     <!--暴露各种指标-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -37,6 +33,18 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    </dependency>
+    <!-- 监控中心管理页面 -->
+    <!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-server -->
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-starter-server</artifactId>
+      <version>2.1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-server-ui</artifactId>
+      <version>2.1.6</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -51,5 +59,5 @@
       <artifactId>lombok</artifactId>
     </dependency>
   </dependencies>
-
+  
 </project>

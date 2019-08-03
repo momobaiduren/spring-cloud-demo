@@ -1,10 +1,17 @@
 server:
-  port: 7000
+  port: 9100
 
 #配置注册中心
 eureka:
   instance:
     hostname: localhost
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+#    metadata-map:
+#      user:
+#        name: zhanglong
+#        password: zl123456
+
     #    192.168.0.104
     #${eureka.instance.ip-address} 决定服务跳转host，必须指定
     #ip-address: 192.168.1.1 #强制指定IP地址，默认会获取本机的IP地址 决定Eureka服务显示host
@@ -17,3 +24,27 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+info:
+  groupId: @project.groupId@
+  artifactId: @project.artifactId@
+  version: @project.version@
+spring:
+#  security:
+#    # 登陆所需的账号密码
+#    user:
+#      name: zhanglong
+#      password: zl123456
+  application:
+    name: @project.artifactId@
+#  boot:
+#    admin:
+#      ui:
+#        title: 服务监控中心
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

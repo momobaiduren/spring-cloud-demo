@@ -1,0 +1,32 @@
+server:
+  port: 9110
+spring:
+  application:
+    name: spring-cloud-demo-admin
+#  security:
+#    user:
+#      name: 'zhanglong'
+#      password: 'zl123456'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9100/eureka/
+#   是否在注册表上显示
+    registerWithEureka: true
+#   是否可以获取注册表上其他应用网络信息
+    fetchRegistry: true
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#    health-check-url-path: /actuator/health
+#    metadata-map:
+#      user.name: ${spring.security.user.name}
+#      user.password: ${spring.security.user.password}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

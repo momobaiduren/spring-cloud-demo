@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 9120
 
 #指定注册中心地址 服务器上更换成内网IP了172.26.28.239  公网Ip 39.98.245.101
 #eureka: # 开发使用
@@ -18,9 +18,10 @@ server:
 eureka:  #生产使用更换为内网ip
   client:
     serviceUrl:
-      defaultZone: http://localhost:7000/eureka/
+      defaultZone: http://localhost:9100/eureka/
   instance:
-    #    instance-id: ${eureka.instance.ip-address}:${server.port}
+    leaseRenewalIntervalInSeconds: 10  #表示eureka client发送心跳给server端的频率，默认为30秒
+    health-check-url-path: /actuator/health  #健康检查的地址（依赖spring-boot-starter-actuator）
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true #不设可自己指定，true会自动获取本地ipv4地址
 #    #${eureka.instance.ip-address} 决定服务跳转host，必须指定
@@ -31,6 +32,11 @@ eureka:  #生产使用更换为内网ip
 #    ip-address: 39.98.245.101
 
 spring:
+#  security:
+#    # 登陆所需的账号密码
+#    user:
+#      name: zhanglong
+#      password: zl123456
   application:
     name: spring-cloud-demo-config
   cloud:
@@ -43,8 +49,36 @@ spring:
           password: zl123456
           timeout: 5
           default-label: master
+  security:
+    user:
+      name: "zhanglong"
+      password: "zl123456"
+  boot:
+    admin:
+      client:
+        url: http://localhost:5000
+        username: "zhanglong"
+        password: "zl123456"
+        instance:
+          metadata:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:7100
+#        username: zhanglong
+#        password: zl123456
 
 
 

@@ -8,23 +8,12 @@ spring:
         enabled: true
       profile: master
       label: master
-  #用于消息总线
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: zhanglong
-    password: zl123456
-#用于消息总线暴漏信息给MQ
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:7000/eureka/
+      defaultZone: http://localhost:9100/eureka/
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
