@@ -31,11 +31,11 @@
       <artifactId>spring-cloud-demo-datasource</artifactId>
       <version>1.0</version>
     </dependency>
-    <dependency>
-      <groupId>com.springcloud</groupId>
-      <artifactId>spring-cloud-demo-common</artifactId>
-      <version>1.0</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.springcloud</groupId>-->
+<!--      <artifactId>spring-cloud-demo-common</artifactId>-->
+<!--      <version>1.0</version>-->
+<!--    </dependency>-->
   </dependencies>
 
 </project>

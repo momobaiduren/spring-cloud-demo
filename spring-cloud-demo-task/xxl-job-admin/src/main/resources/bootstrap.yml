@@ -1,14 +1,13 @@
 spring:
   application:
-    name: spring-cloud-demo-provider-rpc
-  cloud:
-    config:
-      discovery:
-        service-id: spring-cloud-demo-config
-        enabled: true
-      profile: master
-      label: master
-
+    name: xxl-job-admin
+    cloud:
+      config:
+        discovery:
+          service-id: spring-cloud-demo-config
+          enabled: true
+        profile: master
+        label: master
 eureka:
   client:
     serviceUrl:
@@ -16,6 +15,3 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
-
-
-

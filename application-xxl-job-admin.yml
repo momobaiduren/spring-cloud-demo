@@ -1,0 +1,89 @@
+#server:
+#  port: 9090
+#  servlet:
+#    context-path: /xxl-job-admin
+#spring:
+#  application:
+#    name: xxl-job-admin
+#    cloud:
+#      config:
+#        discovery:
+#          service-id: spring-cloud-demo-config
+#          enabled: true
+#        profile: master
+#        label: master
+#  mvc:
+#    static-path-pattern: /static/**
+#  resources:
+#    static-locations: classpath:/static/
+#  freemarker:
+#    templateLoaderPath: classpath:/templates/
+#    suffix: .ftl
+#    charset: utf-8
+#    request-context-attribute: request
+#    settings:
+#      number_format: 0.##########
+#  datasource:
+#    name: druidDataSource
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://127.0.0.1:3306/xxl-job?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
+#      username: root
+#      password: zl12345
+#      initial-size: 5
+#      min-idle: 5
+#      max-active: 20
+#      # 配置获取连接等待超时的时间
+#      max-wait: 60000
+#      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+#      time-between-eviction-runs-millis: 60000
+#      #max-evictable-idle-time-millis: 360000
+#      #time-between-eviction-runs-millis: 60000
+#      # 配置一个连接在池中最小生存的时间，单位是毫秒
+#      min-evictable-idle-time-millis: 300000
+#      # Oracle请使用select 1 from dual
+#      validation-query: SELECT X FROM DUAL
+#      test-on-borrow: false
+#      test-on-return: false
+#      pool-prepared-statements: true
+#      max-pool-prepared-statement-per-connection-size: 20
+#      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+#      filters: stat,wall,config
+#      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#      useGlobalDataSourceStat: true
+#      test-while-idle: true
+#      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+#      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#  mail:
+#    protocol: smtp
+#    host: smtp.qq.com
+#    port: 25
+#    username: 718168633@qq.com
+#    password: dreamture521zl.
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#            required: true
+#
+#mybatis:
+#  mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
+#xxl:
+#  job:
+#    login:
+#      username: zhanglong
+#      password: zl123456
+#    ### 执行器通讯TOKEN [选填]：非空时启用；
+#    accessToken:
+#    i18n:
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:7000/eureka/
+#  instance:
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#    prefer-ip-address: true

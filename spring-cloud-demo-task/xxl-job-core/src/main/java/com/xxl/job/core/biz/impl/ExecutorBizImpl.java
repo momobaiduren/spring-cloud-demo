@@ -11,6 +11,8 @@ import com.xxl.job.core.glue.GlueTypeEnum;
 import com.xxl.job.core.handler.IJobHandler;
 import com.xxl.job.core.handler.impl.GlueJobHandler;
 import com.xxl.job.core.handler.impl.ScriptJobHandler;
+import com.xxl.job.core.log.XxlJobFileAppender;
+import com.xxl.job.core.thread.JobThread;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

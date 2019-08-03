@@ -1,5 +1,9 @@
 package com.xxl.job.core.executor.impl;
 
+import com.xxl.job.core.executor.XxlJobExecutor;
+import com.xxl.job.core.glue.GlueFactory;
+import com.xxl.job.core.handler.IJobHandler;
+import com.xxl.job.core.handler.annotation.JobHandler;
 import java.util.Map;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

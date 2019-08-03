@@ -1,5 +1,7 @@
 package com.xxl.job.core.thread;
 
+import com.xxl.job.core.log.XxlJobFileAppender;
+import com.xxl.job.core.util.FileUtil;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

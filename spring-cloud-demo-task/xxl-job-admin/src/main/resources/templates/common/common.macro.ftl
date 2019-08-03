@@ -1,7 +1,7 @@
 <#macro commonStyle>
 
 	<#-- favicon -->
-	<link rel="icon" href="${request.contextPath}/static/plugins/layer/favicon.ico" />
+	<link rel="icon" href="${request.contextPath}/static/favicon.ico" />
 
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,7 +51,7 @@
 	<script src="${request.contextPath}/static/plugins/jquery/jquery.cookie.js"></script>
 
 	<#-- layer -->
-	<script src="${request.contextPath}/static/plugins/layer/telp/layer.js"></script>
+	<script src="${request.contextPath}/static/plugins/layer/layer.js"></script>
 
 	<#-- common -->
     <script src="${request.contextPath}/static/js/common.1.js"></script>

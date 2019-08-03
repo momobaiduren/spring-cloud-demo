@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<#import "common.macro.ftl" as netCommon>
+  	<#import "./common/common.macro.ftl" as netCommon>
 	<@netCommon.commonStyle />
     <link rel="stylesheet" href="${request.contextPath}/static/adminlte/plugins/iCheck/square/blue.css">
 	<title>${I18n.admin_name}</title>

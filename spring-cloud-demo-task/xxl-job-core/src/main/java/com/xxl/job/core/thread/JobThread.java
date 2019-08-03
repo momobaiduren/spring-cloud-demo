@@ -5,6 +5,9 @@ import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.biz.model.TriggerParam;
 import com.xxl.job.core.executor.XxlJobExecutor;
 import com.xxl.job.core.handler.IJobHandler;
+import com.xxl.job.core.log.XxlJobFileAppender;
+import com.xxl.job.core.log.XxlJobLogger;
+import com.xxl.job.core.util.ShardingUtil;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Collections;
@@ -116,12 +119,14 @@ public class JobThread extends Thread{
 					triggerLogIdSet.remove(triggerParam.getLogId());
 
 					// log filename, like "logPath/yyyy-MM-dd/9999.log"
-					String logFileName = XxlJobFileAppender.makeLogFileName(new Date(triggerParam.getLogDateTim()), triggerParam.getLogId());
+					String logFileName = XxlJobFileAppender
+							.makeLogFileName(new Date(triggerParam.getLogDateTim()), triggerParam.getLogId());
 					XxlJobFileAppender.contextHolder.set(logFileName);
 					ShardingUtil.setShardingVo(new ShardingUtil.ShardingVO(triggerParam.getBroadcastIndex(), triggerParam.getBroadcastTotal()));
 
 					// execute
-					XxlJobLogger.log("<br>----------- xxl-job job execute start -----------<br>----------- Param:" + triggerParam.getExecutorParams());
+					XxlJobLogger
+							.log("<br>----------- xxl-job job execute start -----------<br>----------- Param:" + triggerParam.getExecutorParams());
 
 					if (triggerParam.getExecutorTimeout() > 0) {
 						// limit timeout

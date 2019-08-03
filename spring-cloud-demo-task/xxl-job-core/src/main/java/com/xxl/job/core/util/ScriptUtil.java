@@ -1,5 +1,6 @@
 package com.xxl.job.core.util;
 
+import com.xxl.job.core.log.XxlJobLogger;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import org.apache.commons.exec.CommandLine;

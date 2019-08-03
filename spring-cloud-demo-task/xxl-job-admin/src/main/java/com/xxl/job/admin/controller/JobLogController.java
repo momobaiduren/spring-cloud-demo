@@ -11,6 +11,7 @@ import com.xxl.job.admin.dao.XxlJobLogDao;
 import com.xxl.job.core.biz.ExecutorBiz;
 import com.xxl.job.core.biz.model.LogResult;
 import com.xxl.job.core.biz.model.ReturnT;
+import com.xxl.job.core.util.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
