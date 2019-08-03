@@ -21,8 +21,10 @@
     <module>spring-cloud-demo-provider</module>
 <!--    业务2处理-->
     <module>spring-cloud-demo-service</module>
-<!--    公共类、核心类-->
-    <module>spring-cloud-demo-common</module>
+    <!--    核心类-->
+    <module>spring-cloud-demo-core</module>
+    <!--    公共类-->
+<!--    <module>spring-cloud-demo-common</module>-->
 <!--    数据源读写分离-->
     <module>spring-cloud-demo-datasource</module>
 <!--    spring Tcc @Around 样例-->
