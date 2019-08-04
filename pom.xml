@@ -34,6 +34,7 @@
 <!--    阿里云蚂蚁金服开源分布式事务框架-->
     <module>spring-cloud-demo-seata</module>
     <module>spring-cloud-demo-admin</module>
+    <module>spring-cloud-demo-eureka-admin</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
