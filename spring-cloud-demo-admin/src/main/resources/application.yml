@@ -12,7 +12,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:9100/eureka/
 #   是否在注册表上显示
-    registerWithEureka: true
+    registerWithEureka: false
 #   是否可以获取注册表上其他应用网络信息
     fetchRegistry: true
 #  instance:

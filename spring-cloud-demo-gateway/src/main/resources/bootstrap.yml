@@ -8,14 +8,22 @@ spring:
         enabled: true
       profile: master
       label: master
-
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:9110
+#        username: "zhanglong"
+#        password: "zl123456"
+#        instance:
+#          metadata:
+#            user.name: ${spring.security.user.name}
+#            user.password: ${spring.security.user.password}
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9100/eureka/
   instance:
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
 
 
