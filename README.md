@@ -1,5 +1,5 @@
 # springcloud实战 作者:zhanglong 
-基于springcloud的一整套单机版配置后期仍然会做更新，敬请期待哦
+基于springcloud的一整套简单配置，内部集成链路跟踪、断路器、SBA、读写分离、配置中心、网关、调度中心、分布式事务（后期加入）、消息总线（配置热更新）、swagger集成、druid数据源监控等等
 如果用问题请在 issues中进行提问哦，第一时间尽快解决，或者问题发到个人邮箱
 ## 在spring-cloud-demo的pom中分为以下结构
 ```
@@ -30,6 +30,8 @@
     <module>spring-cloud-demo-service1</module>
     阿里云蚂蚁金服开源分布式事务框架
     <module>spring-cloud-demo-seata</module>
+    SBA监控中心
+    <module>spring-cloud-demo-admin</module>
   </modules>
 ```
  * 1.注册中心使用Eureka
@@ -75,4 +77,5 @@
     <module>spring-cloud-demo-seata-account</module>
   </modules>
  ```
+ * 14.SBA监控中心，对所有注册中心暴漏信息进行状态监控，指数分析，加入security权限
     
