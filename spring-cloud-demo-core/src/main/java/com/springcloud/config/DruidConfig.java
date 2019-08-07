@@ -1,4 +1,4 @@
-package com.springcloud;
+package com.springcloud.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import org.springframework.beans.factory.annotation.Value;

@@ -62,7 +62,7 @@ public class MysqlGenerator {
      * 生的表名   "order_info","stock_info","account_info"
      */
     private static String[] tableNames = new String[]{
-        "statement_statement_account"
+        "settle_agreement_settle_business_detail"
     };
 
     public static String scanner(String tip) {

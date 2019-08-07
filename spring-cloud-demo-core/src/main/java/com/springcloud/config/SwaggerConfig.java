@@ -1,4 +1,4 @@
-package com.springcloud;
+package com.springcloud.config;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
