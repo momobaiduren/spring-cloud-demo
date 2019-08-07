@@ -1,3 +1,4 @@
+
 # web port
 server:
   port: 7300
@@ -10,7 +11,7 @@ logging:
 xxl:
   job:
     admin:
-      addresses: http://127.0.0.1:9090/xxl-job-admin
+      addresses: http://127.0.0.1:9130/xxl-job-admin
 
     ### 执行器AppName [选填]：执行器心跳注册分组依据；为空则关闭自动注册
     executor:
@@ -28,3 +29,14 @@ xxl:
     ### 执行器通讯TOKEN [选填]：非空时启用；
     accessToken:
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9100/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: xxl-job-executor-samples

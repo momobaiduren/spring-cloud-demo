@@ -80,10 +80,14 @@ xxl:
     accessToken:
     i18n:
 
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:7000/eureka/
-#  instance:
-#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-#    prefer-ip-address: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9100/eureka/
+    #从注册中心拉去配置中心网络信息
+    fetch-registry: true
+    #不需要注册到注册中心
+    register-with-eureka: false
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
