@@ -35,7 +35,7 @@
     <module>spring-cloud-demo-seata</module>
     <module>spring-cloud-demo-admin</module>
     <module>spring-cloud-demo-eureka-admin</module>
-    <module>spring-cloud-demo-code-generator</module>
+<!--    <module>spring-cloud-demo-code-generator</module>-->
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
