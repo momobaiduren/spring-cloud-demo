@@ -1,9 +1,6 @@
 package com.demo.collection;
 
-import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -57,13 +54,25 @@ public class SetStr {
     System.out.println(setInt);
   }
 
-  public static void taxAccount(BigDecimal tax, BigDecimal total, Map<BigDecimal, BigDecimal> totalMap){
-    if(totalMap.containsKey(tax)) {
-      totalMap.put(tax, totalMap.get(tax).add(total));
-    }else {
-      totalMap.put(tax, total);
-    }
+  public static void main(String[] args) {
+    Set<String> statementNos = new HashSet<>();
+    System.out.println(statementNos);
+
+//    if (new BigDecimal(-100).compareTo(BigDecimal.ZERO) < 0) {
+//      System.out.println("小于零");
+//    }else {
+//
+//      System.out.println("大于零");
+//    }
   }
+
+//  public static void taxAccount(BigDecimal tax, BigDecimal total, Map<BigDecimal, BigDecimal> totalMap){
+//    if(totalMap.containsKey(tax)) {
+//      totalMap.put(tax, totalMap.get(tax).add(total));
+//    }else {
+//      totalMap.put(tax, total);
+//    }
+//  }
 
 //  public static void main(String[] args) {
 //    Map<BigDecimal, BigDecimal> total = new HashMap<>();

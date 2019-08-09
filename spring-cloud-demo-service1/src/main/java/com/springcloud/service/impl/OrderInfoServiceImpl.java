@@ -4,7 +4,6 @@ import com.springcloud.auto.entity.AccountInfo;
 import com.springcloud.auto.entity.OrderInfo;
 import com.springcloud.auto.entity.StockInfo;
 import com.springcloud.auto.mapper.OrderInfoMapper;
-import com.springcloud.datasource.annotation.ReadDS;
 import com.springcloud.provider.IAccountInfoFeignClientApi;
 import com.springcloud.provider.IStockInfoFeignClientApi;
 import com.springcloud.service.IOrderInfoService;
@@ -29,7 +28,6 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
   private IStockInfoFeignClientApi iStockInfoFeignClientApi;
 
   @Override
-  @ReadDS
   public OrderInfo createAndPayOrder(OrderInfo orderInfo) {
     AccountInfo accountInfo = new AccountInfo();
     accountInfo.setAccountTotal(orderInfo.getProductTotal());

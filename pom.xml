@@ -5,36 +5,37 @@
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
   <modules>
-<!--    注册中心-->
+    <!--    注册中心-->
     <module>spring-cloud-demo-eureka</module>
-<!--    配置中心-->
+    <!--    配置中心-->
     <module>spring-cloud-demo-config</module>
-<!--    网关-->
+    <!--    网关-->
     <module>spring-cloud-demo-gateway</module>
-<!--    xxl定时任务-->
+    <!--    xxl定时任务-->
     <module>spring-cloud-demo-task</module>
-<!--    提供方APi-->
+    <!--    提供方APi-->
     <module>spring-cloud-demo-api</module>
-<!--    实体类-->
+    <!--    实体类-->
     <module>spring-cloud-demo-persist</module>
-<!--    表现层暴露到网关-->
+    <!--    表现层暴露到网关-->
     <module>spring-cloud-demo-provider</module>
-<!--    业务2处理-->
+    <!--    业务2处理-->
     <module>spring-cloud-demo-service</module>
     <!--    核心类-->
     <module>spring-cloud-demo-core</module>
     <!--    公共类-->
-<!--    <module>spring-cloud-demo-common</module>-->
-<!--    数据源读写分离-->
+    <!--    <module>spring-cloud-demo-common</module>-->
+    <!--    数据源读写分离-->
     <module>spring-cloud-demo-datasource</module>
-<!--    spring Tcc @Around 样例-->
+    <!--    spring Tcc @Around 样例-->
     <module>spring-aspect-demo</module>
-<!--    模块1业务类-->
+    <!--    模块1业务类-->
     <module>spring-cloud-demo-service1</module>
-<!--    阿里云蚂蚁金服开源分布式事务框架-->
+    <!--    阿里云蚂蚁金服开源分布式事务框架-->
     <module>spring-cloud-demo-seata</module>
     <module>spring-cloud-demo-admin</module>
     <module>spring-cloud-demo-eureka-admin</module>
+    <module>spring-cloud-demo-code-generator</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -64,12 +65,35 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+<!--springboot的工具包中包含了spring 的热部署 不能打包工具包-->
+<!--  <build>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
+<!--  </build>-->
   <build>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <inherited>true</inherited>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <parameters>true</parameters>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
       </plugin>
     </plugins>
   </build>

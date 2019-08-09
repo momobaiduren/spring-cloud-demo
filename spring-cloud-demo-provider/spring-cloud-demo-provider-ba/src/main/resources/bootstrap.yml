@@ -10,8 +10,6 @@ spring:
         enabled: true
       profile: master
       label: master
-
-
 eureka:
   client:
     serviceUrl:
@@ -19,3 +17,11 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+
+druid:
+  allow: ''
+  deny: ''
+  druidMappingUrl: /druid/*
+  loginPassword: zl123456
+  loginUsername: zhanglong
+  resetEnable: false
