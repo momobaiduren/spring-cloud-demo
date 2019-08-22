@@ -3,10 +3,11 @@ package com.springcloud.properties;
 import lombok.Data;
 
 /**
- * @author longweier
- * @version 1.0
- * @description Swagger配置
- * @date 2019/5/31 10:06
+ * @title: SwaggerProperties
+ * @projectName spring-cloud-demo
+ * @description: TODO
+ * @author zhanglong
+ * @date 2019-08-1100:20
  */
 @Data
 public class SwaggerProperties {

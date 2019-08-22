@@ -52,6 +52,10 @@
     <docker.image.prefix>springDemo</docker.image.prefix>
     <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
     <commons-exec.version>1.3</commons-exec.version>
+    <env.dev>dev</env.dev>
+    <env.test>test</env.test>
+    <env.pro>pro</env.pro>
+    <env.master>master</env.master>
   </properties>
 
   <dependencyManagement>
@@ -65,15 +69,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-<!--springboot的工具包中包含了spring 的热部署 不能打包工具包-->
-<!--  <build>-->
-<!--    <plugins>-->
-<!--      <plugin>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--      </plugin>-->
-<!--    </plugins>-->
-<!--  </build>-->
+
   <build>
     <plugins>
       <plugin>

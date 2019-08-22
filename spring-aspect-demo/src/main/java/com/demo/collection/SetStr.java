@@ -1,7 +1,15 @@
 package com.demo.collection;
 
+import java.math.BigDecimal;
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.DoubleSummaryStatistics;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+import lombok.Data;
 
 /**
  * @title: SetStr
@@ -53,10 +61,24 @@ public class SetStr {
     setInt.add(3);
     System.out.println(setInt);
   }
-
+  @Data
+  public static class StatementAccount{
+    Double num;
+    StatementAccount(Double num){
+      this.num = num;
+    }
+  }
   public static void main(String[] args) {
-    Set<String> statementNos = new HashSet<>();
-    System.out.println(statementNos);
+    List<StatementAccount> statementAccounts = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+      statementAccounts.add(new StatementAccount(Double.valueOf(100)));
+    }
+    DoubleSummaryStatistics doubleSummaryStatistics = statementAccounts.stream()
+        .collect(Collectors.summarizingDouble(StatementAccount::getNum));
+    System.out.println(doubleSummaryStatistics);
+//
+//    Set<String> statementNos = new HashSet<>();
+//    System.out.println(statementNos);
 
 //    if (new BigDecimal(-100).compareTo(BigDecimal.ZERO) < 0) {
 //      System.out.println("小于零");

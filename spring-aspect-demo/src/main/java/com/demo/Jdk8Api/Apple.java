@@ -1,5 +1,6 @@
 package com.demo.Jdk8Api;
 
+import java.util.Objects;
 import lombok.Data;
 
 /**
@@ -28,5 +29,14 @@ public class Apple implements Comparable<Apple> {
   @Override
   public int compareTo(Apple o) {
     return 0;
+  }
+
+
+  public static void main( String[] args ) {
+    String aa = "aa";
+    Object bb = aa;
+    if(bb.getClass().isAssignableFrom(aa.getClass())) {
+      System.out.println("sss");
+    }
   }
 }

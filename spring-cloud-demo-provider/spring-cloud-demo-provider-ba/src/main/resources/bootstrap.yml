@@ -8,8 +8,9 @@ spring:
       discovery:
         service-id: spring-cloud-demo-config
         enabled: true
-      profile: master
+      profile: @env.master@
       label: master
+
 eureka:
   client:
     serviceUrl:
@@ -18,10 +19,5 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
 
-druid:
-  allow: ''
-  deny: ''
-  druidMappingUrl: /druid/*
-  loginPassword: zl123456
-  loginUsername: zhanglong
-  resetEnable: false
+#spring.servlet.multipart.max-file-size=10MB
+#spring.servlet.multipart.max-request-size=10MB

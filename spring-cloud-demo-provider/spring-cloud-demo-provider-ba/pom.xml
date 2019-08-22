@@ -81,7 +81,9 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
+    <defaultGoal>dev</defaultGoal>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

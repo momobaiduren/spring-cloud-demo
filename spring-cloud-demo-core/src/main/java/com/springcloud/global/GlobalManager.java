@@ -1,28 +1,25 @@
 package com.springcloud.global;
 
 /**
+ * @author zhanglong
  * @title: GlobalManager
  * @projectName spring-cloud-demo
- * @description: TODO
- * @author zhanglong
- * @date 2019-08-0200:13
- * swagger:
- *   springcloud:
- *
+ * @date 2019-08-0200:13 swagger: springcloud:
  */
 
 public interface GlobalManager {
-  String ROOT_PREFIX = "swagger.springcloud";
 
-   String TIME_BEGIN = " 00:00:00";
+    String ROOT_PREFIX = "swagger.springcloud";
 
- String TIME_END = " 23:59:59";
+    String TIME_BEGIN = " 00:00:00";
 
- String YYYYMMDD = "yyyy-MM-dd";
+    String TIME_END = " 23:59:59";
 
-  String YYYYMM = "yyyy-MM";
+    String YYYYMMDD = "yyyy-MM-dd";
 
-   String YYYYMMDDHHMMSS = "yyyy-MM-dd HH:mm:ss";
+    String YYYYMM = "yyyy-MM";
 
-   String YYMMDD = "yyMMdd";
+    String YYYYMMDDHHMMSS = "yyyy-MM-dd HH:mm:ss";
+
+    String YYMMDD = "yyMMdd";
 }

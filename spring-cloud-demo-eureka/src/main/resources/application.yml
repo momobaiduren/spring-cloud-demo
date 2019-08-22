@@ -29,22 +29,6 @@ info:
   artifactId: @project.artifactId@
   version: @project.version@
 spring:
-#  security:
-#    # 登陆所需的账号密码
-#    user:
-#      name: zhanglong
-#      password: zl123456
   application:
     name: @project.artifactId@
-#  boot:
-#    admin:
-#      ui:
-#        title: 服务监控中心
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
+
