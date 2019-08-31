@@ -9,14 +9,14 @@ import java.util.Objects;
  */
 public class ValidationContext {
 
-    private ValidationHandler<ValidationResult> validationHandler;
+    private ValidationHandler validationHandler;
 
 
     public static ValidationContext init() {
         return new ValidationContext();
     }
 
-    public ValidationExcutor validationHandler(ValidationHandler<ValidationResult> validationHandler){
+    public ValidationExcutor validationHandler(ValidationHandler validationHandler){
         if(Objects.isNull(validationHandler)) {
             this.validationHandler = new DefaultValidationHandler();
         }else {

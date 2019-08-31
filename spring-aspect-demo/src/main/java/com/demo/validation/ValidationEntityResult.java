@@ -2,6 +2,7 @@ package com.demo.validation;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.bind.ValidationException;
 import lombok.Data;
 
 /**
@@ -20,4 +21,11 @@ public class ValidationEntityResult<T> extends ValidationResult{
     private Map<String, String> errorMsgs = new HashMap<>();
 
     private T data;
+
+    @Override
+    public void isErrorThrowExp() throws ValidationException {
+        if(this.hasError()) {
+            throw new ValidationException(errorMsgs.toString());
+        }
+    }
 }
