@@ -23,6 +23,6 @@ public class ValidationContext {
             this.validationHandler = validationHandler;
         }
 
-        return new ValidationExecutor(validationHandler);
+        return new ValidationExecutor(this.validationHandler);
     }
 }
