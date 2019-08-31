@@ -16,11 +16,11 @@ import org.apache.poi.ss.formula.functions.T;
  * @description: 描述
  * @date 2019-08-3112:33
  */
-public class ValidationExcutor {
+public class ValidationExecutor {
 
     private ValidationHandler validationHandler;
 
-    public ValidationExcutor(ValidationHandler validationHandler){
+    public ValidationExecutor(ValidationHandler validationHandler){
         this.validationHandler = validationHandler;
     }
 

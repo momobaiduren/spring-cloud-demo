@@ -16,13 +16,13 @@ public class ValidationContext {
         return new ValidationContext();
     }
 
-    public ValidationExcutor validationHandler(ValidationHandler validationHandler){
+    public ValidationExecutor validationHandler(ValidationHandler validationHandler){
         if(Objects.isNull(validationHandler)) {
             this.validationHandler = new DefaultValidationHandler();
         }else {
             this.validationHandler = validationHandler;
         }
 
-        return new ValidationExcutor(validationHandler);
+        return new ValidationExecutor(validationHandler);
     }
 }
