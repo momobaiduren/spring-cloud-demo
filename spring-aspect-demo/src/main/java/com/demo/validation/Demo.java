@@ -36,7 +36,7 @@ public class Demo {
         ValidationEntityResult<Demo> validate = ValidationManager.context()
             .validationHandler(ValidationHandler.DEFULTVALIDATIONHANDLER).validateEntity(new Demo());
         validate.isErrorThrowExp();
-        System.out.println(validate.getData());
-        System.out.println(validate.getErrorMsgs());
+        System.out.println(validate.get());
+        System.out.println(validate.errorMsgs());
     }
 }
