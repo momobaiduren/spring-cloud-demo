@@ -4,6 +4,7 @@ import com.demo.excel.EasyExcelExecutor;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +22,7 @@ public class ExcelDemoController {
     @Autowired
     private DemoEasyExcelHandler<DemoEntity> demoEasyExcelHandler;
 
-    @GetMapping("importData")
+    @PostMapping("importData")
     public String importExcel( MultipartFile file, HttpServletResponse response) throws RuntimeException {
         EasyExcelExecutor.bind(demoEasyExcelHandler,response).importExcel(file, DemoEntity.class);
 

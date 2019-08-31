@@ -38,4 +38,12 @@ public class ValidationEntityResult<T> extends ValidationResult{
     public T get(){
         return data;
     }
+
+    public Map<String, String> getErrorMsgs() {
+        return errorMsgs;
+    }
+
+    public void setData( T data ) {
+        this.data = data;
+    }
 }
