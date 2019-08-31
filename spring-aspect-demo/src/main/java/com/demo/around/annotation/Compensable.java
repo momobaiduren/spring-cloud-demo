@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 public @interface Compensable {
 
-  String confirmMethod() default "";
+    String confirmMethod() default "";
 
-  String cancelMethod() default "";
+    String cancelMethod() default "";
 }

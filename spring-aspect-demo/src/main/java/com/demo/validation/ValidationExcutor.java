@@ -1,0 +1,59 @@
+package com.demo.validation;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.groups.Default;
+
+/**
+ * @author zhanglong
+ * @description: 描述
+ * @date 2019-08-3112:33
+ */
+public class ValidationExcutor {
+
+    private ValidationHandler<ValidationResult> validationHandler;
+
+    public ValidationExcutor(ValidationHandler<ValidationResult> validationHandler){
+        this.validationHandler = validationHandler;
+    }
+
+    private Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+
+    public <T> ValidationListResult<T> validateList( List<T> dataList ) {
+        ValidationListResult<T> result = new ValidationListResult();
+        dataList.forEach(t -> {
+            Set<ConstraintViolation<T>> set = validator.validate(t, Default.class);
+            if (set != null && set.size() != 0) {
+                Map<String, String> errorMsg = new HashMap<>();
+                for (ConstraintViolation<T> cv : set) {
+                    errorMsg.put(cv.getPropertyPath().toString(), cv.getMessage());
+                }
+                if(errorMsg.isEmpty()) {
+                    result.getSuccessData().add(t);
+                }else {
+                    result.getErrorData().put(t, errorMsg);
+                }
+            }
+        });
+        validationHandler.resultHandler(result);
+        return result;
+    }
+
+    public <T> ValidationEntityResult<T> validate( T data ) {
+        ValidationEntityResult<T> validationEntityResult = new ValidationEntityResult();
+        validationEntityResult.setData(data);
+        Set<ConstraintViolation<T>> constraintViolationSet = validator.validate(data, Default.class);
+        Optional.ofNullable(constraintViolationSet).ifPresent(constraintViolations -> constraintViolations.forEach(constraintViolation ->{
+            validationEntityResult.getErrorMsgs().put(constraintViolation.getPropertyPath().toString(),constraintViolation.getMessage());
+        }));
+        validationHandler.resultHandler(validationEntityResult);
+        return validationEntityResult;
+    }
+
+}

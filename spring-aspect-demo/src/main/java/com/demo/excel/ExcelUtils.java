@@ -38,24 +38,24 @@ public class ExcelUtils {
      * @param <T> 目标对象类型
      * @param request {@link HttpServletRequest} must be {@link StandardMultipartHttpServletRequest}
      * @param clazz 目标对象类型的Class对象
-     * @param i
      * @return 读取结果
      */
-    public static <T extends ReadModel> List<T> readFromRequest(HttpServletRequest request,
-        Class<T> clazz, int startRowNum) {
+    public static <T extends ReadModel> List<T> readFromRequest( HttpServletRequest request,
+        Class<T> clazz, int startRowNum ) {
         if (!(request instanceof StandardMultipartHttpServletRequest)) {
             throw new RuntimeException("导入文件不能为空");
         }
 
         List<T> dataList = new ArrayList<>();
         StandardMultipartHttpServletRequest standardMultipartRequest = (StandardMultipartHttpServletRequest) request;
-        MultiValueMap<String, MultipartFile> multiFileMap = standardMultipartRequest.getMultiFileMap();
+        MultiValueMap<String, MultipartFile> multiFileMap = standardMultipartRequest
+            .getMultiFileMap();
         Collection<List<MultipartFile>> values = multiFileMap.values();
         values.forEach(multipartFiles -> multipartFiles.forEach(multipartFile -> {
             try {
                 ExcelEventListener<T> readRet = ExcelUtils
-                        .read(new BufferedInputStream(multipartFile.getInputStream()), startRowNum,
-                                clazz);
+                    .read(new BufferedInputStream(multipartFile.getInputStream()), startRowNum,
+                        clazz);
                 dataList.addAll(readRet.getData());
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -73,16 +73,17 @@ public class ExcelUtils {
      * @param clazz extends ReadModel
      * @return ExcelEventListener
      */
-    public static <T extends ReadModel> ExcelEventListener<T> read(InputStream inputStream, int headLine,
-            Class<T> clazz) {
+    public static <T extends ReadModel> ExcelEventListener<T> read( InputStream inputStream,
+        int headLine,
+        Class<T> clazz ) {
         ExcelEventListener<T> excelEventListener = new ExcelEventListener<>();
         EasyExcelFactory
             .readBySax(inputStream, new Sheet(DEFAULT_SHEET, headLine, clazz), excelEventListener);
         return excelEventListener;
     }
 
-    public static void exportResponse(HttpServletResponse response, Class clazz, String fileName,
-            List<? extends BaseRowModel> data) {
+    public static void exportResponse( HttpServletResponse response, Class clazz, String fileName,
+        List<? extends BaseRowModel> data ) {
         ServletOutputStream out = null;
         try {
             out = response.getOutputStream();
@@ -94,11 +95,12 @@ public class ExcelUtils {
         String fileNameEncoded = null;
         try {
             fileNameEncoded = URLEncoder
-                    .encode(fileName, "UTF-8");
+                .encode(fileName, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("导出文件名编码异常：");
         }
-        response.setHeader("Content-disposition", "attachment;filename=" + fileNameEncoded + ".xlsx");
+        response
+            .setHeader("Content-disposition", "attachment;filename=" + fileNameEncoded + ".xlsx");
         ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX, true);
         Sheet sheet1 = new Sheet(1, 0, clazz, "sheet1", null);
         sheet1.setAutoWidth(true);

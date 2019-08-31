@@ -20,19 +20,19 @@ import org.springframework.cglib.proxy.MethodProxy;
 
 public class CglibProxy implements MethodInterceptor {
 
-  @Override
-  public Object intercept(Object object, Method method, Object[] args, MethodProxy methodProxy)
-      throws Throwable {
-    System.out.println("方法执行前");
-    Object returnResult = methodProxy.invokeSuper(object, args);
-    System.out.println("方法执行后");
-    return returnResult;
-  }
+    @Override
+    public Object intercept( Object object, Method method, Object[] args, MethodProxy methodProxy )
+        throws Throwable {
+        System.out.println("方法执行前");
+        Object returnResult = methodProxy.invokeSuper(object, args);
+        System.out.println("方法执行后");
+        return returnResult;
+    }
 
-  public <T> T getInstance(Class<T> tClass){
-    Enhancer enhancer = new Enhancer();
-    enhancer.setSuperclass(LogManagerImpl.class);
-    enhancer.setCallback(this);
-    return (T) enhancer.create();
-  }
+    public <T> T getInstance( Class<T> tClass ) {
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(LogManagerImpl.class);
+        enhancer.setCallback(this);
+        return (T) enhancer.create();
+    }
 }

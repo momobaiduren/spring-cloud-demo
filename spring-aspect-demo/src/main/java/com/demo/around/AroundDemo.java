@@ -13,19 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class AroundDemo {
-  @RequestMapping("/around")
-  @Compensable(confirmMethod = "recordConfirm", cancelMethod = "recordCancel")
-  public void sayHello() {
-    System.out.println("Hello, this is @Around!------2");
-  }
 
-  public void recordConfirm() {
-    System.out.println("zhanglong recordConfirm------1");
+    @RequestMapping("/around")
+    @Compensable(confirmMethod = "recordConfirm", cancelMethod = "recordCancel")
+    public void sayHello() {
+        System.out.println("Hello, this is @Around!------2");
+    }
 
-  }
+    public void recordConfirm() {
+        System.out.println("zhanglong recordConfirm------1");
 
-  public void recordCancel() {
-    System.out.println("zhanglong recordCancel-------3");
+    }
 
-  }
+    public void recordCancel() {
+        System.out.println("zhanglong recordCancel-------3");
+
+    }
 }
