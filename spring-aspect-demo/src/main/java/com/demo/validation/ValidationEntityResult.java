@@ -28,4 +28,8 @@ public class ValidationEntityResult<T> extends ValidationResult{
             throw new ValidationException(errorMsgs.toString());
         }
     }
+
+    public T get(){
+        return data;
+    }
 }

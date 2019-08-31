@@ -29,4 +29,8 @@ public class ValidationListResult<T> extends ValidationResult{
 
         }
     }
+
+    public List<T> get(){
+        return successData;
+    }
 }
