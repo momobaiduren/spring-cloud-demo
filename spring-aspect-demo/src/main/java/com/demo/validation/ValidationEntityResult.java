@@ -10,9 +10,8 @@ import lombok.Data;
  * @description: 描述
  * @date 2019-08-3114:44
  */
-@Data
 public class ValidationEntityResult<T> extends ValidationResult{
-    boolean hasError(){
+    public boolean hasError(){
         if(errorMsgs.isEmpty()) {
             return false;
         }
@@ -27,6 +26,13 @@ public class ValidationEntityResult<T> extends ValidationResult{
         if(this.hasError()) {
             throw new ValidationException(errorMsgs.toString());
         }
+    }
+    public String errorMsgs(){
+        StringBuffer errorMsg = new StringBuffer();
+        for (String filedName : errorMsgs.keySet()) {
+            errorMsg.append(filedName).append(errorMsgs.get(filedName)).append(";");
+        }
+        return errorMsg.toString();
     }
 
     public T get(){

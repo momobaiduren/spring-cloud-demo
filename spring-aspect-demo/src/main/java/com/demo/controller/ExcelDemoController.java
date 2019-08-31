@@ -1,17 +1,12 @@
 package com.demo.controller;
 
-import com.demo.excel.DemoImportModel;
-import com.demo.excel.DemoModelConverter;
-import com.demo.excel.ExcelUtils;
-import com.demo.excel.entity.DemoEntity;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import org.apache.commons.collections4.CollectionUtils;
+import com.demo.excel.EasyExcelExecutor;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author zhanglong
@@ -23,21 +18,16 @@ import org.springframework.web.multipart.support.StandardMultipartHttpServletReq
 @RestController
 @RequestMapping("/excel")
 public class ExcelDemoController {
+    @Autowired
+    private DemoEasyExcelHandler<DemoEntity> demoEasyExcelHandler;
 
     @GetMapping("importData")
-    public Object importExcel( HttpServletRequest request ) throws RuntimeException {
-        if (!(request instanceof StandardMultipartHttpServletRequest)) {
-            throw new RuntimeException("导入文件不能为空");
-        }
-        List<DemoImportModel> data = ExcelUtils.readFromRequest(request, DemoImportModel.class, 2);
-        List<DemoEntity> demoEntities = new ArrayList<>();
-        if (CollectionUtils.isEmpty(data)) {
-            throw new RuntimeException("导入数据空");
-        } else {
-            //进行数据转换
-            demoEntities = new DemoModelConverter().convert(data);
-        }
+    public String importExcel( MultipartFile file, HttpServletResponse response) throws RuntimeException {
+        EasyExcelExecutor.bind(demoEasyExcelHandler,response).importExcel(file, DemoEntity.class);
+
+
+
         //穿到后台进行处理 这里直接返回了
-        return demoEntities;
+        return "";
     }
 }
