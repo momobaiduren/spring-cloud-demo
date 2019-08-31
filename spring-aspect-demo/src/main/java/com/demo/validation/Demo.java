@@ -34,7 +34,7 @@ public class Demo {
 
     public static void main( String[] args ) throws ValidationException {
         ValidationEntityResult<Demo> validate = ValidationManager.context()
-            .validationHandler(ValidationHandler.DEFULTVALIDATIONHANDLER).validate(new Demo());
+            .validationHandler(ValidationHandler.DEFULTVALIDATIONHANDLER).validateEntity(new Demo());
         validate.isErrorThrowExp();
         System.out.println(validate.getData());
         System.out.println(validate.getErrorMsgs());

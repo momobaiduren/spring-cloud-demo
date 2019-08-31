@@ -9,6 +9,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.groups.Default;
+import org.apache.poi.ss.formula.functions.T;
 
 /**
  * @author zhanglong
@@ -50,7 +51,7 @@ public class ValidationExcutor {
         return result;
     }
 
-    public <T> ValidationEntityResult<T> validate( T data ) {
+    public <T> ValidationEntityResult<T> validateEntity( T data ) {
         ValidationEntityResult<T> validationEntityResult = new ValidationEntityResult();
         validationEntityResult.setData(data);
         Set<ConstraintViolation<T>> constraintViolationSet = validator.validate(data, Default.class);
