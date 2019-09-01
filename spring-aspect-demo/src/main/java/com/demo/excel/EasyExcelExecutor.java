@@ -2,6 +2,7 @@ package com.demo.excel;
 
 import com.alibaba.excel.EasyExcel;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -18,31 +19,34 @@ import org.springframework.web.multipart.MultipartFile;
  * @date 2019-08-3120:46
  */
 @Slf4j
-public final class EasyExcelExecutor {
+public final class EasyExcelExecutor<T extends ExcelModel> {
 
     private EasyExcelExecutorContext easyExcelExecutorContext;
-
-    private EasyExcelExecutor(EasyExcelExecutorContext easyExcelExecutorContext){
-        this.easyExcelExecutorContext = easyExcelExecutorContext;
-    }
 
     public static EasyExcelExecutor bind(final EasyExcelHandler easyExcelHandler,final HttpServletResponse response){
         EasyExcelExecutorContext easyExcelExecutorContext = new EasyExcelExecutorContext();
         easyExcelExecutorContext.setEasyExcelHandler(easyExcelHandler);
         easyExcelExecutorContext.setResponse(response);
-        return new EasyExcelExecutor(easyExcelExecutorContext);
+        EasyExcelExecutor easyExcelExecutor = new EasyExcelExecutor();
+        easyExcelExecutorContext.setEasyExcelExecutor(easyExcelExecutor);
+        easyExcelExecutor.easyExcelExecutorContext = easyExcelExecutorContext;
+        return easyExcelExecutor;
     }
 
-    public <T> void importExcel(final MultipartFile file,final Class<T> clazz) {
-        if (Objects.nonNull(file)) {
+    public void importExcel(final MultipartFile file,final Class<T> clazz) {
+        if (Objects.isNull(file)) {
             throw new RuntimeException("导入文件不能为空");
         }
-        String fileName = file.getOriginalFilename();
-        // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
-        EasyExcel.read(fileName, clazz, new ExcelEventListener(easyExcelExecutorContext)).sheet(0).doRead();
+        try(InputStream inputStream = file.getInputStream()) {
+            // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
+            EasyExcel.read(inputStream, clazz, new ExcelEventListener(easyExcelExecutorContext)).sheet(0).doRead();
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+
     }
 
-    public <T> void exportResponse( Class<T> clazz, String fileName,String sheetName,
+    public void exportResponse( Class<T> clazz, String fileName,String sheetName,
         List<T> data) {
         HttpServletResponse response = easyExcelExecutorContext.response();
         if(Objects.isNull(response)) {

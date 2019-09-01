@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletResponse;
  * @date 2019-08-3122:54
  */
 public class EasyExcelExecutorContext {
+
+    private EasyExcelExecutor easyExcelExecutor;
+
     private EasyExcelHandler easyExcelHandler;
+
     private HttpServletResponse response;
 
     public void setEasyExcelHandler(final EasyExcelHandler easyExcelHandler ) {
@@ -25,5 +29,13 @@ public class EasyExcelExecutorContext {
 
     public HttpServletResponse response() {
         return response;
+    }
+
+    public EasyExcelExecutor easyExcelExecutor(){
+        return easyExcelExecutor;
+    }
+
+    public void setEasyExcelExecutor( EasyExcelExecutor easyExcelExecutor ) {
+        this.easyExcelExecutor = easyExcelExecutor;
     }
 }

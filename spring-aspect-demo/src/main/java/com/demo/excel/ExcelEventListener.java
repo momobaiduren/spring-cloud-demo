@@ -48,7 +48,7 @@ public class ExcelEventListener<T> extends AnalysisEventListener<T> {
     public void doAfterAllAnalysed( AnalysisContext analysisContext ) {
         if(Objects.nonNull(easyExcelExecutorContext)) {
             if(Objects.nonNull(easyExcelExecutorContext.easyExcelHandler())) {
-                easyExcelExecutorContext.easyExcelHandler().handlerData(data, errorMsg, easyExcelExecutorContext.response());
+                easyExcelExecutorContext.easyExcelHandler().handlerData(data, errorMsg, easyExcelExecutorContext);
             }
         }
     }
