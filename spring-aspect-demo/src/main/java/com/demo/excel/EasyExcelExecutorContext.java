@@ -16,38 +16,35 @@ public final class EasyExcelExecutorContext {
 
     private EasyExcelExecutorContextBind easyExcelExecutorContextBind;
 
-    public <T extends ExcelModel> EasyExcelExecutorContext(EasyExcelHandler easyExcelHandler ) {
-        if(Objects.isNull(this.dataHandler)) {
-            this.dataHandler = new DataHandler();
-        }
-        if(Objects.isNull(this.easyExcelExecutorContextBind)) {
-            this.easyExcelExecutorContextBind = new EasyExcelExecutorContextBind();
-        }
-        if(Objects.isNull(easyExcelHandler)) {
+    public EasyExcelExecutorContext( EasyExcelHandler easyExcelHandler ) {
+        this.dataHandler = new DataHandler();
+        this.easyExcelExecutorContextBind = new EasyExcelExecutorContextBind();
+        if (Objects.isNull(easyExcelHandler)) {
             easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
         }
         easyExcelExecutorContextBind.bindingasyExcelHandler(easyExcelHandler);
     }
 
 
-    public DataHandler dataHandler(){
+    public DataHandler dataHandler() {
         return dataHandler;
     }
 
-    public EasyExcelExecutorContextBind easyExcelExecutorContextBind(){
+    public EasyExcelExecutorContextBind easyExcelExecutorContextBind() {
         return easyExcelExecutorContextBind;
     }
+
     public class DataHandler<T extends ExcelModel> {
 
         private List<T> data = new ArrayList<>();
 
         private List<T> errorData = new ArrayList<>();
 
-        public List<T> get(){
+        public List<T> get() {
             return data;
         }
 
-        public List<T> errorData(){
+        public List<T> errorData() {
             return errorData;
         }
 
