@@ -9,7 +9,7 @@ import java.util.Objects;
  * @description: context容器
  * @date 2019-08-3122:54
  */
-public class EasyExcelExecutorContext {
+public final class EasyExcelExecutorContext {
 
 
     private DataHandler dataHandler;

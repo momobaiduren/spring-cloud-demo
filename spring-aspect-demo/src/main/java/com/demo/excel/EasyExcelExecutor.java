@@ -1,7 +1,6 @@
 package com.demo.excel;
 
 import com.alibaba.excel.EasyExcel;
-import com.demo.excel.EasyExcelExecutorContext.DataHandler;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -9,7 +8,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
