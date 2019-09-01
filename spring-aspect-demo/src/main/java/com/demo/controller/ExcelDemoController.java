@@ -2,7 +2,9 @@ package com.demo.controller;
 
 import com.demo.excel.EasyExcelExecutor;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.groups.Default;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +25,10 @@ public class ExcelDemoController {
     private DemoEasyExcelHandler<DemoEntity> demoEasyExcelHandler;
 
     @PostMapping("importData")
-    public String importExcel( MultipartFile file, HttpServletResponse response) throws RuntimeException {
-        EasyExcelExecutor.bind(demoEasyExcelHandler,response).importExcel(file, DemoEntity.class);
+    public String importExcel(@Validated({Default.class}) MultipartFile file, HttpServletResponse response) throws RuntimeException {
+        EasyExcelExecutor
+            .bind(demoEasyExcelHandler,response)
+            .importExcel(file, DemoEntity.class);
 
 
 
