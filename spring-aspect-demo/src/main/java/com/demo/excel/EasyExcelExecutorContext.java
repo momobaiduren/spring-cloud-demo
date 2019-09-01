@@ -23,6 +23,9 @@ public final class EasyExcelExecutorContext {
         if(Objects.isNull(this.easyExcelExecutorContextBind)) {
             this.easyExcelExecutorContextBind = new EasyExcelExecutorContextBind();
         }
+        if(Objects.isNull(easyExcelHandler)) {
+            easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
+        }
         easyExcelExecutorContextBind.bindingasyExcelHandler(easyExcelHandler);
     }
 
