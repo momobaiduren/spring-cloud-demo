@@ -1,10 +1,7 @@
 package com.demo.controller;
 
-import com.demo.excel.EasyExcelExecutorContext;
+import com.demo.excel.EasyExcelExecutorContext.DataHandler;
 import com.demo.excel.EasyExcelHandler;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,17 +13,10 @@ import org.springframework.stereotype.Component;
 public class DemoEasyExcelHandler implements EasyExcelHandler<DemoEntity> {
 
     @Override
-    public void handlerData( List<DemoEntity> data, Map<DemoEntity, String> errorMsg,
-        EasyExcelExecutorContext easyExcelExecutorContext ) {
-        System.out.println(data);
-        easyExcelExecutorContext.easyExcelExecutor()
-            .exportResponse(DemoEntity.class, "zhangsan", "zhangsan", errorMsg.keySet().stream().collect(
-                Collectors.toList()));
+    public void handlerData( DataHandler dataHandler ) {
+
+        System.out.println(dataHandler.get());
+        System.out.println(dataHandler.errorData());
     }
 
-//    @Override
-//    public void handlerData( List<? extends ExcelModel> data,
-//        Map<? extends ExcelModel, String> errorMsg, EasyExcelExecutorContext response ) {
-//
-//    }
 }

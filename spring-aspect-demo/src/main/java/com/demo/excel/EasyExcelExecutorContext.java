@@ -1,6 +1,8 @@
 package com.demo.excel;
 
-import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * @author zhanglong
@@ -9,33 +11,73 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class EasyExcelExecutorContext {
 
-    private EasyExcelExecutor easyExcelExecutor;
 
-    private EasyExcelHandler easyExcelHandler;
+    private DataHandler dataHandler;
 
-    private HttpServletResponse response;
+    private EasyExcelExecutorContextBind easyExcelExecutorContextBind;
 
-    public void setEasyExcelHandler(final EasyExcelHandler easyExcelHandler ) {
-        this.easyExcelHandler = easyExcelHandler;
+    public <T extends ExcelModel> EasyExcelExecutorContext(EasyExcelHandler easyExcelHandler ) {
+        if(Objects.isNull(this.dataHandler)) {
+            this.dataHandler = new DataHandler();
+        }
+        if(Objects.isNull(this.easyExcelExecutorContextBind)) {
+            this.easyExcelExecutorContextBind = new EasyExcelExecutorContextBind();
+        }
+        easyExcelExecutorContextBind.bindingasyExcelHandler(easyExcelHandler);
     }
 
-    public void setResponse(final HttpServletResponse response ) {
-        this.response = response;
+
+    public DataHandler dataHandler(){
+        return dataHandler;
     }
 
-    public EasyExcelHandler easyExcelHandler() {
-        return easyExcelHandler;
+    public EasyExcelExecutorContextBind easyExcelExecutorContextBind(){
+        return easyExcelExecutorContextBind;
+    }
+    public class DataHandler<T extends ExcelModel> {
+
+        private List<T> data = new ArrayList<>();
+
+        private List<T> errorData = new ArrayList<>();
+
+        public List<T> get(){
+            return data;
+        }
+
+        public List<T> errorData(){
+            return errorData;
+        }
+
+        public EasyExcelExecutorContext.DataHandler dataAdd( T model ) {
+            data.add(model);
+            return dataHandler;
+        }
+
+        public EasyExcelExecutorContext.DataHandler errorMsgAdd( T model, String errMsg ) {
+            if (data.contains(model)) {
+                data.remove(model);
+            }
+            model.setErrorMsg(errMsg);
+            errorData.add(model);
+            return dataHandler;
+        }
     }
 
-    public HttpServletResponse response() {
-        return response;
+    public class EasyExcelExecutorContextBind {
+
+        private EasyExcelHandler easyExcelHandler;
+
+        public EasyExcelExecutorContext.EasyExcelExecutorContextBind bindingasyExcelHandler(
+            final EasyExcelHandler easyExcelHandler ) {
+            this.easyExcelHandler = easyExcelHandler;
+            return easyExcelExecutorContextBind;
+        }
+
+        public EasyExcelHandler easyExcelHandler() {
+            return easyExcelHandler;
+        }
+
     }
 
-    public EasyExcelExecutor easyExcelExecutor(){
-        return easyExcelExecutor;
-    }
 
-    public void setEasyExcelExecutor( EasyExcelExecutor easyExcelExecutor ) {
-        this.easyExcelExecutor = easyExcelExecutor;
-    }
 }

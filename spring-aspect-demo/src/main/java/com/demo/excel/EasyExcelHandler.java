@@ -1,8 +1,7 @@
 package com.demo.excel;
 
 
-import java.util.List;
-import java.util.Map;
+import com.demo.excel.EasyExcelExecutorContext.DataHandler;
 
 /**
  * @author zhanglong
@@ -13,6 +12,5 @@ public interface EasyExcelHandler<T extends ExcelModel> {
 
     EasyExcelHandler DEFAULTEASYEXCELHANDLER = new DefaultEasyExcelHandler();
 
-    void handlerData( List<T> data, Map<T, String> errorMsg,
-        EasyExcelExecutorContext easyExcelExecutorContext );
+    void handlerData( DataHandler dataHandler );
 }

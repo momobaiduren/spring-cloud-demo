@@ -3,7 +3,6 @@ package com.demo.controller;
 import com.demo.excel.EasyExcelExecutor;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
-import javax.validation.groups.Default;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
@@ -28,9 +27,9 @@ public class ExcelDemoController {
     @PostMapping("importData")
     public String importExcel(MultipartFile file, @Validated  @NotNull(message = "aaa不能为空") String aaa, HttpServletResponse response) throws RuntimeException {
         System.out.println(aaa);
-        EasyExcelExecutor
-            .bind(demoEasyExcelHandler,response)
-            .importExcel(file, DemoEntity.class);
+        EasyExcelExecutor.instance()
+            .bind(demoEasyExcelHandler)
+            .importExcel(file, DemoEntity.class,response,true);
 
 
 

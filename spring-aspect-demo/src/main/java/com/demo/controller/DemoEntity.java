@@ -11,7 +11,7 @@ import lombok.Data;
  * @date 2019-08-3122:25
  */
 @Data
-public class DemoEntity implements ExcelModel {
+public class DemoEntity extends ExcelModel {
     @ExcelProperty("姓名")
     private String username;
     @NotNull(message = "年龄不能为空")
