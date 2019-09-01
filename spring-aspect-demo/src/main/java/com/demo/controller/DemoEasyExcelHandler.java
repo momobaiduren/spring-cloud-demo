@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @date 2019-08-3122:23
  */
 @Component
-public class DemoEasyExcelHandler implements EasyExcelHandler<DemoEntity> {
+public class DemoEasyExcelHandler implements EasyExcelHandler {
 
     @Override
     public void handlerData( DataHandler dataHandler ) {

@@ -8,7 +8,8 @@ import com.demo.excel.EasyExcelExecutorContext.DataHandler;
  * @description: 处理器接口
  * @date 2019-08-3120:52
  */
-public interface EasyExcelHandler<T extends ExcelModel> {
+@FunctionalInterface
+public interface EasyExcelHandler {
 
     EasyExcelHandler DEFAULTEASYEXCELHANDLER = new DefaultEasyExcelHandler();
 
