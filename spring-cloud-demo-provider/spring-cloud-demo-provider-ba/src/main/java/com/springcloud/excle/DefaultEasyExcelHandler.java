@@ -1,9 +1,6 @@
 package com.springcloud.excle;
 
-
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.springcloud.excle.EasyExcelExecutorContext.DataHandler;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +11,12 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class DefaultEasyExcelHandler<M extends ExcelModel, E> extends AbstractEasyExcelHandler<M, E> {
+public class DefaultEasyExcelHandler<M extends ExcelModel> extends AbstractEasyExcelHandler<M> {
     @Override
-    public void handlerData( DataHandler<M> dataHandler, List<IService<E>> iServices ) {
-        super.handlerData(dataHandler, iServices);
+    public void handlerData( DataHandler<M> dataHandler) {
+        throw new RuntimeException(
+            String.format("未实现bind @AbstractEasyExcelHandler接口重写@handlerData()方法"));
     }
+
+
 }

@@ -8,7 +8,7 @@ spring:
       discovery:
         service-id: spring-cloud-demo-config
         enabled: true
-      profile: @env.master@
+      profile: master
       label: master
 
 eureka:

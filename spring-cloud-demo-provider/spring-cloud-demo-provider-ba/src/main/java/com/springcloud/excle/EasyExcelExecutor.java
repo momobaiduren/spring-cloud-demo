@@ -21,7 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @date 2019-08-3120:46
  */
 @Slf4j
-public final class EasyExcelExecutor<M extends ExcelModel, E> {
+public final class EasyExcelExecutor<M extends ExcelModel> {
 
     private EasyExcelExecutorContext easyExcelExecutorContext;
 
@@ -32,7 +32,7 @@ public final class EasyExcelExecutor<M extends ExcelModel, E> {
         return new EasyExcelExecutor();
     }
 
-    public  EasyExcelExecutor bind(EasyExcelHandler<M, E> easyExcelHandler) {
+    public  EasyExcelExecutor bind(EasyExcelHandler<M> easyExcelHandler) {
         if (Objects.isNull(easyExcelHandler)) {
             easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
         }
@@ -43,16 +43,16 @@ public final class EasyExcelExecutor<M extends ExcelModel, E> {
         return this;
     }
 
-    public  EasyExcelExecutor bind(final IService<E> ... iServices ) {
-        if(Objects.nonNull(iServices)) {
-            List<IService<E>> iServicesList = Arrays.asList(iServices);
-            if(Objects.isNull(easyExcelExecutorContext)) {
-                easyExcelExecutorContext = new EasyExcelExecutorContext();
-                easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderIservices(iServicesList);
-            }
-        }
-        return this;
-    }
+//    public  EasyExcelExecutor bind(final IService<E> ... iServices ) {
+//        if(Objects.nonNull(iServices)) {
+//            List<IService<E>> iServicesList = Arrays.asList(iServices);
+//            if(Objects.isNull(easyExcelExecutorContext)) {
+//                easyExcelExecutorContext = new EasyExcelExecutorContext();
+//                easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderIservices(iServicesList);
+//            }
+//        }
+//        return this;
+//    }
 
 
 

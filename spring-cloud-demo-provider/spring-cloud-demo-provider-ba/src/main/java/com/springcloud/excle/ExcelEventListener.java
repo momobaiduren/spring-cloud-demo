@@ -52,8 +52,7 @@ public class ExcelEventListener<M extends ExcelModel> extends AnalysisEventListe
                 .nonNull(easyExcelExecutorContext.easyExcelExecutorContextBuilder()
                     .easyExcelHandler())) {
                 easyExcelExecutorContext.easyExcelExecutorContextBuilder().easyExcelHandler()
-                    .handlerData(easyExcelExecutorContext.dataHandler(),
-                        easyExcelExecutorContext.easyExcelExecutorContextBuilder().iServiceList());
+                    .handlerData(easyExcelExecutorContext.dataHandler());
             }
         }
         long endTime = System.currentTimeMillis();

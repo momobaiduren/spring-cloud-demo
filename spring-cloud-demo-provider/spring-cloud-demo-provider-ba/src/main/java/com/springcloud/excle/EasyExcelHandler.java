@@ -1,9 +1,7 @@
 package com.springcloud.excle;
 
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.springcloud.excle.EasyExcelExecutorContext.DataHandler;
-import java.util.List;
 
 /**
  * @author zhanglong
@@ -11,12 +9,10 @@ import java.util.List;
  * @date 2019-08-3120:52
  */
 @FunctionalInterface
-public interface EasyExcelHandler<M extends ExcelModel, E> {
-
-
+public interface EasyExcelHandler<M extends ExcelModel> {
 
     EasyExcelHandler DEFAULTEASYEXCELHANDLER = new DefaultEasyExcelHandler();
 
-    void handlerData( DataHandler<M> dataHandler,
-        List<IService<E>> iServices );
+    void handlerData( DataHandler<M> dataHandler);
+
 }
