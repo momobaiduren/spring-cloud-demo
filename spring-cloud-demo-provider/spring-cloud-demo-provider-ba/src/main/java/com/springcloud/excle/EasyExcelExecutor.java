@@ -21,7 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @date 2019-08-3120:46
  */
 @Slf4j
-public final class EasyExcelExecutor<T extends ExcelModel> {
+public final class EasyExcelExecutor<M extends ExcelModel, E> {
 
     private EasyExcelExecutorContext easyExcelExecutorContext;
 
@@ -32,7 +32,7 @@ public final class EasyExcelExecutor<T extends ExcelModel> {
         return new EasyExcelExecutor();
     }
 
-    public  EasyExcelExecutor bind(EasyExcelHandler easyExcelHandler) {
+    public  EasyExcelExecutor bind(EasyExcelHandler<M, E> easyExcelHandler) {
         if (Objects.isNull(easyExcelHandler)) {
             easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
         }
@@ -43,9 +43,9 @@ public final class EasyExcelExecutor<T extends ExcelModel> {
         return this;
     }
 
-    public  EasyExcelExecutor bind(final IService<?> ... iServices ) {
+    public  EasyExcelExecutor bind(final IService<E> ... iServices ) {
         if(Objects.nonNull(iServices)) {
-            List<IService<?>> iServicesList = Arrays.asList(iServices);
+            List<IService<E>> iServicesList = Arrays.asList(iServices);
             if(Objects.isNull(easyExcelExecutorContext)) {
                 easyExcelExecutorContext = new EasyExcelExecutorContext();
                 easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderIservices(iServicesList);
@@ -56,11 +56,11 @@ public final class EasyExcelExecutor<T extends ExcelModel> {
 
 
 
-    public EasyExcelExecutor importExcel( final MultipartFile file, final Class<T> clazz ) {
+    public EasyExcelExecutor importExcel( final MultipartFile file, final Class<M> clazz ) {
         return importExcel(file, clazz,null, false);
     }
 
-    public EasyExcelExecutor importExcel( final MultipartFile file, final Class<T> clazz, HttpServletResponse response,
+    public EasyExcelExecutor importExcel( final MultipartFile file, final Class<M> clazz, HttpServletResponse response,
         final boolean isEmportError ) {
         if (Objects.isNull(file)) {
             throw new RuntimeException("导入文件不能为空");
@@ -70,7 +70,7 @@ public final class EasyExcelExecutor<T extends ExcelModel> {
             EasyExcel.read(inputStream, clazz, new ExcelEventListener(easyExcelExecutorContext))
                 .sheet(0).doRead();
             if (isEmportError && Objects.nonNull(response)) {
-              List<T> errorList =  easyExcelExecutorContext.dataHandler().errorData();
+              List<M> errorList =  easyExcelExecutorContext.dataHandler().errorData();
                 exportResponse(clazz, "error_" + file.getOriginalFilename(),
                     file.getOriginalFilename()
                         .substring(file.getOriginalFilename().lastIndexOf(".")),errorList,response);
@@ -81,8 +81,8 @@ public final class EasyExcelExecutor<T extends ExcelModel> {
         return this;
     }
 
-    public void exportResponse( Class<T> clazz, String fileName, String sheetName,
-        List<T> data, HttpServletResponse response ) {
+    public void exportResponse( Class<M> clazz, String fileName, String sheetName,
+        List<M> data, HttpServletResponse response ) {
         if (Objects.isNull(response)) {
             throw new RuntimeException("未绑定响应{@HttpServletResponse}参数");
         }

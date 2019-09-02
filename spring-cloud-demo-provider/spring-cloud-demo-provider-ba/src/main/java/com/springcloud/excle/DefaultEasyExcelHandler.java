@@ -14,11 +14,9 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class DefaultEasyExcelHandler extends AbstractEasyExcelHandler {
-
-
+public class DefaultEasyExcelHandler<M extends ExcelModel, E> extends AbstractEasyExcelHandler<M, E> {
     @Override
-    public void handlerData( DataHandler dataHandler, List iServices ) {
+    public void handlerData( DataHandler<M> dataHandler, List<IService<E>> iServices ) {
         super.handlerData(dataHandler, iServices);
     }
 }

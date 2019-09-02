@@ -11,12 +11,12 @@ import java.util.List;
  * @date 2019-08-3120:52
  */
 @FunctionalInterface
-public interface EasyExcelHandler<M extends ExcelModel> {
+public interface EasyExcelHandler<M extends ExcelModel, E> {
 
 
 
     EasyExcelHandler DEFAULTEASYEXCELHANDLER = new DefaultEasyExcelHandler();
 
     void handlerData( DataHandler<M> dataHandler,
-        List<IService<?>> iServices );
+        List<IService<E>> iServices );
 }

@@ -20,11 +20,11 @@ import org.springframework.beans.BeanUtils;
  * @date 2019-08-3122:07
  */
 @Slf4j
-public abstract class AbstractEasyExcelHandler<M extends ExcelModel> implements
-    EasyExcelHandler<M> {
+public abstract class AbstractEasyExcelHandler<M extends ExcelModel, E> implements
+    EasyExcelHandler<M, E> {
 
     @Override
-    public void handlerData( DataHandler<M> dataHandler, List<IService<?>> iServices ) {
+    public void handlerData( DataHandler<M> dataHandler, List<IService<E>> iServices ) {
         throw new RuntimeException(
             String.format("未实现bind @AbstractEasyExcelHandler接口重写@handlerData()方法"));
     }

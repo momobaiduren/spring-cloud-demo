@@ -3,8 +3,7 @@ package com.springcloud.excle;
 import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import org.apache.poi.ss.formula.functions.T;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author zhanglong
@@ -60,11 +59,11 @@ public final class EasyExcelExecutorContext {
         }
     }
 
-    public class EasyExcelExecutorContextBuilder {
+    public class EasyExcelExecutorContextBuilder<E> {
 
         private EasyExcelHandler easyExcelHandler;
 
-        private List<IService<?>> iServiceList;
+        private List<IService<E>> iServiceList;
 
         public EasyExcelExecutorContextBuilder builderEasyExcelHandler(
             final EasyExcelHandler easyExcelHandler ) {
@@ -76,11 +75,11 @@ public final class EasyExcelExecutorContext {
             return easyExcelHandler;
         }
 
-        public List<IService<?>> iServiceList(){
+        public List<IService<E>> iServiceList(){
             return iServiceList;
         }
 
-        public EasyExcelExecutorContextBuilder builderIservices(final List<IService<?>> iServicesList) {
+        public EasyExcelExecutorContextBuilder builderIservices(final List<IService<E>> iServicesList) {
             this.iServiceList = iServicesList;
             return this;
         }
