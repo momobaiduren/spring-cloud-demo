@@ -1,11 +1,13 @@
-package com.demo.excel;
+package com.springcloud.excle;
 
 import com.alibaba.excel.EasyExcel;
+import com.baomidou.mybatisplus.extension.service.IService;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import javax.servlet.http.HttpServletResponse;
@@ -30,11 +32,29 @@ public final class EasyExcelExecutor<T extends ExcelModel> {
         return new EasyExcelExecutor();
     }
 
-    public <T extends ExcelModel>  EasyExcelExecutor bind( final EasyExcelHandler easyExcelHandler ) {
-        EasyExcelExecutorContext easyExcelExecutorContext = new EasyExcelExecutorContext(easyExcelHandler);
-        this.easyExcelExecutorContext = easyExcelExecutorContext;
+    public  EasyExcelExecutor bind(EasyExcelHandler easyExcelHandler) {
+        if (Objects.isNull(easyExcelHandler)) {
+            easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
+        }
+        if(Objects.isNull(easyExcelExecutorContext)) {
+            easyExcelExecutorContext = new EasyExcelExecutorContext();
+            easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderEasyExcelHandler(easyExcelHandler);
+        }
         return this;
     }
+
+    public  EasyExcelExecutor bind(final IService<?> ... iServices ) {
+        if(Objects.nonNull(iServices)) {
+            List<IService<?>> iServicesList = Arrays.asList(iServices);
+            if(Objects.isNull(easyExcelExecutorContext)) {
+                easyExcelExecutorContext = new EasyExcelExecutorContext();
+                easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderIservices(iServicesList);
+            }
+        }
+        return this;
+    }
+
+
 
     public EasyExcelExecutor importExcel( final MultipartFile file, final Class<T> clazz ) {
         return importExcel(file, clazz,null, false);

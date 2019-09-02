@@ -1,13 +1,15 @@
-package com.demo.excel;
+package com.springcloud.excle;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import org.apache.poi.ss.formula.functions.T;
 
 /**
  * @author zhanglong
- * @description: context容器
- * @date 2019-08-3122:54
+ * @description: context容器 （方法是线程不安全的，如果需要并行处理需要额外加锁）
+ * @date 2019-08-31 22:54
  */
 public final class EasyExcelExecutorContext {
 
@@ -16,15 +18,10 @@ public final class EasyExcelExecutorContext {
 
     private EasyExcelExecutorContextBuilder easyExcelExecutorContextBuilder;
 
-    public EasyExcelExecutorContext( EasyExcelHandler easyExcelHandler ) {
+    public EasyExcelExecutorContext(){
         this.dataHandler = new DataHandler();
         this.easyExcelExecutorContextBuilder = new EasyExcelExecutorContextBuilder();
-        if (Objects.isNull(easyExcelHandler)) {
-            easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
-        }
-        easyExcelExecutorContextBuilder.bindingasyExcelHandler(easyExcelHandler);
     }
-
 
     public DataHandler dataHandler() {
         return dataHandler;
@@ -34,26 +31,26 @@ public final class EasyExcelExecutorContext {
         return easyExcelExecutorContextBuilder;
     }
 
-    public class DataHandler<T extends ExcelModel> {
+    public class DataHandler<M extends ExcelModel> {
 
-        private List<T> data = new ArrayList<>();
+        private List<M> data = new ArrayList<>();
 
-        private List<T> errorData = new ArrayList<>();
+        private List<M> errorData = new ArrayList<>();
 
-        public List<T> get() {
+        public List<M> get() {
             return data;
         }
 
-        public List<T> errorData() {
+        public List<M> errorData() {
             return errorData;
         }
 
-        public EasyExcelExecutorContext.DataHandler dataAdd( T model ) {
+        public EasyExcelExecutorContext.DataHandler dataAdd( M model ) {
             data.add(model);
             return dataHandler;
         }
 
-        public EasyExcelExecutorContext.DataHandler errorMsgAdd( T model, String errMsg ) {
+        public EasyExcelExecutorContext.DataHandler errorMsgAdd( M model, String errMsg ) {
             if (data.contains(model)) {
                 data.remove(model);
             }
@@ -67,16 +64,26 @@ public final class EasyExcelExecutorContext {
 
         private EasyExcelHandler easyExcelHandler;
 
-        public EasyExcelExecutorContextBuilder bindingasyExcelHandler(
+        private List<IService<?>> iServiceList;
+
+        public EasyExcelExecutorContextBuilder builderEasyExcelHandler(
             final EasyExcelHandler easyExcelHandler ) {
             this.easyExcelHandler = easyExcelHandler;
-            return easyExcelExecutorContextBuilder;
+            return this;
         }
 
         public EasyExcelHandler easyExcelHandler() {
             return easyExcelHandler;
         }
 
+        public List<IService<?>> iServiceList(){
+            return iServiceList;
+        }
+
+        public EasyExcelExecutorContextBuilder builderIservices(final List<IService<?>> iServicesList) {
+            this.iServiceList = iServicesList;
+            return this;
+        }
     }
 
 

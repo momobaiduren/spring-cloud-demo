@@ -26,4 +26,11 @@ public class OrderInfoController {
   public OrderInfo createAndPayOrder(OrderInfo orderInfo){
     return iOrderInfoService.createAndPayOrder(orderInfo);
   }
+
+
+  @PostMapping("/createAndPayOrder")
+  public OrderInfo importOrder(OrderInfo orderInfo){
+    return iOrderInfoService.createAndPayOrder(orderInfo);
+  }
+
 }

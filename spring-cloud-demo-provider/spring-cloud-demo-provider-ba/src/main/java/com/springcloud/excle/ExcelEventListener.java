@@ -1,10 +1,10 @@
-package com.demo.excel;
+package com.springcloud.excle;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
-import com.demo.validation.ValidationEntityResult;
-import com.demo.validation.ValidationHandler;
-import com.demo.validation.ValidationManager;
+import com.springcloud.validation.ValidationEntityResult;
+import com.springcloud.validation.ValidationHandler;
+import com.springcloud.validation.ValidationManager;
 import java.util.Objects;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -53,10 +53,10 @@ public class ExcelEventListener<T extends ExcelModel> extends AnalysisEventListe
         log.warn(logMsg);
         long startTime = System.currentTimeMillis();
         if (Objects.nonNull(easyExcelExecutorContext)) {
-            if (Objects.nonNull(easyExcelExecutorContext.easyExcelExecutorContextBind()) && Objects
-                .nonNull(easyExcelExecutorContext.easyExcelExecutorContextBind().easyExcelHandler())) {
-                easyExcelExecutorContext.easyExcelExecutorContextBind().easyExcelHandler()
-                    .handlerData(easyExcelExecutorContext.dataHandler(), easyExcelExecutorContext.easyExcelExecutorContextBind());
+            if (Objects.nonNull(easyExcelExecutorContext.easyExcelExecutorContextBuilder()) && Objects
+                .nonNull(easyExcelExecutorContext.easyExcelExecutorContextBuilder().easyExcelHandler())) {
+                easyExcelExecutorContext.easyExcelExecutorContextBuilder().easyExcelHandler()
+                    .handlerData(easyExcelExecutorContext.dataHandler(), easyExcelExecutorContext.easyExcelExecutorContextBuilder().iServiceList());
             }
         }
         long endTime = System.currentTimeMillis();
