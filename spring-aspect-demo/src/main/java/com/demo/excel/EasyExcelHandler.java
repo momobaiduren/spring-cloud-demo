@@ -1,7 +1,6 @@
 package com.demo.excel;
 
 
-import com.demo.excel.EasyExcelExecutorContext.DataHandler;
 
 /**
  * @author zhanglong
@@ -9,9 +8,10 @@ import com.demo.excel.EasyExcelExecutorContext.DataHandler;
  * @date 2019-08-3120:52
  */
 @FunctionalInterface
-public interface EasyExcelHandler {
+public interface EasyExcelHandler<M extends ReadModel> {
 
     EasyExcelHandler DEFAULTEASYEXCELHANDLER = new DefaultEasyExcelHandler();
 
-    void handlerData( DataHandler dataHandler );
+    void handlerData(EasyExcelExecutorContext.DataHandler<M> dataHandler);
+
 }

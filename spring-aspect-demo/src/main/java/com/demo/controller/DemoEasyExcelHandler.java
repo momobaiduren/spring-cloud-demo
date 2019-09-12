@@ -1,6 +1,6 @@
 package com.demo.controller;
 
-import com.demo.excel.EasyExcelExecutorContext.DataHandler;
+import com.demo.excel.EasyExcelExecutorContext;
 import com.demo.excel.EasyExcelHandler;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class DemoEasyExcelHandler implements EasyExcelHandler {
 
     @Override
-    public void handlerData( DataHandler dataHandler ) {
+    public void handlerData( EasyExcelExecutorContext.DataHandler dataHandler ) {
 
         System.out.println(dataHandler.get());
         System.out.println(dataHandler.errorData());
