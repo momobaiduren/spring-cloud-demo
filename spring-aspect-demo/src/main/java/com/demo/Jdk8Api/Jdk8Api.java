@@ -105,6 +105,7 @@ public class Jdk8Api {
         map.put("4", new Apple(5, 4, "hong3"));
         map.put("5", new Apple(6, 5, "hong3"));
         map.put("6", new Apple(7, 6, "hong3"));
+
         map.entrySet().stream()
             .sorted(Map.Entry.<String, Apple>comparingByKey()
                 .reversed()).forEachOrdered(e -> result.put(e.getKey(), e.getValue()));

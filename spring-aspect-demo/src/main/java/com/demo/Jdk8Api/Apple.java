@@ -20,8 +20,14 @@ public class Apple implements Comparable<Apple> {
     private String appleName;
     private BigDecimal price;
 
-    public Apple() {
+    @Data
+    public static class Aa{
+        private String ss;
     }
+
+
+
+
 
     public Apple( BigDecimal price ) {
         this.price = price;
@@ -39,11 +45,5 @@ public class Apple implements Comparable<Apple> {
     }
 
 
-    public static void main( String[] args ) {
-        String aa = "aa";
-        Object bb = aa;
-        if (bb.getClass().isAssignableFrom(aa.getClass())) {
-            System.out.println("sss");
-        }
-    }
+
 }
