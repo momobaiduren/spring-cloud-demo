@@ -30,7 +30,7 @@ public final class EasyExcelExecutor {
         return new EasyExcelExecutor();
     }
 
-    public  EasyExcelExecutor bind(EasyExcelHandler easyExcelHandler) {
+    public  EasyExcelExecutor binding(EasyExcelHandler easyExcelHandler) {
         if (Objects.isNull(easyExcelHandler)) {
             easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
         }
