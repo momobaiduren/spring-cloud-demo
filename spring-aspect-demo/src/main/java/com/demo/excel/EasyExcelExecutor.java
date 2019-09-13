@@ -26,22 +26,17 @@ public final class EasyExcelExecutor {
     private EasyExcelExecutor() {
     }
 
-    public static EasyExcelExecutor instance() {
-        return new EasyExcelExecutor();
-    }
-
-    public  EasyExcelExecutor binding(EasyExcelHandler easyExcelHandler) {
+    public static EasyExcelExecutor init(EasyExcelHandler easyExcelHandler) {
+        EasyExcelExecutor easyExcelExecutor = new EasyExcelExecutor();
         if (Objects.isNull(easyExcelHandler)) {
             easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
         }
-        if(Objects.isNull(easyExcelExecutorContext)) {
-            easyExcelExecutorContext = new EasyExcelExecutorContext();
-            easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderEasyExcelHandler(easyExcelHandler);
+        if(Objects.isNull(easyExcelExecutor.easyExcelExecutorContext)) {
+            easyExcelExecutor.easyExcelExecutorContext = new EasyExcelExecutorContext();
+            easyExcelExecutor.easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderEasyExcelHandler(easyExcelHandler);
         }
-        return this;
+        return easyExcelExecutor;
     }
-
-
 
 
     public <M extends ReadModel> EasyExcelExecutor importExcel(final MultipartFile file, final Class<M> clazz ) {
