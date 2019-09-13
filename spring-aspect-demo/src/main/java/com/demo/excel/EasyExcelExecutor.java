@@ -39,11 +39,11 @@ public final class EasyExcelExecutor {
     }
 
 
-    public <M extends ReadModel> EasyExcelExecutor importExcel(final MultipartFile file, final Class<M> clazz ) {
-        return importExcel(file, clazz,null, false);
+    public <M extends ReadModel> void importExcel(final MultipartFile file, final Class<M> clazz ) {
+        importExcel(file, clazz,null, false);
     }
 
-    public <M extends ReadModel> EasyExcelExecutor importExcel(final MultipartFile file, final Class clazz, HttpServletResponse response,
+    public <M extends ReadModel> void importExcel(final MultipartFile file, final Class clazz, HttpServletResponse response,
                                          final boolean isEmportError ) {
         if (Objects.isNull(file)) {
             throw new RuntimeException("导入文件不能为空");
@@ -60,7 +60,6 @@ public final class EasyExcelExecutor {
         } catch (IOException e) {
             log.error(e.getMessage());
         }
-        return this;
     }
 
     public <M extends ExcelModel>  void exportResponse( Class<M> clazz, String fileName, String sheetName,
