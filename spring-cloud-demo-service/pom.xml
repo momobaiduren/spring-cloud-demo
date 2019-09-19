@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>spring-cloud-demo</artifactId>
-    <groupId>com.springcloud</groupId>
-    <version>1.0</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-cloud-demo</artifactId>
+        <groupId>com.springcloud</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-cloud-demo-service</artifactId>
-  <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>com.springcloud</groupId>-->
-<!--      <artifactId>spring-cloud-demo-core</artifactId>-->
-<!--      <version>1.0</version>-->
-<!--    </dependency>-->
-    <dependency>
-      <groupId>com.springcloud</groupId>
-      <artifactId>spring-cloud-demo-api</artifactId>
-      <version>1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.springcloud</groupId>
-      <artifactId>spring-cloud-demo-persist</artifactId>
-      <version>1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.springcloud</groupId>
-      <artifactId>spring-cloud-demo-datasource</artifactId>
-      <version>1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.8</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-  </dependencies>
+    <artifactId>spring-cloud-demo-service</artifactId>
+    <dependencies>
+        <!--    <dependency>-->
+        <!--      <groupId>com.springcloud</groupId>-->
+        <!--      <artifactId>spring-cloud-demo-core</artifactId>-->
+        <!--      <version>1.0</version>-->
+        <!--    </dependency>-->
+        <dependency>
+            <groupId>com.springcloud</groupId>
+            <artifactId>spring-cloud-demo-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.springcloud</groupId>
+            <artifactId>spring-cloud-demo-persist</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.springcloud</groupId>
+            <artifactId>spring-cloud-demo-datasource</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+    </dependencies>
 
 </project>

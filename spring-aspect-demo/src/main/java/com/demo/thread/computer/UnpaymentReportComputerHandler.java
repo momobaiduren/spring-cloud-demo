@@ -1,15 +1,20 @@
 package com.demo.thread.computer;
 
-import java.util.List;
+import com.alibaba.fastjson.JSON;
 
-public class UnpaymentReportComputerHandler extends ComputerHandler{
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class UnpaymentReportComputerHandler extends ComputerHandler {
+    AtomicInteger atomicInteger = new AtomicInteger(1);
     @Override
     public void execut(List<Integer> shardingData) {
-        System.out.println(shardingData);
+        System.out.println("--------"+atomicInteger.getAndIncrement());
+        System.out.println(JSON.toJSONString(shardingData));
     }
 
     @Override
     public int count() {
-        return 211;
+        return 2000000;
     }
 }

@@ -20,9 +20,9 @@ public class ShardingComputer {
 
     private int corePoolSize = 0;
 
-    private int maximumPoolSize = 10;
+    private int maximumPoolSize = Runtime.getRuntime().availableProcessors() * 10;
 
-    private long keepAliveTime = 30;
+    private long keepAliveTime = 1800;
 
     private BlockingQueue<Runnable> workQuezue = new SynchronousQueue<>();
 
@@ -52,12 +52,12 @@ public class ShardingComputer {
     }
 
     private Map<Integer, List<Integer>> sharding() {
-        Map<Integer, List<Integer>> shardingDataMap = new ConcurrentHashMap<>();
-        for (int i = 0; i < count; i++) {
+        Map<Integer, List<Integer>> shardingDataMap = new ConcurrentHashMap<>(shardingNum);
+        for (int i = 1; i < count; i++) {
             if (shardingDataMap.containsKey(i % shardingNum)) {
                 shardingDataMap.get(i % shardingNum).add(i);
             } else {
-                List<Integer> shardingData = new ArrayList<>();
+                List<Integer> shardingData = new ArrayList<>(count/shardingNum + 1);
                 shardingData.add(i);
                 shardingDataMap.put(i % shardingNum, shardingData);
             }
@@ -80,7 +80,6 @@ public class ShardingComputer {
             Thread thread = threadFactory.newThread(new ComputerRunable(shardingData, computerHandler));
             threadPoolExecutor.execute(thread);
         });
-        threadPoolExecutor.shutdown();
     }
 
     private void init() {
@@ -96,9 +95,10 @@ public class ShardingComputer {
     }
 
     public ShardingComputer maximumPoolSize(int maximumPoolSize) {
-        if (Objects.nonNull(maximumPoolSize)) {
-            this.maximumPoolSize = maximumPoolSize;
+        if (maximumPoolSize <= shardingNum) {
+            maximumPoolSize = shardingNum + Runtime.getRuntime().availableProcessors()*3;
         }
+        this.maximumPoolSize = maximumPoolSize;
         return this;
     }
 
