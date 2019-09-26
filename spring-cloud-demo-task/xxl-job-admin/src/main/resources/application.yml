@@ -12,6 +12,7 @@ spring:
 #          enabled: true
 #        profile: master
 #        label: master
+
   mvc:
     static-path-pattern: /static/**
   resources:
