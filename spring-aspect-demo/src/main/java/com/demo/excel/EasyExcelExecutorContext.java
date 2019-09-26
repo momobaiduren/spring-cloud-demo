@@ -1,7 +1,5 @@
 package com.demo.excel;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,19 +13,22 @@ public final class EasyExcelExecutorContext {
 
     private DataHandler dataHandler;
 
-    private EasyExcelHandler easyExcelHandler;
+    private EasyExcelExecutorContextBuilder easyExcelExecutorContextBuilder;
 
-
-    public EasyExcelExecutorContext() {
+    public EasyExcelExecutorContext(){
         this.dataHandler = new DataHandler();
+        this.easyExcelExecutorContextBuilder = new EasyExcelExecutorContextBuilder();
     }
 
     public DataHandler dataHandler() {
         return dataHandler;
     }
 
+    public EasyExcelExecutorContextBuilder easyExcelExecutorContextBuilder() {
+        return easyExcelExecutorContextBuilder;
+    }
 
-    public class DataHandler<M extends ExcelModel> {
+    public class DataHandler<M extends ReadModel> {
 
         private List<M> data = new ArrayList<>();
 
@@ -41,34 +42,34 @@ public final class EasyExcelExecutorContext {
             return errorData;
         }
 
-        public EasyExcelExecutorContext.DataHandler dataAdd(M model) {
+        public EasyExcelExecutorContext.DataHandler dataAdd( M model ) {
             data.add(model);
             return dataHandler;
         }
 
-        public EasyExcelExecutorContext.DataHandler errorMsgAdd(M model, String errMsg) {
-            if (StringUtils.isNotBlank(errMsg)){
-                if (data.contains(model)) {
-                    data.remove(model);
-                }
-                ReadModel readModel = (ReadModel) model;
-                readModel.setErrorMsg(errMsg);
-                errorData.add((M) readModel);
+        public EasyExcelExecutorContext.DataHandler errorMsgAdd( M model, String errMsg ) {
+            if (data.contains(model)) {
+                data.remove(model);
             }
+            model.setErrorMsg(errMsg);
+            errorData.add(model);
             return dataHandler;
         }
     }
 
-    public EasyExcelExecutorContext setEasyExcelHandler(
-            final EasyExcelHandler easyExcelHandler) {
-        this.easyExcelHandler = easyExcelHandler;
-        return this;
+    public class EasyExcelExecutorContextBuilder<E> {
+
+        private EasyExcelHandler easyExcelHandler;
+
+        public EasyExcelExecutorContextBuilder builderEasyExcelHandler(
+            final EasyExcelHandler easyExcelHandler ) {
+            this.easyExcelHandler = easyExcelHandler;
+            return this;
+        }
+
+        public EasyExcelHandler easyExcelHandler() {
+            return easyExcelHandler;
+        }
+
     }
-
-
-    public EasyExcelHandler easyExcelHandler() {
-        return easyExcelHandler;
-    }
-
-
 }

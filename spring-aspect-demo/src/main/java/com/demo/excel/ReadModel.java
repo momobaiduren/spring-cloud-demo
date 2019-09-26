@@ -11,5 +11,5 @@ import lombok.Data;
 @Data
 public abstract class ReadModel extends ExcelModel{
     @ExcelProperty("错误信息")
-    public String errorMsg;
+    String errorMsg;
 }

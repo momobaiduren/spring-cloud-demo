@@ -1,18 +1,16 @@
 package com.demo.excel;
 
 
-import java.util.List;
-
 /**
  * @author zhanglong
  * @description: 处理器接口
  * @date 2019-08-3120:52
  */
-public interface EasyExcelHandler {
+@FunctionalInterface
+public interface EasyExcelHandler<M extends ReadModel> {
 
     EasyExcelHandler DEFAULTEASYEXCELHANDLER = new DefaultEasyExcelHandler();
 
-    <M extends ReadModel> void readHandlerData(EasyExcelExecutorContext.DataHandler<M> dataHandler);
+    void handlerData(EasyExcelExecutorContext.DataHandler<M> dataHandler);
 
-    <S, M extends ExcelModel> List<M> writeHandlerData(List<S> source, Class<M> mClass);
 }

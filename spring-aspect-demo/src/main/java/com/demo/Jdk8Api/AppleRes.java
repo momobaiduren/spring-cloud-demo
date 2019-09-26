@@ -6,45 +6,41 @@ import java.math.BigDecimal;
 
 /**
  * @author zhanglong
- * @title: Apple
- * @projectName spring-cloud-demo
- * @description: TODO
- * @date 2019-07-3122:30
+ * @version V1.0
+ * @date 2019/9/20  11:13 下午
  */
-
 @Data
-public class Apple implements Comparable<Apple> {
-
+public class AppleRes implements Comparable<AppleRes>{
     private Integer appleId;
     private Integer bigNum;
     private String appleName;
     private BigDecimal price;
     private Aa aa;
 
-
-    public Apple(){}
-
     @Data
     public static class Aa{
         private String ss;
     }
+    public AppleRes(){}
 
-
-    public Apple( BigDecimal price ) {
+    public AppleRes( BigDecimal price ) {
         this.price = price;
     }
 
-    public Apple( Integer appleId, Integer bigNum, String appleName ) {
+    public AppleRes( Integer appleId, Integer bigNum, String appleName ) {
         this.appleId = appleId;
         this.bigNum = bigNum;
         this.appleName = appleName;
     }
 
     @Override
-    public int compareTo( Apple o ) {
+    public int compareTo( AppleRes o ) {
         return 0;
     }
 
-
-
+    public static void main(String[] args) {
+        if (true == true){
+            System.out.println("parma");
+        }
+    }
 }

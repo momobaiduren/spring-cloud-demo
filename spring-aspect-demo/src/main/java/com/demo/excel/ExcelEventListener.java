@@ -48,9 +48,12 @@ public class ExcelEventListener<M extends ReadModel> extends AnalysisEventListen
         log.warn(logMsg);
         long startTime = System.currentTimeMillis();
         if (Objects.nonNull(easyExcelExecutorContext)) {
-            if ( Objects.nonNull(easyExcelExecutorContext.easyExcelHandler())) {
-                easyExcelExecutorContext.easyExcelHandler()
-                    .readHandlerData(easyExcelExecutorContext.dataHandler());
+            if (Objects.nonNull(easyExcelExecutorContext.easyExcelExecutorContextBuilder())
+                && Objects
+                .nonNull(easyExcelExecutorContext.easyExcelExecutorContextBuilder()
+                    .easyExcelHandler())) {
+                easyExcelExecutorContext.easyExcelExecutorContextBuilder().easyExcelHandler()
+                    .handlerData(easyExcelExecutorContext.dataHandler());
             }
         }
         long endTime = System.currentTimeMillis();
