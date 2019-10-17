@@ -12,6 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * @author zhanglong
@@ -21,43 +22,36 @@ import java.util.Objects;
 @Slf4j
 public final class EasyExcelExecutor {
 
-    private EasyExcelExecutorContext easyExcelExecutorContext;
-
     private EasyExcelExecutor() {
     }
-
-    public static EasyExcelExecutor instance() {
-        return new EasyExcelExecutor();
+    /**
+     * create by ZhangLong on 2019/10/17
+     * @param easyExcelConsumer 导入数据的消费处理
+     * description 导入
+     */
+    public static  <M extends ReadModel> void importExcel(Consumer<EasyExcel<M>> easyExcelConsumer, final MultipartFile file, final Class<M> clazz) {
+        importExcelAndExportErrorData(easyExcelConsumer, file, clazz, null);
     }
-
-    public EasyExcelExecutor bindingHandler(EasyExcelHandler easyExcelHandler) {
-        if (Objects.isNull(easyExcelHandler)) {
-            easyExcelHandler = EasyExcelHandler.DEFAULTEASYEXCELHANDLER;
-        }
-        if (Objects.isNull(easyExcelExecutorContext)) {
-            easyExcelExecutorContext = new EasyExcelExecutorContext();
-            easyExcelExecutorContext.easyExcelExecutorContextBuilder().builderEasyExcelHandler(easyExcelHandler);
-        }
-        return this;
-    }
-
-
-    public <M extends ReadModel> void importExcel(final MultipartFile file, final Class<M> clazz) {
-        importExcel(file, clazz, null, false);
-    }
-
-    public <M extends ReadModel> void importExcel(final MultipartFile file, final Class<M> clazz, HttpServletResponse response,
-                                                  final boolean isEmportError) {
+    /**
+     * create by ZhangLong on 2019/10/17
+     * @param easyExcelConsumer 导入数据的消费处理
+     * @param response 不为null实现导出处理
+     * description 导入
+     */
+    @SuppressWarnings("all")
+    public static  <M extends ReadModel> void importExcelAndExportErrorData(Consumer<EasyExcel<M>> easyExcelConsumer, final MultipartFile file,
+                                                                            final Class<M> clazz,final HttpServletResponse response) {
+        ExcleData<M> excleData = new ExcleData<>();
         if (Objects.isNull(file)) {
             throw new RuntimeException("导入文件不能为空");
         }
         try (InputStream inputStream = file.getInputStream()) {
             // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
-            EasyExcel.read(inputStream, clazz, new ExcelEventListener(easyExcelExecutorContext));
-            if (isEmportError && Objects.nonNull(response)) {
-                List<M> errorList = easyExcelExecutorContext.dataHandler().errorData();
+            EasyExcel.read(inputStream, clazz, new ExcelEventListener(easyExcelConsumer, excleData));
+            if (Objects.nonNull(response)) {
+                List<M> errorList = (List<M>) excleData.errorData();
                 exportResponse(clazz, "error_" + file.getOriginalFilename(),
-                        file.getOriginalFilename()
+                        Objects.requireNonNull(file.getOriginalFilename())
                                 .substring(file.getOriginalFilename().lastIndexOf(".")), errorList, response);
             }
         } catch (IOException e) {
@@ -65,7 +59,7 @@ public final class EasyExcelExecutor {
         }
     }
 
-    public <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,
+    public static  <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,
                                                       List<M> data, HttpServletResponse response) {
         if (Objects.isNull(response)) {
             throw new RuntimeException("未绑定响应{@HttpServletResponse}参数");
@@ -79,8 +73,7 @@ public final class EasyExcelExecutor {
         } catch (UnsupportedEncodingException e) {
             log.error("导出文件名编码异常：", e);
         }
-        response
-                .setHeader("Content-disposition", "attachment;filename=" + fileNameEncoded + ".xlsx");
+        response.setHeader("Content-disposition", "attachment;filename=" + fileNameEncoded + ".xlsx");
         try (OutputStream outputStream = response.getOutputStream()) {
             if (StringUtils.isBlank(sheetName)) {
                 sheetName = "sheet0";

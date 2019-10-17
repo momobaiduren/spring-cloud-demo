@@ -1,13 +1,8 @@
 package com.demo.validation;
 
-import java.util.Date;
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import javax.xml.bind.ValidationException;
+import java.util.Date;
 
 /**
  * @author zhanglong
@@ -33,9 +28,8 @@ public class Demo {
 
 
     public static void main( String[] args ) throws ValidationException {
-        ValidationEntityResult<Demo> validate = ValidationManager.context()
-            .validationHandler(ValidationHandler.DEFULTVALIDATIONHANDLER).validateEntity(new Demo());
-        validate.isErrorThrowExp();
+        ValidationEntityResult<Demo> validate = ValidationManager.validation(validationResult -> {}).validateEntity(new Demo());
+//        validate.isErrorThrowExp();
         System.out.println(validate.get());
         System.out.println(validate.errorMsgs());
     }

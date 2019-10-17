@@ -1,15 +1,9 @@
 package com.demo.collection;
 
-import java.math.BigDecimal;
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.DoubleSummaryStatistics;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 import lombok.Data;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author zhanglong
@@ -76,7 +70,7 @@ public class SetStr {
     public static void main( String[] args ) {
         List<StatementAccount> statementAccounts = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            statementAccounts.add(new StatementAccount(Double.valueOf(100)));
+            statementAccounts.add(new StatementAccount(100d));
         }
         DoubleSummaryStatistics doubleSummaryStatistics = statementAccounts.stream()
             .collect(Collectors.summarizingDouble(StatementAccount::getNum));

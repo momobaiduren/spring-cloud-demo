@@ -43,4 +43,10 @@ public class HandlerEntity<T> {
         Assert.notNull(bigDecimalOperator, "BinaryOperator cloud not be null");
         biConsumer.accept(t, bigDecimalOperator.apply(function.apply(t), supplier.get()));
     }
+
+    public static void main(String[] args) {
+        System.out.println(Apple.class.getName());
+        System.out.println(Apple.class == Apple.class);
+    }
+
 }

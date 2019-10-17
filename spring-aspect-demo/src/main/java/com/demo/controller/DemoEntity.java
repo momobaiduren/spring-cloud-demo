@@ -17,5 +17,13 @@ public class DemoEntity extends ReadModel {
     private String username;
     @NotNull(message = "年龄不能为空")
     @ExcelProperty("年龄")
-    private String age;
+    private int age;
+
+    public DemoEntity() {
+    }
+
+    public DemoEntity(String username, @NotNull(message = "年龄不能为空") int age) {
+        this.username = username;
+        this.age = age;
+    }
 }

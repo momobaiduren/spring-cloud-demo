@@ -17,7 +17,7 @@ import java.util.List;
  * @date 2019-09-0513:49
  */
 @Slf4j
-public class EasyExcel {
+public class EasyExcel<T> {
 
     public static <M extends ReadModel> void read( InputStream inputStream, Class<M> clazz, ExcelEventListener excelEventListener ) {
         EasyExcelFactory.readBySax(inputStream, new Sheet(1, 1, clazz), excelEventListener);

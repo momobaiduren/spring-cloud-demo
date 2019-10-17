@@ -1,9 +1,8 @@
 package com.demo.validation;
 
+import javax.xml.bind.ValidationException;
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.bind.ValidationException;
-import lombok.Data;
 
 /**
  * @author zhanglong
@@ -12,10 +11,7 @@ import lombok.Data;
  */
 public class ValidationEntityResult<T> extends ValidationResult{
     public boolean hasError(){
-        if(errorMsgs.isEmpty()) {
-            return false;
-        }
-        return true;
+        return !errorMsgs.isEmpty();
     }
     private Map<String, String> errorMsgs = new HashMap<>();
 
@@ -28,7 +24,7 @@ public class ValidationEntityResult<T> extends ValidationResult{
         }
     }
     public String errorMsgs(){
-        StringBuffer errorMsg = new StringBuffer();
+        StringBuilder errorMsg = new StringBuilder();
         for (String filedName : errorMsgs.keySet()) {
             errorMsg.append(filedName).append(errorMsgs.get(filedName)).append(";");
         }
@@ -39,7 +35,7 @@ public class ValidationEntityResult<T> extends ValidationResult{
         return data;
     }
 
-    public Map<String, String> getErrorMsgs() {
+    Map<String, String> getErrorMsgs() {
         return errorMsgs;
     }
 
