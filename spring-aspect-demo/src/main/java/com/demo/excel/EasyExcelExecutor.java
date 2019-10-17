@@ -15,9 +15,8 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * @author zhanglong
+ * create by ZhangLong on 2019-08-31
  * @description: 执行器
- * @date 2019-08-3120:46
  */
 @Slf4j
 public final class EasyExcelExecutor {
@@ -25,21 +24,21 @@ public final class EasyExcelExecutor {
     private EasyExcelExecutor() {
     }
     /**
-     * create by ZhangLong on 2019/10/17
-     * @param easyExcelConsumer 导入数据的消费处理
+     * create by ZhangLong on 2019-08-31
+     * @param excleDataConsumer 导入数据的消费处理 并且ExcleData非空
      * description 导入
      */
-    public static  <M extends ReadModel> void importExcel(Consumer<EasyExcel<M>> easyExcelConsumer, final MultipartFile file, final Class<M> clazz) {
-        importExcelAndExportErrorData(easyExcelConsumer, file, clazz, null);
+    public static  <M extends ReadModel> void importExcel(Consumer<ExcleData<M>> excleDataConsumer, final MultipartFile file, final Class<M> clazz) {
+        importExcelAndExportErrorData(excleDataConsumer, file, clazz, null);
     }
     /**
-     * create by ZhangLong on 2019/10/17
-     * @param easyExcelConsumer 导入数据的消费处理
+     * create by ZhangLong on 2019-08-31
+     * @param excleDataConsumer 导入数据的消费处理 并且ExcleData非空
      * @param response 不为null实现导出处理
      * description 导入
      */
     @SuppressWarnings("all")
-    public static  <M extends ReadModel> void importExcelAndExportErrorData(Consumer<EasyExcel<M>> easyExcelConsumer, final MultipartFile file,
+    public static  <M extends ReadModel> void importExcelAndExportErrorData(Consumer<ExcleData<M>> excleDataConsumer, final MultipartFile file,
                                                                             final Class<M> clazz,final HttpServletResponse response) {
         ExcleData<M> excleData = new ExcleData<>();
         if (Objects.isNull(file)) {
@@ -47,7 +46,7 @@ public final class EasyExcelExecutor {
         }
         try (InputStream inputStream = file.getInputStream()) {
             // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
-            EasyExcel.read(inputStream, clazz, new ExcelEventListener(easyExcelConsumer, excleData));
+            EasyExcel.read(inputStream, clazz, new ExcelEventListener(excleDataConsumer, excleData));
             if (Objects.nonNull(response)) {
                 List<M> errorList = (List<M>) excleData.errorData();
                 exportResponse(clazz, "error_" + file.getOriginalFilename(),
@@ -58,7 +57,10 @@ public final class EasyExcelExecutor {
             log.error(e.getMessage());
         }
     }
-
+    /**
+     * create by ZhangLong on 2019-08-31
+     * description 导出数据
+     */
     public static  <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,
                                                       List<M> data, HttpServletResponse response) {
         if (Objects.isNull(response)) {

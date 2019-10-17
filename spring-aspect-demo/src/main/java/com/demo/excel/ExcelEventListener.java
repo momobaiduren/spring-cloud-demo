@@ -21,9 +21,10 @@ public class ExcelEventListener<M extends ReadModel> extends AnalysisEventListen
 
 
     private ExcleData<M> excleData;
-    private Consumer<ExcleData<M>> easyExcelConsumer;
+    private Consumer<ExcleData<M>> excleDataConsumer;
 
-    ExcelEventListener(final Consumer<EasyExcel<? extends ReadModel>> easyExcelConsumer, ExcleData<M> excleData) {
+    ExcelEventListener(final Consumer<ExcleData<M>> excleDataConsumer, ExcleData<M> excleData) {
+        this.excleDataConsumer = excleDataConsumer;
         this.excleData = excleData;
     }
 
@@ -48,9 +49,8 @@ public class ExcelEventListener<M extends ReadModel> extends AnalysisEventListen
                         excleData.errorData().size());
         log.warn(logMsg);
         long startTime = System.currentTimeMillis();
-        if (Objects
-                .nonNull(easyExcelConsumer)) {
-            easyExcelConsumer.accept(excleData);
+        if (Objects.nonNull(excleDataConsumer)) {
+            excleDataConsumer.accept(excleData);
         }
         long endTime = System.currentTimeMillis();
         log.warn(String.format("表格数据处理时长(ms):%d", endTime - startTime));

@@ -27,8 +27,8 @@ public class ExcelDemoController {
 
     @PostMapping("importData")
     public String importExcel(MultipartFile file, HttpServletResponse response) throws RuntimeException {
-//        EasyExcelExecutor.importExcel(demoEasyExcelHandler,file, DemoEntity.class);
-        EasyExcelExecutor.importExcelAndExportErrorData(demoEasyExcelHandler,file,DemoEntity.class,response,true);
+        EasyExcelExecutor.importExcel(easyExcel -> {demoEasyExcelHandler.handlerData(easyExcel);},file, DemoEntity.class);
+//        EasyExcelExecutor.importExcelAndExportErrorData(easyExcel -> {System.out.println("不做任何处理");},file,DemoEntity.class,response);
         //穿到后台进行处理 这里直接返回了
         return "";
     }

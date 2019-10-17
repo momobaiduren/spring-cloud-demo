@@ -9,11 +9,10 @@ import org.springframework.stereotype.Component;
  * @date 2019-08-3122:23
  */
 @Component
-public class DemoEasyExcelHandler implements EasyExcelHandler {
-    @Override
-    public void handlerData(ExcleData dataHandler) {
-        System.out.println(dataHandler.get());
+public class DemoEasyExcelHandler {
+    public void handlerData(ExcleData<DemoEntity> excleData) {
+        System.out.println(excleData.get());
         System.out.println("---------------------------");
-        System.out.println(dataHandler.errorData());
+        System.out.println(excleData.errorData());
     }
 }
