@@ -21,17 +21,15 @@ public class ExcleData<M extends ReadModel> {
         return errorData;
     }
 
-    public ExcleData dataAdd(M model ) {
+    public void dataAdd(M model ) {
         data.add(model);
-        return this;
     }
 
-    public ExcleData errorMsgAdd(M model, String errMsg ) {
+    public void errorMsgAdd(M model, String errMsg ) {
         if (data.contains(model)) {
             data.remove(model);
         }
         model.setErrorMsg(errMsg);
         errorData.add(model);
-        return this;
     }
 }
