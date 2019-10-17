@@ -21,7 +21,7 @@ import java.util.function.Consumer;
 /**
  * create by ZhangLong on 2019-08-31
  *
- * @description: 执行器
+ * @description: 执行器 直接调用方法
  */
 @Slf4j
 public final class EasyExcelExecutor {
