@@ -55,6 +55,8 @@ public final class EasyExcelExecutor {
         }
         try (InputStream inputStream = file.getInputStream()) {
             // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
+            //新版本方法
+//            EasyExcel.read(inputStream,clazz, new ExcelEventListener(excleDataConsumer,excleData));
             EasyExcelFactory.readBySax(inputStream, new Sheet(1, 1, clazz),
                     new ExcelEventListener(excleDataConsumer, excleData));
             if (Objects.nonNull(response)) {
@@ -72,6 +74,7 @@ public final class EasyExcelExecutor {
      * create by ZhangLong on 2019-08-31
      * description 导出数据
      */
+    @SuppressWarnings("all")
     public static <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,
                                                              List<M> data, HttpServletResponse response) {
         if (Objects.isNull(response)) {
@@ -91,6 +94,8 @@ public final class EasyExcelExecutor {
             if (StringUtils.isBlank(sheetName)) {
                 sheetName = "sheet0";
             }
+            //新版本方法
+//            EasyExcel.write(outputStream, clazz, sheetName, data);
             ExcelWriter writer = new ExcelWriter(outputStream, ExcelTypeEnum.XLSX, true);
             Sheet sheet1 = new Sheet(1, 0, clazz, sheetName, null);
             sheet1.setAutoWidth(true);
