@@ -6,16 +6,17 @@ import java.util.Map;
 
 /**
  * @author zhanglong
- * @description: 描述
+ * @description: 校验单个对象
  * @date 2019-08-3114:44
  */
 public class ValidationEntityResult<T> extends ValidationResult{
+
+    private Map<String, String> errorMsgs = new HashMap<>();
+    private T data;
+
     public boolean hasError(){
         return !errorMsgs.isEmpty();
     }
-    private Map<String, String> errorMsgs = new HashMap<>();
-
-    private T data;
 
     @Override
     public void isErrorThrowExp() throws ValidationException {
@@ -25,9 +26,9 @@ public class ValidationEntityResult<T> extends ValidationResult{
     }
     public String errorMsgs(){
         StringBuilder errorMsg = new StringBuilder();
-        for (String filedName : errorMsgs.keySet()) {
-            errorMsg.append(filedName).append(errorMsgs.get(filedName)).append(";");
-        }
+        errorMsgs.forEach((key, value) ->{
+            errorMsg.append(key).append(value).append(";");
+        });
         return errorMsg.toString();
     }
 
