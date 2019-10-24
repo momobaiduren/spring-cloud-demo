@@ -17,6 +17,7 @@ import java.net.URLEncoder;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * create by ZhangLong on 2019-08-31
@@ -63,7 +64,7 @@ public final class EasyExcelExecutor {
                 List<M> errorList = (List<M>) excleData.errorData();
                 exportResponse(clazz, "error_" + file.getOriginalFilename(),
                         Objects.requireNonNull(file.getOriginalFilename())
-                                .substring(file.getOriginalFilename().lastIndexOf(".")), errorList, response);
+                                .substring(file.getOriginalFilename().lastIndexOf(".")), klass -> excleData.errorData(), response);
             }
         } catch (IOException e) {
             log.error(e.getMessage());
@@ -76,7 +77,8 @@ public final class EasyExcelExecutor {
      */
     @SuppressWarnings("all")
     public static <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,
-                                                             List<M> data, HttpServletResponse response) {
+                                                             Function<Class<M>, List<M>> dataListFunction, HttpServletResponse response) {
+        Objects.requireNonNull(dataListFunction,"dataListFunction could not be null");
         if (Objects.isNull(response)) {
             throw new RuntimeException("未绑定响应{@HttpServletResponse}参数");
         }
@@ -96,13 +98,16 @@ public final class EasyExcelExecutor {
             }
             //新版本方法
 //            EasyExcel.write(outputStream, clazz, sheetName, data);
-            ExcelWriter writer = new ExcelWriter(outputStream, ExcelTypeEnum.XLSX, true);
-            Sheet sheet1 = new Sheet(1, 0, clazz, sheetName, null);
-            sheet1.setAutoWidth(true);
-            writer.write(data, sheet1);
-            writer.finish();
-            outputStream.flush();
-        } catch (IOException e) {
+            List<M> dataList = dataListFunction.apply(clazz);
+            if (Objects.nonNull(dataList)){
+                ExcelWriter writer = new ExcelWriter(outputStream, ExcelTypeEnum.XLSX, true);
+                Sheet sheet1 = new Sheet(1, 0, clazz, sheetName, null);
+                sheet1.setAutoWidth(true);
+                writer.write(dataList, sheet1);
+                writer.finish();
+                outputStream.flush();
+            }
+        } catch (Exception e) {
             log.error(e.getMessage());
         }
     }

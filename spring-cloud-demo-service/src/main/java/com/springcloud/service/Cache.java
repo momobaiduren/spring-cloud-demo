@@ -1,4 +1,4 @@
-package com.demo.cache;
+package com.springcloud.service;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,14 +8,11 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Cache<K, V> {
 
-    void cache(K key, V val, Long expire, TimeUnit timeUnit);
+    void cache(K key, V val, long expire, TimeUnit timeUnit);
 
     void dealSoftCache();
 
      V get(K key);
 
-    default V get(K key, String param){
-        System.out.println(param);
-        return get(key);
-    }
+
 }
