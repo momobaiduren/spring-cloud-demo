@@ -1,17 +1,16 @@
 package com.springcloud.interceptor;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
- * @author longweier
- * @version 1.0
- * @description 跨域请求类
- * @date 2019/6/6 9:23
+ * @author  zhanglong on 2019/6/6  10:23 上午
+ * @version V1.0 解决跨域问题
  */
 @Component
 public class CorsInterceptor implements HandlerInterceptor {

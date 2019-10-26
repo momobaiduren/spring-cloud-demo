@@ -1,34 +1,37 @@
 package com.springcloud.validation;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.groups.Default;
+import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * @author zhanglong
- * @description: 描述
+ * @description:
  * @date 2019-08-3112:33
  */
 public class ValidationExecutor {
 
-    private ValidationHandler validationHandler;
+    private Consumer<ValidationResult> consumer;
 
-    public ValidationExecutor(ValidationHandler validationHandler){
-        this.validationHandler = validationHandler;
+    public ValidationExecutor(Consumer<ValidationResult> consumer){
+        this.consumer = consumer;
     }
 
-    private Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+    public <T> ValidationListResult<T> validateList(List<T> dataList){
+        return validateList(dataList,null);
+    }
 
-    public <T> ValidationListResult<T> validateList( List<T> dataList ) {
-        ValidationListResult<T> result = new ValidationListResult();
+    public <T> ValidationListResult<T> validateList(List<T> dataList, Validator validator) {
+        if (Objects.isNull(validator)){
+            validator = Validation.buildDefaultValidatorFactory().getValidator();
+        }
+        ValidationListResult<T> result = new ValidationListResult<>();
+        Validator finalValidator = validator;
         dataList.forEach(t -> {
-            Set<ConstraintViolation<T>> set = validator.validate(t, Default.class);
+            Set<ConstraintViolation<T>> set = finalValidator.validate(t, Default.class);
             if (set != null && set.size() != 0) {
                 Map<String, String> errorMsg = new HashMap<>();
                 for (ConstraintViolation<T> cv : set) {
@@ -46,12 +49,19 @@ public class ValidationExecutor {
                 }
             }
         });
-        validationHandler.resultHandler(result);
+        if (Objects.nonNull(consumer)){
+            consumer.accept(result);
+        }
         return result;
     }
-
-    public <T> ValidationEntityResult<T> validateEntity( T data ) {
-        ValidationEntityResult<T> validationEntityResult = new ValidationEntityResult();
+    public <T> ValidationEntityResult<T> validateEntity( T data){
+        return validateEntity(data, null);
+    }
+    public <T> ValidationEntityResult<T> validateEntity( T data, Validator validator) {
+        if (Objects.isNull(validator)){
+            validator = Validation.buildDefaultValidatorFactory().getValidator();
+        }
+        ValidationEntityResult<T> validationEntityResult = new ValidationEntityResult<>();
         validationEntityResult.setData(data);
         Set<ConstraintViolation<T>> constraintViolationSet = validator.validate(data, Default.class);
         Optional.ofNullable(constraintViolationSet).ifPresent(constraintViolations -> constraintViolations.forEach(constraintViolation ->{
@@ -62,7 +72,9 @@ public class ValidationExecutor {
                 validationEntityResult.getErrorMsgs().put(constraintViolation.getPropertyPath().toString(), constraintViolation.getMessage());
             }
         }));
-        validationHandler.resultHandler(validationEntityResult);
+        if (Objects.nonNull(consumer)){
+            consumer.accept(validationEntityResult);
+        }
         return validationEntityResult;
     }
 

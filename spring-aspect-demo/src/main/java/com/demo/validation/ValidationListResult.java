@@ -15,8 +15,8 @@ import java.util.Map.Entry;
  * @description: 描述
  * @date 2019-08-3113:48
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class ValidationListResult<T> extends ValidationResult{
     private List<T> successData = new ArrayList<>();
 

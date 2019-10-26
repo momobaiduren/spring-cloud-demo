@@ -10,14 +10,17 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9100/eureka/
+      defaultZone: http://${eureka.instance.ip-address}:9100/eureka/
 #   是否在注册表上显示
     registerWithEureka: false
 #   是否可以获取注册表上其他应用网络信息
     fetchRegistry: true
-#  instance:
-#    leaseRenewalIntervalInSeconds: 10
-#    health-check-url-path: /actuator/health
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    ip-address: 118.25.55.79
+# 注册时使用ip而不是主机名
+    prefer-ip-address: true
 #    metadata-map:
 #      user.name: ${spring.security.user.name}
 #      user.password: ${spring.security.user.password}

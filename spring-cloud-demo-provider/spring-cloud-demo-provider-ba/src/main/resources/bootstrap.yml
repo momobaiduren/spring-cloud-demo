@@ -14,9 +14,11 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9100/eureka/
+      defaultZone: http://${eureka.instance.ip-address}:9100/eureka/
   instance:
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    ip-address: 118.25.55.79
+# 注册时使用ip而不是主机名
     prefer-ip-address: true
 
 #spring.servlet.multipart.max-file-size=10MB

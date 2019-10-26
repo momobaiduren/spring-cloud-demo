@@ -54,50 +54,6 @@
 
   <build>
     <plugins>
-<!--      &lt;!&ndash;使用docker-maven-plugin插件&ndash;&gt;-->
-<!--      <plugin>-->
-<!--        <groupId>com.spotify</groupId>-->
-<!--        <artifactId>docker-maven-plugin</artifactId>-->
-<!--        <version>1.0.0</version>-->
-
-<!--        &lt;!&ndash;将插件绑定在某个phase执行&ndash;&gt;-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>build-image</id>-->
-<!--            &lt;!&ndash;将插件绑定在package这个phase上。也就是说，用户只需执行mvn package ，就会自动执行mvn docker:build&ndash;&gt;-->
-<!--            <phase>package</phase>-->
-<!--            <goals>-->
-<!--              <goal>build</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-
-<!--        <configuration>-->
-<!--          &lt;!&ndash;指定生成的镜像名&ndash;&gt;-->
-<!--          <imageName>${docker.image.prefix}/${project.artifactId}</imageName>-->
-<!--          &lt;!&ndash;指定标签&ndash;&gt;-->
-<!--          <imageTags>-->
-<!--            <imageTag>latest</imageTag>-->
-<!--          </imageTags>-->
-<!--          &lt;!&ndash; 指定 Dockerfile 路径&ndash;&gt;-->
-<!--          <dockerDirectory>${project.basedir}</dockerDirectory>-->
-
-<!--          &lt;!&ndash;指定远程 docker api地址&ndash;&gt;-->
-<!--&lt;!&ndash;          <dockerHost>tcp://localhost:2375</dockerHost>&ndash;&gt;-->
-
-<!--          &lt;!&ndash; 这里是复制 jar 包到 docker 容器指定目录配置 &ndash;&gt;-->
-<!--          <resources>-->
-<!--            <resource>-->
-<!--              <targetPath>/</targetPath>-->
-<!--              &lt;!&ndash;jar 包所在的路径  此处配置的 即对应 target 目录&ndash;&gt;-->
-<!--              <directory>${project.build.directory}</directory>-->
-<!--              &lt;!&ndash; 需要包含的 jar包 ，这里对应的是 Dockerfile中添加的文件名　&ndash;&gt;-->
-<!--              <include>${project.artifactId}-${project.version}.jar</include>-->
-<!--            </resource>-->
-<!--          </resources>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
-
 
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -110,7 +66,7 @@
         <configuration>
           <repository>${docker.image.prefix}/${project.artifactId}</repository>
           <buildArgs>
-            <JAR_FILE>target/${project.artifactId}-${project.version}.jar</JAR_FILE>
+            <JAR_FILE>/target/${project.artifactId}-${project.version}.jar</JAR_FILE>
           </buildArgs>
         </configuration>
       </plugin>

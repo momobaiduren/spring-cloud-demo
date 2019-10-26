@@ -12,44 +12,12 @@
   <artifactId>spring-cloud-demo-core</artifactId>
 
   <dependencies>
-    <!-- 安全认证 -->
-    <!--    <dependency>-->
-    <!--      <groupId>org.springframework.boot</groupId>-->
-    <!--      <artifactId>spring-boot-starter-security</artifactId>-->
-    <!--    </dependency>-->
-    <!--暴露各种指标-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.springframework.boot</groupId>-->
-    <!--      <artifactId>spring-boot-starter-actuator</artifactId>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.springframework.cloud</groupId>-->
-    <!--      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
-    <!--    </dependency>-->
-    <!-- 监控中心管理页面 -->
-    <!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-server -->
-    <!--    <dependency>-->
-    <!--      <groupId>de.codecentric</groupId>-->
-    <!--      <artifactId>spring-boot-admin-starter-server</artifactId>-->
-    <!--      <version>2.1.6</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>de.codecentric</groupId>-->
-    <!--      <artifactId>spring-boot-admin-server-ui</artifactId>-->
-    <!--      <version>2.1.6</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.springframework.boot</groupId>-->
-    <!--      <artifactId>spring-boot-starter-webflux</artifactId>-->
-    <!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-starter-web</artifactId>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.jolokia</groupId>-->
-<!--      <artifactId>jolokia-core</artifactId>-->
-<!--    </dependency>-->
+    <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>easyexcel</artifactId>
+      <version>2.0.0-beta1</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
@@ -99,82 +67,13 @@
       <artifactId>validation-api</artifactId>
       <version>2.0.1.Final</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.4</version>
+    </dependency>
   </dependencies>
 
 
 </project>
-
-
-  <!--<?xml version="1.0" encoding="UTF-8"?>-->
-  <!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
-  <!--  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-  <!--  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
-  <!--  <parent>-->
-  <!--    <artifactId>spring-cloud-demo</artifactId>-->
-  <!--    <groupId>com.springcloud</groupId>-->
-  <!--    <version>1.0</version>-->
-  <!--  </parent>-->
-  <!--  <modelVersion>4.0.0</modelVersion>-->
-  <!--  <artifactId>spring-cloud-boot-core</artifactId>-->
-  <!--  <dependencies>-->
-  <!--    &lt;!&ndash;表示为web工程&ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-boot-starter-web</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--    <dependency>-->
-  <!--      <groupId>org.springframework.boot</groupId>-->
-  <!--      <artifactId>spring-boot-starter-test</artifactId>-->
-  <!--    </dependency>-->
-  <!--    &lt;!&ndash; 安全认证 &ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-boot-starter-security</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--    &lt;!&ndash;暴露各种指标&ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-boot-starter-actuator</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>org.springframework.cloud</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--    &lt;!&ndash; 监控中心管理页面 &ndash;&gt;-->
-  <!--    &lt;!&ndash; https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-server &ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>de.codecentric</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-boot-admin-starter-server</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <version>2.1.6</version>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>de.codecentric</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-boot-admin-server-ui</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <version>2.1.6</version>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;    <dependency>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <artifactId>spring-boot-starter-webflux</artifactId>&ndash;&gt;-->
-  <!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
-  <!--    <dependency>-->
-  <!--      <groupId>org.jolokia</groupId>-->
-  <!--      <artifactId>jolokia-core</artifactId>-->
-  <!--    </dependency>-->
-  <!--    <dependency>-->
-  <!--      <groupId>org.projectlombok</groupId>-->
-  <!--      <artifactId>lombok</artifactId>-->
-  <!--    </dependency>-->
-  <!--    <dependency>-->
-  <!--      <groupId>io.springfox</groupId>-->
-  <!--      <artifactId>springfox-swagger2</artifactId>-->
-  <!--      <version>2.9.2</version>-->
-  <!--    </dependency>-->
-  <!--    <dependency>-->
-  <!--      <groupId>com.alibaba</groupId>-->
-  <!--      <artifactId>druid</artifactId>-->
-  <!--      <version>1.1.18</version>-->
-  <!--      <scope>compile</scope>-->
-  <!--    </dependency>-->
-  <!--  </dependencies>-->
-  <!--  -->
-  <!--</project>-->

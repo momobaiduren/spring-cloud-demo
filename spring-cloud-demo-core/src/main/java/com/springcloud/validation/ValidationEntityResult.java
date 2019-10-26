@@ -1,24 +1,22 @@
 package com.springcloud.validation;
 
+import javax.xml.bind.ValidationException;
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.bind.ValidationException;
 
 /**
  * @author zhanglong
- * @description: 描述
+ * @description: 校验单个对象
  * @date 2019-08-3114:44
  */
 public class ValidationEntityResult<T> extends ValidationResult{
-    public boolean hasError(){
-        if(errorMsgs.isEmpty()) {
-            return false;
-        }
-        return true;
-    }
-    private Map<String, String> errorMsgs = new HashMap<>();
 
+    private Map<String, String> errorMsgs = new HashMap<>();
     private T data;
+
+    public boolean hasError(){
+        return !errorMsgs.isEmpty();
+    }
 
     @Override
     public void isErrorThrowExp() throws ValidationException {
@@ -27,10 +25,10 @@ public class ValidationEntityResult<T> extends ValidationResult{
         }
     }
     public String errorMsgs(){
-        StringBuffer errorMsg = new StringBuffer();
-        for (String filedName : errorMsgs.keySet()) {
-            errorMsg.append(filedName).append(errorMsgs.get(filedName)).append(";");
-        }
+        StringBuilder errorMsg = new StringBuilder();
+        errorMsgs.forEach((key, value) ->{
+            errorMsg.append(key).append(value).append(";");
+        });
         return errorMsg.toString();
     }
 
@@ -38,7 +36,7 @@ public class ValidationEntityResult<T> extends ValidationResult{
         return data;
     }
 
-    public Map<String, String> getErrorMsgs() {
+    Map<String, String> getErrorMsgs() {
         return errorMsgs;
     }
 

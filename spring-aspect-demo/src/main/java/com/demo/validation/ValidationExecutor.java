@@ -24,7 +24,7 @@ public class ValidationExecutor {
         return validateList(dataList,null);
     }
 
-    public <T> ValidationListResult<T> validateList(List<T> dataList,Validator validator) {
+    public <T> ValidationListResult<T> validateList(List<T> dataList, Validator validator) {
         if (Objects.isNull(validator)){
             validator = Validation.buildDefaultValidatorFactory().getValidator();
         }
