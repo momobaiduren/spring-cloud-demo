@@ -2,7 +2,7 @@ package com.springcloud.easyExcel.export;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.yh.csx.settle.easyExcel.ExcelModel;
+import com.springcloud.easyExcel.ExcelModel;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 

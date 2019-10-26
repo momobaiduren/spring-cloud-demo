@@ -25,12 +25,16 @@ public class CacheNode<K, V> {
     * description 缓存的值
     */
    private V val;
-   /**
+    /**
+     * description 缓存版本问题，防止版本不一致
+     */
+    private long version;
+    /**
      * description 缓存的截止日期
      */
     private LocalDateTime deadline;
 
-   /**
+    /**
      * description 缓存时间单位 默认是秒
      */
     private TimeUnit timeUnit = TimeUnit.SECONDS;

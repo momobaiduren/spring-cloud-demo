@@ -25,7 +25,7 @@
 //
 //@Aspect
 //@Component
-//public class UserManagerAuthorityAspect {
+//public class PermissionAuthorityAspect {
 //
 //    @Value("${permission.auth.enable}")
 //    private boolean enableAuth = false;
@@ -54,7 +54,7 @@
 //            MethodSignature signature = (MethodSignature) pjp.getSignature();
 //            Method method = signature.getMethod();
 //            if (Objects.nonNull(method)) {
-//                PermissionAuthority permissionAuthority = method.getAnnotation(PermissionAuthority.class);
+//                com.springcloud.service.permission.PermissionAuthority permissionAuthority = method.getAnnotation(com.springcloud.service.permission.PermissionAuthority.class);
 //                if(Objects.nonNull(permissionAuthority)) {
 //                    PermissionAuthorityEnum[] authorityPropertyNames = permissionAuthority.authorityPropertyNames();
 //                    if (authorityPropertyNames.length > 0) {

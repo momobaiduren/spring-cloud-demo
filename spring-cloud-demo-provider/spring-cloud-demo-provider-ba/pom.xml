@@ -11,12 +11,6 @@
 
   <artifactId>spring-cloud-demo-provider-ba</artifactId>
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>easyexcel</artifactId>
-      <version>2.0.0-beta1</version>
-    </dependency>
     <dependency>
       <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-core</artifactId>
@@ -37,23 +31,6 @@
       <artifactId>spring-cloud-starter-sleuth</artifactId>
     </dependency>
 
-<!--    <dependency>-->
-<!--      <groupId>io.springfox</groupId>-->
-<!--      <artifactId>springfox-swagger2</artifactId>-->
-<!--      <version>2.9.2</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--      <groupId>io.springfox</groupId>-->
-<!--      <artifactId>springfox-swagger-ui</artifactId>-->
-<!--      <version>2.9.2</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--      <groupId>com.alibaba</groupId>-->
-<!--      <artifactId>druid-spring-boot-starter</artifactId>-->
-<!--      <version>1.1.10</version>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-api</artifactId>
@@ -64,11 +41,6 @@
       <artifactId>spring-cloud-demo-service1</artifactId>
       <version>1.0</version>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.cloud</groupId>-->
-<!--      <artifactId>spring-cloud-starter-openfeign</artifactId>-->
-<!--    </dependency>-->
-
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>

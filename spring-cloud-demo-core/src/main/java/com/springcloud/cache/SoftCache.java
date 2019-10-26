@@ -25,13 +25,18 @@ public class SoftCache<K, V> implements Cache<K,V>{
      */
     private final SoftReference<Map<K, CacheNode<K, V>>> softReferenceCache = new SoftReference<>(new ConcurrentHashMap<>());
 
-    @Override
     public void cache(K key, V val, long expire){
-        cache(key, val, expire, TimeUnit.SECONDS);
+        cache(key, val, null, expire, TimeUnit.SECONDS);
     }
 
     @Override
-    public void cache(K key, V val, long expire, TimeUnit timeUnit){
+    public void cache(K key, V val, Long version, long expire){
+        cache(key, val, version, expire, TimeUnit.SECONDS);
+    }
+
+
+    @Override
+    public void cache(K key, V val,Long version, long expire, TimeUnit timeUnit){
         Objects.requireNonNull(key,"key could not be null");
         Objects.requireNonNull(val,"val could not be null");
         LocalDateTime expireTime = LocalDateTime.now();
@@ -50,13 +55,13 @@ public class SoftCache<K, V> implements Cache<K,V>{
                 break;
         }
         CacheNode<K, V> kvCacheNode = Objects.requireNonNull(softReferenceCache.get()).get(key);
-        if (Objects.nonNull(kvCacheNode)){
+        if (Objects.nonNull(kvCacheNode) && version == kvCacheNode.getVersion()){
             kvCacheNode.setTimeUnit(timeUnit);
             kvCacheNode.setVal(val);
             kvCacheNode.setDeadline(expireTime);
             Objects.requireNonNull(softReferenceCache.get()).put(key,kvCacheNode);
         }else {
-            CacheNode<K, V> cacheNode =  new CacheNode<>(key, val, expireTime, timeUnit);
+            CacheNode<K, V> cacheNode =  new CacheNode<>(key, val, version, expireTime, timeUnit);
             Objects.requireNonNull(softReferenceCache.get()).put(key, cacheNode);
         }
     }

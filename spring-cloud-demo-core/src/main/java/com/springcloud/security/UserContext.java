@@ -10,10 +10,13 @@ import java.util.concurrent.TimeUnit;
  * @author ZhangLong on 2019/10/26  10:38 上午
  * @version V1.0
  */
-public class UserContext {
+public final class UserContext {
     private static final ThreadLocal<SecurityUser> localUserContext = new ThreadLocal<>();
 
     private static final Cache<String, SecurityUser> tokenUserCache = new SoftCache<>();
+
+    private UserContext() {}
+
     /**
      * create by ZhangLong on 2019/10/26
      * description 本地缓存数据（线程内）
@@ -38,7 +41,7 @@ public class UserContext {
             synchronized (UserContext.class) {
                 if (Objects.isNull(tokenUserCache.get(token))){
                     SecurityUser securityUser = userTokenService.getUser(token);
-                    tokenUserCache.cache(token, securityUser, 30, TimeUnit.MINUTES);
+                    tokenUserCache.cache(token, securityUser, 1L,30L, TimeUnit.MINUTES);
                     localUserContext.set(securityUser);
                 }
             }

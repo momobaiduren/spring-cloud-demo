@@ -1,7 +1,7 @@
 package com.springcloud.easyExcel.export;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.yh.csx.settle.easyExcel.ExcelModel;
+import com.springcloud.easyExcel.ExcelModel;
 import lombok.Data;
 
 import java.math.BigDecimal;
