@@ -26,10 +26,6 @@ public class CacheNode<K, V> {
     */
    private V val;
     /**
-     * description 缓存版本问题，防止版本不一致
-     */
-    private long version;
-    /**
      * description 缓存的截止日期
      */
     private LocalDateTime deadline;

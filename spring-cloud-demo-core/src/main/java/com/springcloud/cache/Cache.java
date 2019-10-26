@@ -8,9 +8,9 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Cache<K, V> {
 
-    void cache(K key, V val, Long version, long expire);
+    void cache(K key, V val, long expire);
 
-    void cache(K key, V val, Long version, long expire, TimeUnit timeUnit);
+    void cache(K key, V val, long expire, TimeUnit timeUnit);
 
      V get(K key);
 
