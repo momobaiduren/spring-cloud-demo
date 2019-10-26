@@ -4,7 +4,6 @@ import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.IJobHandler;
 import com.xxl.job.core.handler.annotation.JobHandler;
 import com.xxl.job.core.log.XxlJobLogger;
-import java.util.concurrent.TimeUnit;
 import org.springframework.stereotype.Component;
 
 
@@ -29,8 +28,9 @@ public class DemoJobHandler extends IJobHandler {
 
 		for (int i = 0; i < 5; i++) {
 			XxlJobLogger.log("beat at:" + i);
-			TimeUnit.SECONDS.sleep(2);
+//			TimeUnit.SECONDS.sleep(2);
 		}
+//		SUCCESS.setContent();
 		return SUCCESS;
 	}
 

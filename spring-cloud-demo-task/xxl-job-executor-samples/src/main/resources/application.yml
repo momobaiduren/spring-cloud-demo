@@ -3,10 +3,6 @@
 server:
   port: 7300
 
-# log config
-logging:
-  config: classpath:logback.xml
-
 ### 调度中心部署跟地址 [选填]：如调度中心集群部署存在多个地址则用逗号分隔。执行器将会使用该地址进行"执行器心跳注册"和"任务结果回调"；为空则关闭自动注册；
 xxl:
   job:
@@ -32,10 +28,11 @@ xxl:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9100/eureka/
-  instance:
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    prefer-ip-address: true
+      defaultZone: http://118.25.55.79:9100/eureka/
+#    取消注册发现
+    registerWithEureka: false
+#    获取注册中心信息
+    fetchRegistry: true
 
 spring:
   application:

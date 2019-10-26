@@ -28,8 +28,8 @@ spring:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/xxl-job?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://www.zhanglong.org.cn:3306/xxl-job?autoCommit=true&useUnicode=true&autoReconnect=true&characterEncoding=utf8
       username: root
       password: zl12345
       initial-size: 5
@@ -51,7 +51,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
       # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
       filters: stat,wall,config
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       useGlobalDataSourceStat: true
       test-while-idle: true
       #通过connectProperties属性来打开mergeSql功能；慢SQL记录
@@ -72,6 +72,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
+
 xxl:
   job:
     login:
@@ -81,14 +82,4 @@ xxl:
     accessToken:
     i18n:
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9100/eureka/
-    #从注册中心拉去配置中心网络信息
-    fetch-registry: true
-    #不需要注册到注册中心
-    register-with-eureka: false
-  instance:
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    prefer-ip-address: true
+

@@ -16,7 +16,7 @@ eureka:
   instance:
     instance-id: ${eureka.instance.ip-address}:${server.port}
     ip-address: 118.25.55.79
-#    prefer-ip-address: true
+    prefer-ip-address: true
 
 
 
