@@ -62,6 +62,7 @@
     <module>spring-cloud-demo-business</module>
 <!--    项目包版本统一管理-->
     <module>spring-cloud-demo-dependencies</module>
+<!--    业务通用模块抽象层-->
     <module>spring-cloud-demo-component</module>
   </modules>
 

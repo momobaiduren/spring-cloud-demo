@@ -52,10 +52,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId></groupId>-->
-<!--            <artifactId>spring-boot</artifactId>-->
-<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/ma.glasnost.orika/orika-core -->
+        <dependency>
+            <groupId>ma.glasnost.orika</groupId>
+            <artifactId>orika-core</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
