@@ -14,29 +14,22 @@
         <dependency>
             <groupId>com.springcloud</groupId>
             <artifactId>spring-cloud-demo-core</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.commons</groupId>-->
-<!--            <artifactId>commons-collections4</artifactId>-->
-<!--            <version>4.4</version>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>com.springcloud</groupId>
             <artifactId>spring-cloud-demo-api</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.springcloud</groupId>
             <artifactId>spring-cloud-demo-persist</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.springcloud</groupId>
             <artifactId>spring-cloud-demo-datasource</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

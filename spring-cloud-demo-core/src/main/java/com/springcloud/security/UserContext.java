@@ -41,7 +41,7 @@ public final class UserContext {
             synchronized (UserContext.class) {
                 if (Objects.isNull(tokenUserCache.get(token))){
                     SecurityUser securityUser = userTokenService.getUser(token);
-                    tokenUserCache.cache(token, securityUser, 1L,30L, TimeUnit.MINUTES);
+                    tokenUserCache.cache(token, securityUser, 30L, TimeUnit.MINUTES);
                     localUserContext.set(securityUser);
                 }
             }

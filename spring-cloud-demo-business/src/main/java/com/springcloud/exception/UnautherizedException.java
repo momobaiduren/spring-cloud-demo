@@ -5,7 +5,8 @@ package com.springcloud.exception;
  * 
  * @author Bruce.Yang
  */
-public class UnautherizedException extends ServiceException {
+public class
+UnautherizedException extends ServiceException {
 
 	private static final long serialVersionUID = -6024574197533635147L;
 

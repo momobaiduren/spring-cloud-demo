@@ -1,10 +1,8 @@
 package com.springcloud.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springcloud.auto.entity.AccountInfo;
 import com.springcloud.auto.mapper.AccountInfoMapper;
-import com.springcloud.datasource.annotation.WriteDS;
 import com.springcloud.service.IAccountInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +20,6 @@ public class AccountInfoServiceImpl implements IAccountInfoService {
   @Autowired
   private AccountInfoMapper accountInfoMapper;
   @Override
-  @WriteDS
   public AccountInfo jianAccount(AccountInfo accountInfo) {
     QueryWrapper<AccountInfo> qw = new QueryWrapper<>();
     qw.eq("user_Name",accountInfo.getUserName());

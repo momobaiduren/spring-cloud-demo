@@ -1,6 +1,5 @@
 package com.springcloud.computer;
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -10,7 +9,6 @@ import java.util.concurrent.*;
  * @version V1.0
  * @date 2019-09-12 14:33
  */
-@Slf4j
 public class ShardingComputer {
 
     private ShardingComputer() {
@@ -69,7 +67,7 @@ public class ShardingComputer {
 
     public void computer() {
         if (count <= 0) {
-            log.warn("handler num is Zero");
+            System.err.println("handler num is Zero");
             return;
         }
         if (Objects.isNull(threadFactory) || Objects.isNull(threadPoolExecutor)) {

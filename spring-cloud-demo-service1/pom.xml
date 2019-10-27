@@ -8,34 +8,23 @@
     <version>1.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-
   <artifactId>spring-cloud-demo-service1</artifactId>
   <dependencies>
     <dependency>
       <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-core</artifactId>
-      <version>1.0</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-api</artifactId>
-      <version>1.0</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>com.springcloud</groupId>
       <artifactId>spring-cloud-demo-persist</artifactId>
-      <version>1.0</version>
+      <version>${project.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.springcloud</groupId>
-      <artifactId>spring-cloud-demo-datasource</artifactId>
-      <version>1.0</version>
-    </dependency>
-<!--    <dependency>-->
-<!--      <groupId>com.springcloud</groupId>-->
-<!--      <artifactId>spring-cloud-demo-common</artifactId>-->
-<!--      <version>1.0</version>-->
-<!--    </dependency>-->
   </dependencies>
 
 </project>

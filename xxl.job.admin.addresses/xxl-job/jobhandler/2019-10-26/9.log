@@ -1,0 +1,9 @@
+2019-10-26 23:13:10 [com.xxl.job.core.thread.JobThread#run]-[124]-[Thread-41] <br>----------- xxl-job job execute start -----------<br>----------- Param:spring-cloud-demo中的测试参数
+2019-10-26 23:13:10 [com.xxl.job.executor.service.jobhandler.DemoJobHandler#execute]-[27]-[Thread-41] XXL-JOB, Hello World.
+2019-10-26 23:13:10 [com.xxl.job.executor.service.jobhandler.DemoJobHandler#execute]-[30]-[Thread-41] beat at:0
+2019-10-26 23:13:10 [com.xxl.job.executor.service.jobhandler.DemoJobHandler#execute]-[30]-[Thread-41] beat at:1
+2019-10-26 23:13:10 [com.xxl.job.executor.service.jobhandler.DemoJobHandler#execute]-[30]-[Thread-41] beat at:2
+2019-10-26 23:13:10 [com.xxl.job.executor.service.jobhandler.DemoJobHandler#execute]-[30]-[Thread-41] beat at:3
+2019-10-26 23:13:10 [com.xxl.job.executor.service.jobhandler.DemoJobHandler#execute]-[30]-[Thread-41] beat at:4
+2019-10-26 23:13:10 [com.xxl.job.core.thread.JobThread#run]-[158]-[Thread-41] <br>----------- xxl-job job execute end(finish) -----------<br>----------- ReturnT:ReturnT [code=200, msg=null, content=null]
+2019-10-26 23:13:10 [com.xxl.job.core.thread.TriggerCallbackThread#callbackLog]-[176]-[Thread-9] <br>----------- xxl-job job callback finish.
