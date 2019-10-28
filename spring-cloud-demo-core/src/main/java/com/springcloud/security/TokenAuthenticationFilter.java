@@ -2,22 +2,24 @@ package com.springcloud.security;
 
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+@Component
 public class TokenAuthenticationFilter implements Filter {
     private static final String[] HEADERS = new String[]{"login-token", "x-token"};
-    private static final String SUPPLIER_HEADER = ",supplier-code";
-    @Autowired
-    private IUserTokenService userTokenService;
+    private final IUserTokenService userTokenService;
 
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public TokenAuthenticationFilter(IUserTokenService userTokenService) {
+        this.userTokenService = userTokenService;
+    }
+
+    public void init(FilterConfig filterConfig) {
     }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -75,11 +77,7 @@ public class TokenAuthenticationFilter implements Filter {
     }
 
     private String fetchToken(HttpServletRequest request) {
-        String[] var2 = HEADERS;
-        int var3 = var2.length;
-
-        for (int var4 = 0; var4 < var3; ++var4) {
-            String header = var2[var4];
+        for (String header : HEADERS) {
             String token = request.getHeader(header);
             if (StringUtils.isNotBlank(token)) {
                 return token;

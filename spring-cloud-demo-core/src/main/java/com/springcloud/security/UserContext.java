@@ -1,7 +1,6 @@
 package com.springcloud.security;
 
 import com.springcloud.cache.Cache;
-import com.springcloud.cache.SoftCache;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public final class UserContext {
     private static final ThreadLocal<SecurityUser> localUserContext = new ThreadLocal<>();
 
-    private static final Cache<String, SecurityUser> tokenUserCache = new SoftCache<>();
+    private static final Cache<String, SecurityUser> tokenUserCache = new UserPermissionCache();
 
     private UserContext() {}
 

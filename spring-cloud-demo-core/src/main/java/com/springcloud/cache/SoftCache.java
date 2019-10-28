@@ -1,7 +1,12 @@
 package com.springcloud.cache;
 
+import lombok.Synchronized;
+import lombok.extern.slf4j.Slf4j;
+
 import java.lang.ref.SoftReference;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,13 +17,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author ZhangLong on 2019/10/22  9:02 下午
  * @version V1.0
  */
-public class SoftCache<K, V> implements Cache<K,V>{
+@Slf4j
+public abstract class SoftCache<K, V> implements Cache<K,V>{
 
     public SoftCache() {
         dealSoftCache();
     }
-
-    private AtomicBoolean start = new AtomicBoolean(true);
+    /**
+     * description 缓存监控开关
+     */
+    private AtomicBoolean switchMonitor = new AtomicBoolean(true);
 
     /**
      * description   default value=16
@@ -29,25 +37,23 @@ public class SoftCache<K, V> implements Cache<K,V>{
         cache(key, val, expire, TimeUnit.SECONDS);
     }
 
-
-
     @Override
     public void cache(K key, V val, long expire, TimeUnit timeUnit){
-        Objects.requireNonNull(key,"key could not be null");
-        Objects.requireNonNull(val,"val could not be null");
+        Objects.requireNonNull(key, "key could not be null");
+        Objects.requireNonNull(val, "val could not be null");
         LocalDateTime expireTime = LocalDateTime.now();
         switch (timeUnit) {
             case SECONDS:
-                expireTime = expireTime.plusSeconds(expire);
+                expireTime = LocalDateTime.now().plusSeconds(expire);
                 break;
             case MINUTES:
-                expireTime = expireTime.plusMinutes(expire);
+                expireTime = LocalDateTime.now().plusMinutes(expire);
                 break;
             case HOURS:
-                expireTime = expireTime.plusHours(expire);
+                expireTime = LocalDateTime.now().plusHours(expire);
                 break;
             case DAYS:
-                expireTime = expireTime.plusDays(expire);
+                expireTime = LocalDateTime.now().plusDays(expire);
                 break;
         }
         CacheNode<K, V> kvCacheNode = Objects.requireNonNull(softReferenceCache.get()).get(key);
@@ -62,46 +68,50 @@ public class SoftCache<K, V> implements Cache<K,V>{
         }
     }
 
-    private synchronized void dealSoftCache(){
+    @Synchronized
+    private void dealSoftCache(){
         do {
-            start.set(false);
+            switchMonitor.set(false);
             new Thread(()->{
                 while (true){
-                    Map<K, CacheNode<K, V>> cacheNodes = softReferenceCache.get();
-                    assert cacheNodes != null;
-                    cacheNodes.forEach((key, cacheNode) -> {
-                        if (Objects.isNull(cacheNode)){
-                            cacheNodes.remove(key);
+                    Map<K, CacheNode<K, V>> cacheNodes = Objects.requireNonNull(softReferenceCache.get());
+                    Iterator<Map.Entry<K, CacheNode<K, V>>> iterator = cacheNodes.entrySet().iterator();
+                    if (iterator.hasNext()){
+                        Map.Entry<K, CacheNode<K, V>> next = iterator.next();
+                        if (Objects.isNull(next.getValue())){
+                            iterator.remove();
+                        }else {
+                           if (Objects.nonNull(next.getValue().getDeadline())
+                                   && LocalDateTime.now().isAfter(next.getValue().getDeadline())){
+                                iterator.remove();
+                           }
                         }
-                        if (LocalDateTime.now().isAfter(cacheNode.getDeadline())){
-                            cacheNodes.remove(key);
-                        }
-                    });
+
+                    }
                     try {
                         Thread.sleep(1000);
                         if(cacheNodes.isEmpty()){
                             Thread.sleep(10000);
                         }
                     } catch (InterruptedException e) {
-                        System.err.println(e.getMessage());
+                        log.error(e.getMessage());
                     }
                 }
             }).start();
-        }while (start.get());
+        }while (switchMonitor.get());
     }
 
 
     @Override
     public V get(K key){
-        Map<K, CacheNode<K, V>> cacheNodeMap = softReferenceCache.get();
-        assert cacheNodeMap != null;
+        Map<K, CacheNode<K, V>> cacheNodeMap = new HashMap<>(Objects.requireNonNull(softReferenceCache.get()));
         CacheNode<K, V> cacheNode = cacheNodeMap.get(key);
         return cacheNode == null ? null : cacheNode.getVal();
     }
 
     @Override
     public void clear() {
-        softReferenceCache.get().clear();
+        Objects.requireNonNull(softReferenceCache.get()).clear();
     }
 
 
