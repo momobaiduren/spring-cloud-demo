@@ -14,9 +14,9 @@ public interface Cache<K, V> {
 
      V get(K key);
 
-    V computeIfAbsent(K key, V val);
+    V getIfDefault(K key, V val);
 
-    V computeIfAbsent(K key, V val, Long expire, TimeUnit timeUnit);
+    V getIfDefault(K key, V val, Long expire, TimeUnit timeUnit);
 
      void remove(K key);
 

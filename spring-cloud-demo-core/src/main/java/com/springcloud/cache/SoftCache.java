@@ -18,11 +18,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @version V1.0
  */
 @Slf4j
-public abstract class SoftCache<K, V> implements Cache<K,V>{
+public abstract class SoftCache<K, V> implements Cache<K, V> {
 
     public SoftCache() {
         dealSoftCache();
     }
+
     /**
      * description 缓存监控开关
      */
@@ -33,41 +34,34 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
      */
     private final SoftReference<Map<K, CacheNode<K, V>>> softReferenceCache = new SoftReference<>(new ConcurrentHashMap<>());
 
-    public void cache(K key, V val){
+    public void cache(K key, V val) {
         cache(key, val, null, null);
     }
 
-    public void remove(K key){
+    public void remove(K key) {
         Map<K, CacheNode<K, V>> cacheNodes = Objects.requireNonNull(softReferenceCache.get());
         Iterator<Map.Entry<K, CacheNode<K, V>>> iterator = cacheNodes.entrySet().iterator();
-        if (iterator.hasNext()){
+        if (iterator.hasNext()) {
             Map.Entry<K, CacheNode<K, V>> next = iterator.next();
-            if (key.equals(next.getKey())){
+            if (key.equals(next.getKey())) {
                 iterator.remove();
             }
         }
     }
 
     @Override
-    public void cache(K key, V val, Long expire, TimeUnit timeUnit){
+    public void cache(K key, V val, Long expire, TimeUnit timeUnit) {
         Objects.requireNonNull(key, "key could not be null");
         Objects.requireNonNull(val, "val could not be null");
         LocalDateTime expireTime = plusExpireTime(expire, timeUnit);
         CacheNode<K, V> kvCacheNode = Objects.requireNonNull(softReferenceCache.get()).get(key);
-        if (Objects.nonNull(kvCacheNode)){
-            kvCacheNode.setTimeUnit(timeUnit);
-            kvCacheNode.setVal(val);
-            kvCacheNode.setDeadline(expireTime);
-            Objects.requireNonNull(softReferenceCache.get()).put(key,kvCacheNode);
-        }else {
-            CacheNode<K, V> cacheNode =  new CacheNode<>(key, val, expireTime, timeUnit);
-            Objects.requireNonNull(softReferenceCache.get()).put(key, cacheNode);
-        }
+        CacheNode<K, V> cacheNode = new CacheNode<>(key, val, expireTime, timeUnit);
+        Objects.requireNonNull(softReferenceCache.get()).put(key, cacheNode);
     }
 
     private LocalDateTime plusExpireTime(Long expire, TimeUnit timeUnit) {
         LocalDateTime expireTime = null;
-        if (Objects.nonNull(expire) && expire > 0){
+        if (Objects.nonNull(expire) && expire > 0) {
             switch (timeUnit) {
                 case SECONDS:
                     expireTime = LocalDateTime.now().plusSeconds(expire);
@@ -91,27 +85,27 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
      * description 守护线程进行清除处理
      */
     @Synchronized
-    public void dealSoftCache(){
+    public void dealSoftCache() {
         do {
             switchMonitor.set(false);
-            Thread thread = new Thread(()->{
-                while (true){
+            Thread thread = new Thread(() -> {
+                while (true) {
                     Map<K, CacheNode<K, V>> cacheNodes = Objects.requireNonNull(softReferenceCache.get());
                     Iterator<Map.Entry<K, CacheNode<K, V>>> iterator = cacheNodes.entrySet().iterator();
-                    if (iterator.hasNext()){
+                    if (iterator.hasNext()) {
                         Map.Entry<K, CacheNode<K, V>> next = iterator.next();
-                        if (Objects.isNull(next.getValue())){
+                        if (Objects.isNull(next.getValue())) {
                             iterator.remove();
-                        }else {
-                           if (Objects.nonNull(next.getValue().getDeadline())
-                                   && LocalDateTime.now().isAfter(next.getValue().getDeadline())){
+                        } else {
+                            if (Objects.nonNull(next.getValue().getDeadline())
+                                    && LocalDateTime.now().isAfter(next.getValue().getDeadline())) {
                                 iterator.remove();
-                           }
+                            }
                         }
                     }
                     try {
                         TimeUnit.SECONDS.sleep(30);
-                        if(cacheNodes.isEmpty()){
+                        if (cacheNodes.isEmpty()) {
                             TimeUnit.MINUTES.sleep(30);
                         }
                     } catch (InterruptedException e) {
@@ -121,23 +115,24 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
             });
             thread.setDaemon(true);
             thread.start();
-        }while (switchMonitor.get());
+        } while (switchMonitor.get());
     }
 
 
     @Override
-    public V get(K key){
+    public V get(K key) {
         Map<K, CacheNode<K, V>> cacheNodeMap = new HashMap<>(Objects.requireNonNull(softReferenceCache.get()));
         CacheNode<K, V> cacheNode = cacheNodeMap.get(key);
         return cacheNode == null ? null : cacheNode.getVal();
     }
 
-    public V computeIfAbsent(K key, V defaultValue){
-        return computeIfAbsent(key, defaultValue, null, null);
+    @Override
+    public V getIfDefault(K key, V defaultValue) {
+        return getIfDefault(key, defaultValue, null, null);
     }
 
     @Override
-    public V computeIfAbsent(K key, V defaultValue, Long expire, TimeUnit timeUnit){
+    public V getIfDefault(K key, V defaultValue, Long expire, TimeUnit timeUnit) {
         Objects.requireNonNull(defaultValue);
         Map<K, CacheNode<K, V>> cacheNodeMap = new HashMap<>(Objects.requireNonNull(softReferenceCache.get()));
         CacheNode<K, V> kvCacheNode = cacheNodeMap.computeIfAbsent(key,
