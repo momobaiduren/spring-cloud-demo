@@ -35,7 +35,12 @@ public abstract class SoftCache<K, V> implements Cache<K, V> {
     private final SoftReference<Map<K, CacheNode<K, V>>> softReferenceCache = new SoftReference<>(new ConcurrentHashMap<>());
 
     public void cache(K key, V val) {
-        cache(key, val, null, null);
+        cache(key, val, null);
+    }
+
+    @Override
+    public void cache(K key, V val, Long expire) {
+        cache(key, val, expire, TimeUnit.SECONDS);
     }
 
     public void remove(K key) {
@@ -82,7 +87,7 @@ public abstract class SoftCache<K, V> implements Cache<K, V> {
 
     /**
      * create by ZhangLong on 2019/11/2
-     * description 守护线程进行清除处理
+     * description 守护线程进行清除定时缓存
      */
     @Synchronized
     public void dealSoftCache() {
@@ -103,14 +108,14 @@ public abstract class SoftCache<K, V> implements Cache<K, V> {
                             }
                         }
                     }
-                    try {
-                        TimeUnit.SECONDS.sleep(30);
-                        if (cacheNodes.isEmpty()) {
-                            TimeUnit.MINUTES.sleep(30);
-                        }
-                    } catch (InterruptedException e) {
-                        log.error(e.getMessage());
-                    }
+//                    try {
+//                        TimeUnit.SECONDS.sleep(30);
+//                        if (cacheNodes.isEmpty()) {
+//                            TimeUnit.MINUTES.sleep(30);
+//                        }
+//                    } catch (InterruptedException e) {
+//                        log.error(e.getMessage());
+//                    }
                 }
             });
             thread.setDaemon(true);
@@ -126,7 +131,6 @@ public abstract class SoftCache<K, V> implements Cache<K, V> {
         return cacheNode == null ? null : cacheNode.getVal();
     }
 
-    @Override
     public V getIfDefault(K key, V defaultValue) {
         return getIfDefault(key, defaultValue, null, null);
     }

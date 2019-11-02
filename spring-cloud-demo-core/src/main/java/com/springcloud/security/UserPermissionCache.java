@@ -8,4 +8,8 @@ import com.springcloud.cache.SoftCache;
  */
 class UserPermissionCache extends SoftCache<String, SecurityUser> {
 
+    @Override
+    public void cache(String key, SecurityUser val, Long expire) {
+
+    }
 }
