@@ -37,6 +37,17 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
         cache(key, val, expire, TimeUnit.SECONDS);
     }
 
+    public void remove(K key){
+        Map<K, CacheNode<K, V>> cacheNodes = Objects.requireNonNull(softReferenceCache.get());
+        Iterator<Map.Entry<K, CacheNode<K, V>>> iterator = cacheNodes.entrySet().iterator();
+        if (iterator.hasNext()){
+            Map.Entry<K, CacheNode<K, V>> next = iterator.next();
+            if (key.equals(next.getKey())){
+                iterator.remove();
+            }
+        }
+    }
+
     @Override
     public void cache(K key, V val, long expire, TimeUnit timeUnit){
         Objects.requireNonNull(key, "key could not be null");
@@ -56,6 +67,7 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
                 expireTime = LocalDateTime.now().plusDays(expire);
                 break;
         }
+//        Objects.requireNonNull(softReferenceCache.get()).putIfAbsent(key, new CacheNode<>(key, val, expireTime, timeUnit));
         CacheNode<K, V> kvCacheNode = Objects.requireNonNull(softReferenceCache.get()).get(key);
         if (Objects.nonNull(kvCacheNode)){
             kvCacheNode.setTimeUnit(timeUnit);
@@ -69,7 +81,7 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
     }
 
     @Synchronized
-    private void dealSoftCache(){
+    public void dealSoftCache(){
         do {
             switchMonitor.set(false);
             new Thread(()->{
@@ -86,7 +98,6 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
                                 iterator.remove();
                            }
                         }
-
                     }
                     try {
                         Thread.sleep(1000);
@@ -108,6 +119,8 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
         CacheNode<K, V> cacheNode = cacheNodeMap.get(key);
         return cacheNode == null ? null : cacheNode.getVal();
     }
+
+
 
     @Override
     public void clear() {

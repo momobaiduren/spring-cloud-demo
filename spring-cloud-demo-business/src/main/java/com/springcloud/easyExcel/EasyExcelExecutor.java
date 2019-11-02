@@ -4,6 +4,7 @@ import com.alibaba.excel.EasyExcelFactory;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.springcloud.util.WebUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -35,7 +36,7 @@ public final class EasyExcelExecutor {
      *                          description 导入
      */
     public static <M extends ReadModel> void importExcel(Consumer<ExcleData<M>> excleDataConsumer, final MultipartFile file, final Class<M> clazz) {
-        importExcelAndExportErrorData(excleDataConsumer, file, clazz, null);
+        importExcelAndExportErrorData(excleDataConsumer, file, clazz, false);
     }
 
     /**
@@ -47,7 +48,7 @@ public final class EasyExcelExecutor {
      */
     @SuppressWarnings("all")
     public static <M extends ReadModel> void importExcelAndExportErrorData(Consumer<ExcleData<M>> excleDataConsumer, final MultipartFile file,
-                                                                           final Class<M> clazz, final HttpServletResponse response) {
+                                                                           final Class<M> clazz,boolean isExportErrorData ) {
         ExcleData<M> excleData = new ExcleData<>();
         if (Objects.isNull(file)) {
             throw new RuntimeException("导入文件不能为空");
@@ -58,11 +59,11 @@ public final class EasyExcelExecutor {
 //            EasyExcel.read(inputStream,clazz, new ExcelEventListener(excleDataConsumer,excleData));
             EasyExcelFactory.readBySax(inputStream, new Sheet(1, 1, clazz),
                     new ExcelEventListener(excleDataConsumer, excleData));
-            if (Objects.nonNull(response)) {
+            if (isExportErrorData) {
                 List<M> errorList = (List<M>) excleData.errorData();
                 exportResponse(clazz, "error_" + file.getOriginalFilename(),
                         Objects.requireNonNull(file.getOriginalFilename())
-                                .substring(file.getOriginalFilename().lastIndexOf(".")), response, klass -> excleData.errorData());
+                                .substring(file.getOriginalFilename().lastIndexOf(".")),  klass -> excleData.errorData());
             }
         } catch (IOException e) {
             log.error(e.getMessage());
@@ -74,9 +75,9 @@ public final class EasyExcelExecutor {
      * description 导出数据
      */
     @SuppressWarnings("all")
-    public static <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,
-                                                             HttpServletResponse response, Function<Class<M>, List<M>> dataListFunction) {
+    public static <M extends ExcelModel> void exportResponse(Class<M> clazz, String fileName, String sheetName,Function<Class<M>, List<M>> dataListFunction) {
         Objects.requireNonNull(dataListFunction, "dataListFunction could not be null");
+        HttpServletResponse response = WebUtils.getResponse();
         if (Objects.isNull(response)) {
             throw new RuntimeException("未绑定响应{@HttpServletResponse}参数");
         }

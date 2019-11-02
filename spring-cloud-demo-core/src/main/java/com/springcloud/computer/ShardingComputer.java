@@ -67,7 +67,10 @@ public class ShardingComputer {
         return shardingDataMap;
     }
 
-
+    /**
+     * create by ZhangLong on 2019/11/2
+     * description 计算
+     */
     public void computer() {
         if (count <= 0) {
             log.error("handler num is Zero");
