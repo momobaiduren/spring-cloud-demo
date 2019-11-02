@@ -33,8 +33,8 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
      */
     private final SoftReference<Map<K, CacheNode<K, V>>> softReferenceCache = new SoftReference<>(new ConcurrentHashMap<>());
 
-    public void cache(K key, V val, long expire){
-        cache(key, val, expire, TimeUnit.SECONDS);
+    public void cache(K key, V val){
+        cache(key, val, null, null);
     }
 
     public void remove(K key){
@@ -49,25 +49,10 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
     }
 
     @Override
-    public void cache(K key, V val, long expire, TimeUnit timeUnit){
+    public void cache(K key, V val, Long expire, TimeUnit timeUnit){
         Objects.requireNonNull(key, "key could not be null");
         Objects.requireNonNull(val, "val could not be null");
-        LocalDateTime expireTime = LocalDateTime.now();
-        switch (timeUnit) {
-            case SECONDS:
-                expireTime = LocalDateTime.now().plusSeconds(expire);
-                break;
-            case MINUTES:
-                expireTime = LocalDateTime.now().plusMinutes(expire);
-                break;
-            case HOURS:
-                expireTime = LocalDateTime.now().plusHours(expire);
-                break;
-            case DAYS:
-                expireTime = LocalDateTime.now().plusDays(expire);
-                break;
-        }
-//        Objects.requireNonNull(softReferenceCache.get()).putIfAbsent(key, new CacheNode<>(key, val, expireTime, timeUnit));
+        LocalDateTime expireTime = plusExpireTime(expire, timeUnit);
         CacheNode<K, V> kvCacheNode = Objects.requireNonNull(softReferenceCache.get()).get(key);
         if (Objects.nonNull(kvCacheNode)){
             kvCacheNode.setTimeUnit(timeUnit);
@@ -80,11 +65,36 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
         }
     }
 
+    private LocalDateTime plusExpireTime(Long expire, TimeUnit timeUnit) {
+        LocalDateTime expireTime = null;
+        if (Objects.nonNull(expire) && expire > 0){
+            switch (timeUnit) {
+                case SECONDS:
+                    expireTime = LocalDateTime.now().plusSeconds(expire);
+                    break;
+                case MINUTES:
+                    expireTime = LocalDateTime.now().plusMinutes(expire);
+                    break;
+                case HOURS:
+                    expireTime = LocalDateTime.now().plusHours(expire);
+                    break;
+                case DAYS:
+                    expireTime = LocalDateTime.now().plusDays(expire);
+                    break;
+            }
+        }
+        return expireTime;
+    }
+
+    /**
+     * create by ZhangLong on 2019/11/2
+     * description 守护线程进行清除处理
+     */
     @Synchronized
     public void dealSoftCache(){
         do {
             switchMonitor.set(false);
-            new Thread(()->{
+            Thread thread = new Thread(()->{
                 while (true){
                     Map<K, CacheNode<K, V>> cacheNodes = Objects.requireNonNull(softReferenceCache.get());
                     Iterator<Map.Entry<K, CacheNode<K, V>>> iterator = cacheNodes.entrySet().iterator();
@@ -100,15 +110,17 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
                         }
                     }
                     try {
-                        Thread.sleep(1000);
+                        TimeUnit.SECONDS.sleep(30);
                         if(cacheNodes.isEmpty()){
-                            Thread.sleep(10000);
+                            TimeUnit.MINUTES.sleep(30);
                         }
                     } catch (InterruptedException e) {
                         log.error(e.getMessage());
                     }
                 }
-            }).start();
+            });
+            thread.setDaemon(true);
+            thread.start();
         }while (switchMonitor.get());
     }
 
@@ -120,6 +132,18 @@ public abstract class SoftCache<K, V> implements Cache<K,V>{
         return cacheNode == null ? null : cacheNode.getVal();
     }
 
+    public V computeIfAbsent(K key, V defaultValue){
+        return computeIfAbsent(key, defaultValue, null, null);
+    }
+
+    @Override
+    public V computeIfAbsent(K key, V defaultValue, Long expire, TimeUnit timeUnit){
+        Objects.requireNonNull(defaultValue);
+        Map<K, CacheNode<K, V>> cacheNodeMap = new HashMap<>(Objects.requireNonNull(softReferenceCache.get()));
+        CacheNode<K, V> kvCacheNode = cacheNodeMap.computeIfAbsent(key,
+                k -> new CacheNode<>(k, defaultValue, plusExpireTime(expire, timeUnit), timeUnit));
+        return kvCacheNode.getVal();
+    }
 
 
     @Override

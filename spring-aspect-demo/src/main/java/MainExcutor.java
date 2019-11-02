@@ -1,13 +1,9 @@
-import com.demo.cache.SoftCache;
-
 /**
  * @author ZhangLong on 2019/10/17  5:00 下午
  * @version V1.0
  */
 public class MainExcutor {
     public static void main(String[] args) {
-        SoftCache<String, Integer> softCache = new SoftCache<>();
-        System.out.println(softCache.get("zhanglong", "测试"));
 //        LocalDateTime now = LocalDateTime.now().plusSeconds(10L);
 //        System.out.println(now);
 //        for (int i = 0; i < 100; i++) {

@@ -8,11 +8,15 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Cache<K, V> {
 
-    void cache(K key, V val, long expire);
+    void cache(K key, V val);
 
-    void cache(K key, V val, long expire, TimeUnit timeUnit);
+    void cache(K key, V val, Long expire, TimeUnit timeUnit);
 
      V get(K key);
+
+    V computeIfAbsent(K key, V val);
+
+    V computeIfAbsent(K key, V val, Long expire, TimeUnit timeUnit);
 
      void remove(K key);
 

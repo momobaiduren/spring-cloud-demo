@@ -8,14 +8,15 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Cache<K, V> {
 
-    void cache(K key, V val, Long expire, TimeUnit timeUnit);
+    void cache(K key, V val, long expire);
 
-    void dealSoftCache();
+    void cache(K key, V val, long expire, TimeUnit timeUnit);
 
-     V get(K key);
+    V get(K key);
 
-    default V get(K key, String param){
-        System.out.println(param);
-        return get(key);
-    }
+    void remove(K key);
+
+    void clear();
+
+
 }

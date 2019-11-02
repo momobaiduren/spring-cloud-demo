@@ -4,7 +4,10 @@ package com.springcloud.computer;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhanglong
@@ -13,6 +16,11 @@ import java.util.concurrent.*;
  */
 @Slf4j
 public class ShardingComputer {
+
+    private static final String COMPENSATE_GROUP_NAME = "COMPENSATE-GROUP";
+    private static final String COMPENSATE_THREAD_NAME = "THREAD-SHARDING-COMPUTER-COMPENSATE";
+    private static final String COMPUTER_THREAD_NAME_PREFIX = "THREAD-SHARDING-COMPUTER-";
+
 
     private ShardingComputer() {
     }
@@ -82,14 +90,14 @@ public class ShardingComputer {
         Map<Integer, List<Integer>> shardingDataMap = sharding();
         shardingDataMap.forEach((sharding, shardingData) -> {
             Thread thread = threadFactory
-                    .bindingThreadName("THREAD-SHARDING-COMPUTER-" + sharding)
+                    .bindingThreadName(new ThreadGroup(threadGroupName),COMPUTER_THREAD_NAME_PREFIX + sharding)
                     .newThread(() -> {
                         computerHandler.execut(shardingData);
                     });
             threadPoolExecutor.execute(thread);
         });
         Thread thread =  threadFactory
-                .bindingThreadName("THREAD-SHARDING-COMPUTER-COMPENSATE")
+                .bindingThreadName(new ThreadGroup(COMPENSATE_GROUP_NAME),COMPENSATE_THREAD_NAME)
                 .newThread(() -> {
                     computerHandler.compensate();
                 });
@@ -98,7 +106,7 @@ public class ShardingComputer {
     }
 
     private void init() {
-        threadFactory = new ComputerThreadFactory().bindThreadGroup(new ThreadGroup(threadGroupName));
+        threadFactory = new ComputerThreadFactory();
         threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS, workQuezue);
     }
 

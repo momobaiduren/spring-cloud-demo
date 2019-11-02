@@ -16,12 +16,9 @@ public class ComputerThreadFactory implements ThreadFactory {
 
     private String threadName;
 
-    public ComputerThreadFactory bindThreadGroup(ThreadGroup threadGroup){
-        this.threadGroup = threadGroup;
-        return this;
-    }
 
-    public ComputerThreadFactory bindingThreadName(String threadName){
+    public ComputerThreadFactory bindingThreadName(ThreadGroup threadGroup, String threadName){
+        this.threadGroup = threadGroup;
         this.threadName = threadName;
         return this;
     }
