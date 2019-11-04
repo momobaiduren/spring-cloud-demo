@@ -1,6 +1,5 @@
 package com.springcloud.cache;
 
-import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.ref.SoftReference;
@@ -89,8 +88,7 @@ public abstract class SoftCache<K, V> implements Cache<K, V> {
      * create by ZhangLong on 2019/11/2
      * description 守护线程进行清除定时缓存
      */
-    @Synchronized
-    public void dealSoftCache() {
+    private void dealSoftCache() {
         do {
             switchMonitor.set(false);
             Thread thread = new Thread(() -> {

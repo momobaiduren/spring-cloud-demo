@@ -12,6 +12,14 @@
     <artifactId>spring-aspect-demo</artifactId>
 
     <dependencies>
+        <!-- 使用jdk8以后的新特性-->
+        <!-- https://mvnrepository.com/artifact/com.github.bsideup.jabel/jabel-javac-plugin -->
+<!--        <dependency>-->
+<!--            <groupId>com.github.bsideup.jabel</groupId>-->
+<!--            <artifactId>jabel-javac-plugin</artifactId>-->
+<!--            <version>0.2.0</version>-->
+<!--        </dependency>-->
+
         <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -80,10 +88,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- 工程主入口-->
-                    <mainClass>com.demo.SpringDemoApplication</mainClass>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.spotify</groupId>

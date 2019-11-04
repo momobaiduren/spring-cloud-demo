@@ -15,7 +15,6 @@ public interface ComputerHandler {
       shardingData.forEach(shardingNum -> {
          throw new UnsupportedOperationException("unimplemented interface ComputerHandler and override execut method");
       });
-      compensate();
    };
    /**
     * create by ZhangLong on 2019-09-13

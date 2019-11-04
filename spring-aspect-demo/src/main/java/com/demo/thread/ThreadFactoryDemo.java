@@ -1,22 +1,18 @@
 package com.demo.thread;
 
 import com.demo.Jdk8Api.Apple;
-import java.lang.ref.SoftReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.apache.commons.pool2.PooledObject;
 import org.apache.commons.pool2.PooledObjectFactory;
 import org.apache.commons.pool2.impl.SoftReferenceObjectPool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolExecutorFactoryBean;
+
+import java.lang.ref.SoftReference;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhanglong
@@ -65,7 +61,7 @@ public class ThreadFactoryDemo {
      */
 
     private static SoftReference<Map<String, String>> softReference = new SoftReference<>(
-        new ConcurrentHashMap());
+        new ConcurrentHashMap<>());
 
     @Autowired
     private ThreadPoolExecutorFactoryBean threadPoolExecutorFactoryBean;

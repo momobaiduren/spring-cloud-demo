@@ -4,10 +4,7 @@ package com.springcloud.computer;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author zhanglong
@@ -25,31 +22,55 @@ public class ShardingComputer {
     private ShardingComputer() {
     }
 
+    /**
+     * description 核心线程数，太大会导致线程上下文切换的消耗
+     */
     private int corePoolSize = 0;
-
+    /**
+     * description 最大线程数
+     */
     private int maximumPoolSize = Runtime.getRuntime().availableProcessors() * 10;
-
-    private long keepAliveTime = 1800;
-
+    /**
+     * description 空闲线程存活时间
+     */
+    private long keepAliveTime = 60;
+    /**
+     * description 线程队列类型 初始化构造不设置队列长度默认65535
+     */
     private BlockingQueue<Runnable> workQuezue = new SynchronousQueue<>();
-
+    /**
+     * description 数据总量
+     */
     private int count;
-
+    /**
+     * description 分片数量
+     */
     private int shardingNum = Runtime.getRuntime().availableProcessors() * 5;
-
+    /**
+     * description 自定义线程分组名称
+     */
     private String threadGroupName;
-
+    /**
+     * description 自定义线程工厂，用来描述线程相关信息
+     */
     private ComputerThreadFactory threadFactory;
-
+    /**
+     * description 线程池执行器
+     */
     private ThreadPoolExecutor threadPoolExecutor;
-
+    /**
+     * description 分片处理类
+     */
     private ComputerHandler computerHandler;
+    /**
+     * description 用于线程内处理异常结果记录
+     */
+    private Map<Integer, List<Integer>> dealResult;
 
-    public ShardingComputer threadGroupName(String threadGroupName) {
-        this.threadGroupName = threadGroupName;
-        return this;
-    }
-
+    /**
+     * create by ZhangLong on 2019/11/3
+     * description 初始化
+     */
     public static ShardingComputer instance(ComputerHandler computerHandler) {
         Objects.requireNonNull(computerHandler, "computerHandler could not be null");
         ShardingComputer computor = new ShardingComputer();
@@ -63,6 +84,7 @@ public class ShardingComputer {
      */
     private Map<Integer, List<Integer>> sharding() {
         Map<Integer, List<Integer>> shardingDataMap = new HashMap<>(shardingNum);
+        dealResult = new ConcurrentHashMap<>(shardingNum);
         for (int i = 1; i <= count; i++) {
             if (shardingDataMap.containsKey(i % shardingNum)) {
                 shardingDataMap.get(i % shardingNum).add(i);
@@ -75,6 +97,7 @@ public class ShardingComputer {
         return shardingDataMap;
     }
 
+
     /**
      * create by ZhangLong on 2019/11/2
      * description 计算
@@ -84,23 +107,29 @@ public class ShardingComputer {
             log.error("handler num is Zero");
             return;
         }
-        if (Objects.isNull(threadFactory) || Objects.isNull(threadPoolExecutor)) {
-            init();
-        }
+        init();
         Map<Integer, List<Integer>> shardingDataMap = sharding();
+//        CyclicBarrier cyclicBarrier = new CyclicBarrier(shardingDataMap.size(), ()->{
+//            if (!dealResult.isEmpty()){
+//                //TODO 处理完成之后阻塞，异常数据监控处理，处理完成之后
+//            }
+//        });
         shardingDataMap.forEach((sharding, shardingData) -> {
             Thread thread = threadFactory
-                    .bindingThreadName(new ThreadGroup(threadGroupName),COMPUTER_THREAD_NAME_PREFIX + sharding)
+                    .bindingThreadName(new ThreadGroup(threadGroupName), COMPUTER_THREAD_NAME_PREFIX + sharding)
                     .newThread(() -> {
                         computerHandler.execut(shardingData);
+//                        try {
+//                            cyclicBarrier.await();
+//                        } catch (InterruptedException | BrokenBarrierException e) {
+//                            log.error(e.getMessage());
+//                        }
                     });
             threadPoolExecutor.execute(thread);
         });
-        Thread thread =  threadFactory
-                .bindingThreadName(new ThreadGroup(COMPENSATE_GROUP_NAME),COMPENSATE_THREAD_NAME)
-                .newThread(() -> {
-                    computerHandler.compensate();
-                });
+        Thread thread = threadFactory
+                .bindingThreadName(new ThreadGroup(COMPENSATE_GROUP_NAME), COMPENSATE_THREAD_NAME)
+                .newThread(() -> computerHandler.compensate());
         threadPoolExecutor.execute(thread);
         threadPoolExecutor.shutdown();
     }
@@ -146,6 +175,12 @@ public class ShardingComputer {
             shardingNum = Runtime.getRuntime().availableProcessors() * 5;
         }
         this.shardingNum = shardingNum;
+        sharding();
+        return this;
+    }
+
+    public ShardingComputer threadGroupName(String threadGroupName) {
+        this.threadGroupName = threadGroupName;
         return this;
     }
 
