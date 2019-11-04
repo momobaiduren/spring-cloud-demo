@@ -3,7 +3,6 @@ package com.springcloud.validation;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.xml.bind.ValidationException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,12 +22,12 @@ public class ValidationListResult<T> extends ValidationResult{
     private Map<T, Map<String, String>> errorData = new HashMap<>();
 
     @Override
-    public void isErrorThrowExp() throws ValidationException {
+    public void isErrorThrowExp() {
         if(!errorData.isEmpty()) {
             for (Entry<T, Map<String, String>> entry : errorData.entrySet()) {
                 T key = entry.getKey();
                 Map<String, String> value = entry.getValue();
-                throw new ValidationException(key.toString() + ":" + value.toString());
+                throw new RuntimeException(key.toString() + ":" + value.toString());
             }
         }
     }
