@@ -30,11 +30,9 @@ public final class SpringBeanUtils {
         ConfigurableApplicationContext applicationContext = ContextUtils.getApplicationContext();
         checkRegisterBean(applicationContext, name, clazz);
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(clazz);
-        Object[] var5 = args;
         int var6 = args.length;
 
-        for(int var7 = 0; var7 < var6; ++var7) {
-            Object arg = var5[var7];
+        for (Object arg : args) {
             beanDefinitionBuilder.addConstructorArgValue(arg);
         }
 
