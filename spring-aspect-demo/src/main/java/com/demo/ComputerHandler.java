@@ -7,11 +7,15 @@ import java.util.List;
  * @version V1.0
  */
 public interface ComputerHandler {
+
+   default void banchExecut( List<Integer> shardingData ){
+      shardingData.forEach(this::execut);
+   }
    /**
     * create by ZhangLong on 2019-09-13
-    * description 分片处理数据
+    * description 如果为null就是全部一次处理
     */
-   void execut( List<Integer> shardingData );
+   boolean execut(Integer sharding);
    /**
     * create by ZhangLong on 2019-09-13
     * description 未处理数据总量（除去新生成的，新数据在统一在补偿中处理）
