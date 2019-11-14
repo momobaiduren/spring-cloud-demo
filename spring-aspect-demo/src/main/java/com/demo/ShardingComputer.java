@@ -1,10 +1,17 @@
-package com.springcloud.computer;
+package com.demo;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.*;
-import java.util.concurrent.*;
 
 /**
  * @author zhanglong
@@ -53,7 +60,7 @@ public class ShardingComputer {
     /**
      * description 自定义线程工厂，用来描述线程相关信息
      */
-    private ComputerThreadFactory threadFactory;
+    private CustomThreadFactory threadFactory;
     /**
      * description 线程池执行器
      */
@@ -79,7 +86,7 @@ public class ShardingComputer {
     }
 
     /**
-     * @desc 分片数从1开始执行，如果索引是0的要加1
+     * description 分片数从1开始执行，如果索引是0的要加1
      */
     private Map<Integer, List<Integer>> sharding() {
         Map<Integer, List<Integer>> shardingDataMap = new HashMap<>(shardingNum);
@@ -107,22 +114,12 @@ public class ShardingComputer {
         }
         init();
         Map<Integer, List<Integer>> shardingDataMap = sharding();
-//        CyclicBarrier cyclicBarrier = new CyclicBarrier(shardingDataMap.size(), ()->{
-//            if (!dealResult.isEmpty()){
-//                //TODO 处理完成之后阻塞，异常数据监控处理，处理完成之后
-//            }
-//        });
         shardingDataMap.forEach(( sharding, shardingData ) -> {
             Thread thread = threadFactory
                 .bindingThreadName(new ThreadGroup(threadGroupName),
                     COMPUTER_THREAD_NAME_PREFIX + sharding)
                 .newThread(() -> {
                     computerHandler.execut(shardingData);
-//                        try {
-//                            cyclicBarrier.await();
-//                        } catch (InterruptedException | BrokenBarrierException e) {
-//                            log.error(e.getMessage());
-//                        }
                 });
             threadPoolExecutor.execute(thread);
         });
@@ -134,7 +131,7 @@ public class ShardingComputer {
     }
 
     private void init() {
-        threadFactory = new ComputerThreadFactory();
+        threadFactory = new CustomThreadFactory();
         threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime,
             TimeUnit.SECONDS, workQuezue, threadFactory);
     }
