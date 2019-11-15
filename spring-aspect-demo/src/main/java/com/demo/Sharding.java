@@ -11,6 +11,7 @@ import java.util.Map;
  * @description: 描述
  */
 public final class Sharding {
+    private Sharding(){}
     /**
      * description 分片数从1开始执行，如果索引是0的要加1
      */
