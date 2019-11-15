@@ -11,8 +11,8 @@ import java.util.function.Consumer;
 /**
  * created by zhanglong and since  2019/11/14 5:25 下午
  *
- * @description 分为有结果集操作 {@link com.demo.ComputerHandler}
- *              无结果集操作处理 {@link com.demo.MergeHandler}
+ * @description 分为有结果集操作 {@link com.demo.ComputerHandler} 数据写出操作 无结果集操作处理 {@link
+ * com.demo.MergeHandler} 数据写入操作
  */
 @Slf4j
 public class ShardingOperation {
@@ -29,7 +29,7 @@ public class ShardingOperation {
      */
     private int shardingNum = Runtime.getRuntime().availableProcessors() * 5;
 
-    private int shardingDealMinCount = 300;
+    private Integer shardingDealMinCount = 300;
 
     private ThreadPoolProperties threadPoolProperties;
     /**
@@ -47,24 +47,19 @@ public class ShardingOperation {
 
     /**
      * created by zhanglong and since  2019/11/15 2:04 下午
-     *
      * @description 进行自旋，直到结果集完全执行完成
      */
     public Map<Class<? extends ShardingHandler>, List<?>> result() {
         while (!endOfRun.compareAndSet(true, false)) {
             try {
                 //释放50毫秒cpu资源
-                TimeUnit.MILLISECONDS.sleep(50L);
+                TimeUnit.MILLISECONDS.sleep(100L);
             } catch (InterruptedException e) {
                 log.error(e.getMessage());
             }
             endOfRun.set(Objects.isNull(countDownLatch) || countDownLatch.getCount() == 0);
         }
         return result;
-    }
-
-    public static void main( String[] args ) {
-        ShardingOperation.instance().result();
     }
 
     /**
@@ -79,7 +74,7 @@ public class ShardingOperation {
         MergeHandler mergeHandler ) {
         Objects.requireNonNull(consumer, "consumer could not be null");
         if (Objects.nonNull(mergeHandler)) {
-            dealWithMerge(mergeHandler, consumer);
+            dealWithMergeResult(mergeHandler, consumer);
             consumer.accept(result);
         }
     }
@@ -89,16 +84,16 @@ public class ShardingOperation {
         Objects.requireNonNull(consumer, "consumer could not be null");
         Objects.requireNonNull(mergeHandlers, "mergeHandlers could not be null");
         for (MergeHandler mergeHandler : mergeHandlers) {
-            dealWithMerge(mergeHandler, consumer);
+            dealWithMergeResult(mergeHandler, consumer);
         }
     }
 
-    public void run(ComputerHandler computerHandler) {
+    public void run( ComputerHandler computerHandler ) {
         Objects.requireNonNull(computerHandler, "computerHandler could not be null");
         parallelDealWith(computerHandler);
     }
 
-    private void dealWithMerge( MergeHandler mergeHandler,
+    private void dealWithMergeResult( MergeHandler mergeHandler,
         Consumer<Map<Class<? extends ShardingHandler>, List<?>>> consumer ) {
         if (parallelDealWith(mergeHandler)) {
             return;
@@ -113,61 +108,58 @@ public class ShardingOperation {
             log.error("handler num is Zero");
             return true;
         }
-
+        if (Objects.nonNull(shardingDealMinCount) && shardingDealMinCount >= count) {
+            shardingHandler.execut();
+            return true;
+        }
         Map<Integer, List<Integer>> shardingDataMap = Sharding.sharding(shardingNum, count);
-        final boolean isMergeHandler = shardingHandler instanceof MergeHandler;
-        if (isMergeHandler) {
+        if (Objects.isNull(threadPoolProperties)) {
+            threadPoolProperties = new ThreadPoolProperties();
+        }
+
+        if (shardingHandler instanceof MergeHandler) {
             countDownLatch = new CountDownLatch(shardingDataMap.size() + 1);
             if (Objects.isNull(result.get(shardingHandler.getClass()))) {
                 result.put(shardingHandler.getClass(), new ArrayList<>(count));
             }
+            MergeHandler mergeHandler = (MergeHandler) shardingHandler;
+            computer(shardingDataMap, shardingData -> {
+                mergeHandler.banchExecut(shardingData, result);
+                countDownLatch.countDown();
+            }, () -> {
+                mergeHandler.compensate(result);
+                countDownLatch.countDown();
+            });
         }
-        if (shardingDealMinCount >= count) {
-            shardingHandler.execut(null, isMergeHandler ? result : null);
-        } else {
-            if (Objects.isNull(threadPoolProperties)) {
-                threadPoolProperties = new ThreadPoolProperties();
-            }
-            CustomThreadFactory threadFactory = new CustomThreadFactory();
-            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
-                threadPoolProperties.getCorePoolSize(), threadPoolProperties.getMaximumPoolSize(),
-                threadPoolProperties.getKeepAliveTime(),
-                TimeUnit.SECONDS, threadPoolProperties.getWorkQuezue(), threadFactory);
 
-            computer(shardingDataMap, shardingHandler, threadFactory,
-                threadPoolExecutor, isMergeHandler);
+        if (shardingHandler instanceof ComputerHandler) {
+            ComputerHandler computerHandler = (ComputerHandler) shardingHandler;
+            computer(shardingDataMap, computerHandler::banchExecut, computerHandler::compensate);
         }
+
         return false;
     }
 
     private void computer( Map<Integer, List<Integer>> shardingDataMap,
-        ShardingHandler shardingHandler, CustomThreadFactory threadFactory,
-        ThreadPoolExecutor threadPoolExecutor, boolean isMergeHandler ) {
+        Consumer<List<Integer>> executeConsumer, Runnable compensateRunable ) {
+        CustomThreadFactory threadFactory = new CustomThreadFactory();
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
+            threadPoolProperties.getCorePoolSize(), threadPoolProperties.getMaximumPoolSize(),
+            threadPoolProperties.getKeepAliveTime(),
+            TimeUnit.SECONDS, threadPoolProperties.getWorkQuezue(), threadFactory);
+
         shardingDataMap.forEach(( sharding, shardingData ) -> {
             Thread thread = threadFactory
                 .bindingThreadName(new ThreadGroup(threadPoolProperties.getThreadGroupName()),
                     THREAD_NAME_PREFIX + sharding)
-                .newThread(() -> {
-                    if(isMergeHandler){
-                        shardingHandler.banchExecut(shardingData, result);
-                        countDownLatch.countDown();
-                    }else {
-                        shardingHandler.banchExecut(shardingData, null);
-                    }
-                });
+                .newThread(() -> executeConsumer.accept(shardingData));
             threadPoolExecutor.execute(thread);
         });
+
         Thread thread = threadFactory
             .bindingThreadName(new ThreadGroup(threadPoolProperties.getThreadGroupName()),
                 COMPENSATE_THREAD_NAME)
-            .newThread(() -> {
-                if(isMergeHandler){
-                    shardingHandler.compensate(result);
-                    countDownLatch.countDown();
-                }else {
-                    shardingHandler.compensate(null);
-                }
-            });
+            .newThread(compensateRunable);
         threadPoolExecutor.execute(thread);
         threadPoolExecutor.shutdown();
     }
