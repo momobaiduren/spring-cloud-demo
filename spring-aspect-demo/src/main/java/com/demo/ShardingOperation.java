@@ -130,11 +130,11 @@ public class ShardingOperation {
             computer(shardingDataMap, shardingData -> {
                 mergeHandler.banchExecut(shardingData, result);
                 countDownLatch.countDown();
-                releaseCpuSource(1000L);
+                releaseCpuSource();
             }, () -> {
                 mergeHandler.compensate(result);
                 countDownLatch.countDown();
-                releaseCpuSource(1000L);
+                releaseCpuSource();
             });
         }
 
@@ -146,9 +146,9 @@ public class ShardingOperation {
         return false;
     }
 
-    private void releaseCpuSource(Long milliseconds){
+    private void releaseCpuSource(){
         try {
-            TimeUnit.MILLISECONDS.sleep(milliseconds);
+            TimeUnit.MILLISECONDS.sleep(1000);
         } catch (InterruptedException e) {
             log.error(e.getMessage());
         }
