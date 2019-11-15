@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.thread.computer;
 
 import java.util.List;
 import java.util.Map;

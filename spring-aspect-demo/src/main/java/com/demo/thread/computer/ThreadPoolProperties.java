@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.thread.computer;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.SynchronousQueue;

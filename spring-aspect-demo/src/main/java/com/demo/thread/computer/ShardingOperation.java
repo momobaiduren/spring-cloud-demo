@@ -1,18 +1,23 @@
-package com.demo;
+package com.demo.thread.computer;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import lombok.extern.slf4j.Slf4j;
-
-import java.util.*;
-import java.util.concurrent.*;
 import java.util.function.Consumer;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * created by zhanglong and since  2019/11/14 5:25 下午
  *
- * @description 分为有结果集操作 {@link com.demo.ComputerHandler} 数据写出操作 无结果集操作处理 {@link
- * com.demo.MergeHandler} 数据写入操作
+ * @description 分为有结果集操作 {@link ComputerHandler} 数据写出操作 无结果集操作处理 {@link
+ * MergeHandler} 数据写入操作
  */
 @Slf4j
 public class ShardingOperation {

@@ -1,7 +1,4 @@
-package com.demo;
-
-import java.util.List;
-import java.util.Map;
+package com.demo.thread.computer;
 
 /**
  * created by zhanglong and since  2019/11/14  5:27 下午
