@@ -28,9 +28,13 @@ public class ShardingOperation {
      * description 分片数量
      */
     private int shardingNum = Runtime.getRuntime().availableProcessors() * 5;
-
+    /**
+     * description 最小分片条件，超过之后才会归并
+     */
     private Integer shardingDealMinCount = 300;
-
+    /**
+     * description 线程池参数配置
+     */
     private ThreadPoolProperties threadPoolProperties;
     /**
      * description 合并结束标示
@@ -41,7 +45,7 @@ public class ShardingOperation {
      */
     private CountDownLatch countDownLatch;
     /**
-     * description 结果集容器当
+     * description 结果集容器
      */
     private Map<Class<? extends ShardingHandler>, List<?>> result = new ConcurrentHashMap<>();
 
@@ -73,9 +77,9 @@ public class ShardingOperation {
     public void run( Consumer<Map<Class<? extends ShardingHandler>, List<?>>> consumer,
         MergeHandler mergeHandler ) {
         Objects.requireNonNull(consumer, "consumer could not be null");
+        Objects.requireNonNull(consumer, "consumer could not be null");
         if (Objects.nonNull(mergeHandler)) {
             dealWithMergeResult(mergeHandler, consumer);
-            consumer.accept(result);
         }
     }
 
@@ -84,7 +88,7 @@ public class ShardingOperation {
         Objects.requireNonNull(consumer, "consumer could not be null");
         Objects.requireNonNull(mergeHandlers, "mergeHandlers could not be null");
         for (MergeHandler mergeHandler : mergeHandlers) {
-            dealWithMergeResult(mergeHandler, consumer);
+            run(consumer, mergeHandler);
         }
     }
 
@@ -126,9 +130,11 @@ public class ShardingOperation {
             computer(shardingDataMap, shardingData -> {
                 mergeHandler.banchExecut(shardingData, result);
                 countDownLatch.countDown();
+                releaseCpuSource(1000L);
             }, () -> {
                 mergeHandler.compensate(result);
                 countDownLatch.countDown();
+                releaseCpuSource(1000L);
             });
         }
 
@@ -138,6 +144,14 @@ public class ShardingOperation {
         }
 
         return false;
+    }
+
+    private void releaseCpuSource(Long milliseconds){
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            log.error(e.getMessage());
+        }
     }
 
     private void computer( Map<Integer, List<Integer>> shardingDataMap,
