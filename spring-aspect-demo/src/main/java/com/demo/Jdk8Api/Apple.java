@@ -1,8 +1,8 @@
 package com.demo.Jdk8Api;
 
-import lombok.Data;
-
+import com.demo.thread.computer.MergeModel;
 import java.math.BigDecimal;
+import lombok.Data;
 
 /**
  * @author zhanglong
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  */
 
 @Data
-public class Apple implements Comparable<Apple> {
+public class Apple implements Comparable<Apple>, MergeModel {
 
     private Integer appleId;
     private Integer bigNum;

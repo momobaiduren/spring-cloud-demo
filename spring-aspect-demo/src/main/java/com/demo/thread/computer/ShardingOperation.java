@@ -1,11 +1,9 @@
 package com.demo.thread.computer;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -16,8 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * created by zhanglong and since  2019/11/14 5:25 下午
  *
- * @description 分为有结果集操作 {@link ComputerHandler} 数据写出操作 无结果集操作处理 {@link
- * MergeHandler} 数据写入操作
+ * @description 分为有结果集操作 {@link ComputerHandler} 数据写出操作 无结果集操作处理 {@link MergeHandler} 数据写入操作
  */
 @Slf4j
 public class ShardingOperation {
@@ -50,22 +47,26 @@ public class ShardingOperation {
      */
     private CountDownLatch countDownLatch;
     /**
-     * description 结果集容器
+     * description 管理线程执行器
      */
-    private Map<Class<? extends ShardingHandler>, List<?>> result = new ConcurrentHashMap<>();
+    private ThreadPoolExecutor threadPoolExecutor;
+    /**
+     * description 自定义线程工厂用于描述线程组和线程
+     */
+    private CustomThreadFactory threadFactory;
+    /**
+     * description 条件
+     */
+    private Object conditions;
 
     /**
      * created by zhanglong and since  2019/11/15 2:04 下午
+     *
      * @description 进行自旋，直到结果集完全执行完成
      */
-    public Map<Class<? extends ShardingHandler>, List<?>> result() {
+    public <M extends MergeModel,R extends MergeResult<M>> R result( R result ) {
         while (!endOfRun.compareAndSet(true, false)) {
-            try {
-                //释放50毫秒cpu资源
-                TimeUnit.MILLISECONDS.sleep(100L);
-            } catch (InterruptedException e) {
-                log.error(e.getMessage());
-            }
+            releaseCpuSource();
             endOfRun.set(Objects.isNull(countDownLatch) || countDownLatch.getCount() == 0);
         }
         return result;
@@ -75,85 +76,142 @@ public class ShardingOperation {
      * create by ZhangLong on 2019/11/3 description 初始化
      */
     public static ShardingOperation instance() {
-        return new ShardingOperation();
-    }
-
-
-    public void run( Consumer<Map<Class<? extends ShardingHandler>, List<?>>> consumer,
-        MergeHandler mergeHandler ) {
-        Objects.requireNonNull(consumer, "consumer could not be null");
-        Objects.requireNonNull(consumer, "consumer could not be null");
-        if (Objects.nonNull(mergeHandler)) {
-            dealWithMergeResult(mergeHandler, consumer);
+        final ShardingOperation shardingOperation = new ShardingOperation();
+        shardingOperation.threadFactory = new CustomThreadFactory();
+        if (Objects.isNull(shardingOperation.threadPoolProperties)) {
+            shardingOperation.threadPoolProperties = new ThreadPoolProperties();
         }
+        shardingOperation.threadPoolExecutor = new ThreadPoolExecutor(
+            shardingOperation.threadPoolProperties.getCorePoolSize(),
+            shardingOperation.threadPoolProperties.getMaximumPoolSize(),
+            shardingOperation.threadPoolProperties.getKeepAliveTime(),
+            TimeUnit.SECONDS, shardingOperation.threadPoolProperties.getWorkQuezue(),
+            shardingOperation.threadFactory);
+        return shardingOperation;
     }
 
-    public void run( Consumer<Map<Class<? extends ShardingHandler>, List<?>>> consumer,
+    /**
+     * created by zhanglong and since  2019/11/16 12:20 下午
+     *
+     * @param result 初始化结果集
+     * @param consumer 结果集消费
+     * @param conditions 条件输入
+     * @param mergeHandler 执行器
+     * @description 描述
+     */
+    public <M extends MergeModel,R extends MergeResult<M>>  void run(Class<M> eClass, R result, Consumer<MergeResult<M>> consumer,
+        Object conditions, MergeHandler mergeHandler ) {
+        Objects.requireNonNull(mergeHandler, "mergeHandler could not be null");
+        Objects.requireNonNull(consumer, "consumer could not be null");
+        this.conditions = conditions;
+        dealWithMergeResult(eClass, result, consumer, mergeHandler);
+        threadPoolExecutor.shutdown();
+    }
+
+    /**
+     * created by zhanglong and since  2019/11/16 12:20 下午
+     *
+     * @param result 初始化结果集
+     * @param consumer 结果集消费
+     * @param conditions 条件输入
+     * @param mergeHandlers 执行器
+     * @description 描述
+     */
+    public <M extends MergeModel,R extends MergeResult<M>> void  run(Class<M> eClass,  R result, Consumer<R> consumer,
+        Object conditions,
         MergeHandler... mergeHandlers ) {
+        Objects.requireNonNull(result, "result could not be null");
         Objects.requireNonNull(consumer, "consumer could not be null");
         Objects.requireNonNull(mergeHandlers, "mergeHandlers could not be null");
+        this.conditions = conditions;
         for (MergeHandler mergeHandler : mergeHandlers) {
-            run(consumer, mergeHandler);
+            dealWithMergeResult(eClass, result, consumer, mergeHandler);
         }
+        threadPoolExecutor.shutdown();
     }
 
-    public void run( ComputerHandler computerHandler ) {
+    /**
+     * created by zhanglong and since  2019/11/16 12:20 下午
+     *
+     * @param computerHandler 执行器
+     * @param conditions 条件输入
+     * @description 描述
+     */
+    public void run( ComputerHandler computerHandler, Object conditions ) {
         Objects.requireNonNull(computerHandler, "computerHandler could not be null");
-        parallelDealWith(computerHandler);
+        this.conditions = conditions;
+        dealWith(computerHandler, null);
     }
 
-    private void dealWithMergeResult( MergeHandler mergeHandler,
-        Consumer<Map<Class<? extends ShardingHandler>, List<?>>> consumer ) {
-        if (parallelDealWith(mergeHandler)) {
-            return;
-        }
-        Map<Class<? extends ShardingHandler>, List<?>> result = result();
+    private <M extends MergeModel,R extends MergeResult<M>> void dealWithMergeResult(Class<M> eClass,  R result,
+        Consumer<R> consumer, MergeHandler mergeHandler ) {
+        dealWith(mergeHandler, result);
+        result(result);
         consumer.accept(result);
     }
 
-    private boolean parallelDealWith( ShardingHandler shardingHandler ) {
-        int count = shardingHandler.count();
-        if (count <= 0) {
-            log.error("handler num is Zero");
-            return true;
-        }
+    private <M extends MergeModel,R extends MergeResult<M>> void dealWith(ShardingHandler shardingHandler, R result) {
+        int count = shardingHandler.count(conditions);
         if (Objects.nonNull(shardingDealMinCount) && shardingDealMinCount >= count) {
-            shardingHandler.execut();
-            return true;
+            singleDealWith(shardingHandler);
+            return;
         }
-        Map<Integer, List<Integer>> shardingDataMap = Sharding.sharding(shardingNum, count);
-        if (Objects.isNull(threadPoolProperties)) {
-            threadPoolProperties = new ThreadPoolProperties();
-        }
+        parallelDealWith(shardingHandler, result, count);
+    }
 
+    private <M extends MergeModel,R extends MergeResult<M>> void parallelDealWith( ShardingHandler shardingHandler,
+        R mergeResult, int count ) {
+        Map<Integer, List<Integer>> shardingDataMap = Sharding.sharding(shardingNum, count);
         if (shardingHandler instanceof MergeHandler) {
             countDownLatch = new CountDownLatch(shardingDataMap.size() + 1);
-            if (Objects.isNull(result.get(shardingHandler.getClass()))) {
-                result.put(shardingHandler.getClass(), new ArrayList<>(count));
-            }
             MergeHandler mergeHandler = (MergeHandler) shardingHandler;
             computer(shardingDataMap, shardingData -> {
-                mergeHandler.banchExecut(shardingData, result);
+                mergeHandler.banchExecute(shardingData, result ->{
+                    //TODO
+                }, conditions);
                 countDownLatch.countDown();
-                releaseCpuSource();
             }, () -> {
-                mergeHandler.compensate(result);
+                mergeHandler.compensate(result -> {
+                    //TODO
+                }, conditions);
                 countDownLatch.countDown();
-                releaseCpuSource();
             });
         }
 
         if (shardingHandler instanceof ComputerHandler) {
             ComputerHandler computerHandler = (ComputerHandler) shardingHandler;
-            computer(shardingDataMap, computerHandler::banchExecut, computerHandler::compensate);
+            computer(shardingDataMap,
+                shardingData -> computerHandler.banchExecut(shardingData, conditions),
+                () -> computerHandler.compensate(conditions));
         }
-
-        return false;
     }
 
-    private void releaseCpuSource(){
+
+
+
+    private <M extends MergeModel,R extends MergeResult<M>>  void singleDealWith( ShardingHandler shardingHandler) {
+        countDownLatch = new CountDownLatch(1);
+        threadPoolExecutor.execute(threadFactory.bindingThreadName(
+            new ThreadGroup(threadPoolProperties.getThreadGroupName()), "defualt-thread")
+            .newThread(() -> {
+                if (shardingHandler instanceof MergeHandler) {
+                    MergeHandler mergeHandler = (MergeHandler) shardingHandler;
+                    //多线程内处理
+                    mergeHandler.execute(result ->{
+                        //TODO 直接返回结果集
+                    }, conditions);
+                    countDownLatch.countDown();
+                }
+                if (shardingHandler instanceof ComputerHandler) {
+                    ComputerHandler computerHandler = (ComputerHandler) shardingHandler;
+                    computerHandler.execut(conditions);
+                }
+            }));
+    }
+
+    private void releaseCpuSource() {
         try {
-            TimeUnit.MILLISECONDS.sleep(1000);
+            TimeUnit.MILLISECONDS.sleep(100);
         } catch (InterruptedException e) {
             log.error(e.getMessage());
         }
@@ -161,12 +219,6 @@ public class ShardingOperation {
 
     private void computer( Map<Integer, List<Integer>> shardingDataMap,
         Consumer<List<Integer>> executeConsumer, Runnable compensateRunable ) {
-        CustomThreadFactory threadFactory = new CustomThreadFactory();
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
-            threadPoolProperties.getCorePoolSize(), threadPoolProperties.getMaximumPoolSize(),
-            threadPoolProperties.getKeepAliveTime(),
-            TimeUnit.SECONDS, threadPoolProperties.getWorkQuezue(), threadFactory);
-
         shardingDataMap.forEach(( sharding, shardingData ) -> {
             Thread thread = threadFactory
                 .bindingThreadName(new ThreadGroup(threadPoolProperties.getThreadGroupName()),
@@ -180,7 +232,6 @@ public class ShardingOperation {
                 COMPENSATE_THREAD_NAME)
             .newThread(compensateRunable);
         threadPoolExecutor.execute(thread);
-        threadPoolExecutor.shutdown();
     }
 
     public ShardingOperation threadPoolProperties( ThreadPoolProperties threadPoolProperties ) {
@@ -190,12 +241,13 @@ public class ShardingOperation {
         return this;
     }
 
-    public void shardingDealMinCount( int shardingDealMinCount ) {
+    public ShardingOperation shardingDealMinCount( int shardingDealMinCount ) {
         if (shardingDealMinCount <= 0) {
             this.shardingDealMinCount = 300;
         } else {
             this.shardingDealMinCount = shardingDealMinCount;
         }
+        return this;
     }
 
     public ShardingOperation shardingNum( int shardingNum ) {

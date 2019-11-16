@@ -1,30 +1,42 @@
 package com.demo.thread.computer;
 
+import com.demo.Jdk8Api.Apple;
 import java.util.List;
-import java.util.Map;
+import java.util.function.Consumer;
 
 /**
- * created by zhanglong and since  2019/11/14  5:27 下午
+ * created by zhanglong and since  2019/11/14  5:27 下午 <M extends MergeModel,R extends
+ * MergeResult<M>>
+ *
  * @description: 描述
  */
-interface MergeHandler extends ShardingHandler {
-    default void banchExecut( List<Integer> shardingData,
-        Map<Class<? extends ShardingHandler>, List<?>> result ){
-        shardingData.forEach(sharding -> execut(sharding, result));
+public interface MergeHandler<M extends MergeModel, R extends MergeResult<M>, C> extends ShardingHandler {
+
+    default void banchExecute( List<Integer> shardingData, Consumer<R> consumerResult, C conditions ) {
+        shardingData.forEach(sharding -> execute(sharding, consumerResult, conditions));
     }
 
     /**
-     * create by ZhangLong on 2019/11/14
-     * description 写入Map参数中{@link MergeHandler#execut(Integer, Map)} 结果
+     * create by ZhangLong on 2019/11/14 description 写入Map参数中{@link MergeHandler#execute(Integer,
+     * Consumer, C)} 结果
+     *
      * @param sharding 如果=null 就是直接一次全部处理
-     * @param result 直接写入结果集，不需要初始化
+     * @param consumerResult 直接写入结果集，不需要初始化
      */
-    void execut( Integer sharding, Map<Class<? extends ShardingHandler>, List<?>> result );
+    default void execute( Integer sharding, Consumer<R> consumerResult, C conditions ) {
+        throw new UnsupportedOperationException(
+            "cloud not impliment execute(Integer, Map, Object) method");
+    }
+
+    default void execute( Consumer<R> consumerResult, C conditions ) {
+        throw new UnsupportedOperationException("cloud not impliment execute(Map, Object) method");
+    }
 
     /**
-     * create by ZhangLong on 2019/11/14
-     * description 补偿数据
-     * @param result
+     * create by ZhangLong on 2019/11/14 description 补偿数据
      */
-    void compensate( Map<Class<? extends ShardingHandler>, List<?>> result );
+    default void compensate( Consumer<R> consumerResult, C conditions ) {
+        throw new UnsupportedOperationException(
+            "cloud not impliment compensate(Map, Object) method");
+    }
 }
