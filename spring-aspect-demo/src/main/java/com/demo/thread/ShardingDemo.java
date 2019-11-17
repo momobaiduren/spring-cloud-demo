@@ -1,40 +1,48 @@
 package com.demo.thread;
 
 import com.demo.Jdk8Api.Apple;
-import com.demo.thread.computer.ListResult;
-import com.demo.thread.computer.MergeHandler;
-import com.demo.thread.computer.MergeModel;
-import com.demo.thread.computer.ShardingOperation;
-import java.util.ArrayList;
+import com.demo.thread.computer.MergeHandlerImpl;
+import com.demo.thread.computer.ShardingContext;
+import com.demo.thread.computer.ShardingWorker;
+import java.util.List;
 
 public class ShardingDemo {
 
     public static void main( String[] args ) {
         System.out.println(System.currentTimeMillis());
-//        ShardingOperation.instance().run(new UnpaymentReportComputerHandler(), null);
-//        AtomicReference<BigDecimal> resultBigd = new AtomicReference<>(BigDecimal.ZERO);
-        ShardingOperation.instance().run(Apple.class, new ListResult<>(new ArrayList<>()), result -> {});
-//            if (!result.getResultMapList().isEmpty()) {
-//                System.out.println(result.getResultMapList().size());
-//                result.getResultMapList().forEach((clazz, appleList) ->{
-//                    if(CollectionUtils.isNotEmpty(appleList)) {
-//                        resultBigd.set(appleList.stream().map(Apple::getPrice).reduce(BigDecimal.ZERO,BigDecimal::add).add(resultBigd.get()));
-//                    }
-//                });
-//            }
-//        }, "123", new MergeHandlerImpl());
-//        System.out.println(resultBigd.get());
-//        System.out.println(System.currentTimeMillis());
+        ShardingContext shardingContext =
+            new ShardingContext<>(
+                MergeHandlerImpl.class, List.class, new MergeHandlerImpl(),"123");
+        ShardingWorker.instance().shardingNum(40).run(result -> {
+            System.out.println(result.size());
+            result.get(shardingContext.getHandlerClass()).forEach((key,va)->{
+                List<Apple> apples = (List<Apple>) va;
+//                System.out.println(apples.size());
+
+            });
+
+        }, shardingContext);
+        System.out.println(System.currentTimeMillis());
+
+//        List<Apple> apples = new ArrayList<>(10000000);
+//        for (int i = 0; i < 2500000; i++) {
+//            Apple apple = new Apple(BigDecimal.ONE);
+//            apples.add(apple);
+//        }
+//        for (int i = 0; i < 2500000; i++) {
+//            Apple apple = new Apple(BigDecimal.ONE);
+//            apples.add(apple);
+//        }
+//        for (int i = 0; i < 2500000; i++) {
+//            Apple apple = new Apple(BigDecimal.ONE);
+//            apples.add(apple);
+//        }
+//        for (int i = 0; i < 2500000; i++) {
+//            Apple apple = new Apple(BigDecimal.ONE);
+//            apples.add(apple);
+//        }
+//        System.out.println(apples.stream().map(Apple::getPrice).reduce(BigDecimal.ZERO,BigDecimal::add));
+        System.out.println(System.currentTimeMillis());
     }
-    class MergeContext<M extends MergeModel,H extends MergeHandler, R> {
-        private Class<M> mClass;
 
-        private H MergeHandler;
-
-        private Class<R> rClass;
-
-        MergeContext( Class<M> mClass ) {
-            this.mClass = mClass;
-        }
-    }
 }

@@ -5,13 +5,13 @@ package com.demo.thread.computer;
  *
  * @description: 描述
  */
-public interface ShardingHandler<C> {
+public interface ShardingHandler {
 
     /**
      * create by ZhangLong on 2019/11/14
      * description 获取处理数据的总量，根据索引或者主键查询
      */
-     int count( C conditions );
+    <C> int count( C conditions );
 
 
 }

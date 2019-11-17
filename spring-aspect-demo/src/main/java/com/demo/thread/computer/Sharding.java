@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * created by zhanglong and since  2019/11/14  5:52 下午
  *
  * @description: 描述
  */
+@Slf4j
 public final class Sharding {
     private Sharding(){}
     /**
@@ -27,5 +30,13 @@ public final class Sharding {
             }
         }
         return shardingDataMap;
+    }
+
+    public static void releaseCpuSource( long milliseconds ) {
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            log.error(e.getMessage());
+        }
     }
 }
