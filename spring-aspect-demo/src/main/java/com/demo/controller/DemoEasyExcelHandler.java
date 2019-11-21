@@ -1,6 +1,6 @@
 package com.demo.controller;
 
-import com.demo.excel.ExcleData;
+import com.springcloud.easyExcel.ExcleData;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DemoEasyExcelHandler {
-    public void handlerData(ExcleData<DemoEntity> excleData) {
+    public void handlerData( ExcleData<DemoEntity> excleData) {
         System.out.println(excleData.get());
         System.out.println("---------------------------");
         System.out.println(excleData.errorData());

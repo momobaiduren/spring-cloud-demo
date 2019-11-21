@@ -1,6 +1,5 @@
 package com.demo.thread.computer;
 
-import com.demo.Jdk8Api.Apple;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

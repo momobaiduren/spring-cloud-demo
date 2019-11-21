@@ -1,7 +1,7 @@
 package com.demo.controller;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.demo.excel.ReadModel;
+import com.springcloud.easyExcel.ReadModel;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;

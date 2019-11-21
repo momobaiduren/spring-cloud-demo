@@ -1,4 +1,4 @@
-package com.demo.thread.computer;
+package com.demo.computer;
 
 import java.util.Objects;
 import java.util.Queue;
@@ -17,17 +17,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public final class WorkTaskQueue {
 
-    private Queue<Runnable> workTaskQueue = new ConcurrentLinkedQueue<>();
+    private Queue<Runnable> workTaskQueue =  new ConcurrentLinkedQueue<>();
 
     private AtomicInteger taskCount = new AtomicInteger(0);
     private static final String THREAD_GROUP_NAME = "default-sharding-group";
     private static final String THREAD_NAME = "default-sharding-thread";
-
-//    private AtomicBoolean taskEndOfFlag = new AtomicBoolean(false);
-
-//    public int taskCount() {
-//        return taskCount.get();
-//    }
 
     void addTask( Runnable task ) {
         taskCount.incrementAndGet();
@@ -37,7 +31,7 @@ public final class WorkTaskQueue {
 
     void submit( ThreadPoolProperties threadPoolProperties, int executeThreadNum ) {
         CustomThreadFactory threadFactory = new CustomThreadFactory();
-        threadFactory.bindingThreadName(new ThreadGroup(THREAD_GROUP_NAME), THREAD_NAME);
+        threadFactory.bindingThreadGroup(new ThreadGroup(THREAD_GROUP_NAME), THREAD_NAME);
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
             threadPoolProperties.getCorePoolSize(),
             threadPoolProperties.getMaximumPoolSize(),
@@ -72,7 +66,6 @@ public final class WorkTaskQueue {
             } else {
                 workingTaskQueue.offer(worktask);
             }
-            Sharding.releaseCpuSource(1500L);
         }
         threadPoolExecutor.shutdown();
     }
