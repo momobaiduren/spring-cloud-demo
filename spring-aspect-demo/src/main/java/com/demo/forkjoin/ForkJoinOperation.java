@@ -1,5 +1,9 @@
 package com.demo.forkjoin;
 
+import com.demo.thread.computer.ShardingHandler;
+
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
@@ -24,12 +28,13 @@ public class ForkJoinOperation {
     }
 
 
-    public <R> void run(Consumer<R> consumer){
+    public <R, H extends ShardingHandler> void forkjoin(Consumer<R> consumer, HandlerContext<H> handlerContext){
+        Objects.requireNonNull(handlerContext, "");
         ForkJoinPool pool = new ForkJoinPool();
-        ForkJoinTask<Integer> taskFuture =  pool.submit(new MyForkJoinTask(1,100000000));
+        ForkJoinTask<List<R>> taskFuture =  pool.submit(new ForkJoinAction<>(handlerContext, executeMinUnit));
         try {
-            Integer result = taskFuture.get();
-            System.out.println("result = " + result);
+            List<R> rs = taskFuture.get();
+            System.out.println("result = " + rs);
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace(System.out);
         }
