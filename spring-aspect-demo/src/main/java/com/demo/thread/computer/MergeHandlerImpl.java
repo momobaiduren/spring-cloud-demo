@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class MergeHandlerImpl implements MergeHandler<List<Apple>, Object> {
+public class MergeHandlerImpl implements MergeHandler<List<Apple>, Integer> {
 
     @Override
-    public void execute( Integer shardingNum, BiConsumer<Integer, List<Apple>> consumerResult, Object conditions ) {
-        List<Apple> apples = new ArrayList<>(5000);
-        for (int i = 0; i < 5000; i++) {
+    public void execute( Integer shardingNum, BiConsumer<Integer, List<Apple>> consumerResult, Integer conditions ) {
+        List<Apple> apples = new ArrayList<>(conditions);
+        for (int i = 0; i < conditions; i++) {
             Apple apple = new Apple(BigDecimal.ONE);
             apples.add(apple);
         }
@@ -20,9 +20,9 @@ public class MergeHandlerImpl implements MergeHandler<List<Apple>, Object> {
     }
 
     @Override
-    public void execute( Consumer<List<Apple>> consumer, Object conditions ) {
-        List<Apple> apples = new ArrayList<>(10000000);
-        for (int i = 0; i < 10000000; i++) {
+    public void execute( Consumer<List<Apple>> consumer, Integer conditions ) {
+        List<Apple> apples = new ArrayList<>(conditions);
+        for (int i = 0; i < conditions; i++) {
             Apple apple = new Apple(BigDecimal.ONE);
             apples.add(apple);
         }
@@ -30,12 +30,12 @@ public class MergeHandlerImpl implements MergeHandler<List<Apple>, Object> {
     }
 
     @Override
-    public void compensate( Consumer<List<Apple>> consumer, Object conditions ) {
+    public void compensate( Consumer<List<Apple>> consumer, Integer conditions ) {
         System.out.println("补偿成功");
     }
 
     @Override
     public int count( Object conditions ) {
-        return 20000;
+        return 100000;
     }
 }
