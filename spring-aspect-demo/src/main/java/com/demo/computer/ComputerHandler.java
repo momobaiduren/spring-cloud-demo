@@ -2,29 +2,31 @@ package com.demo.computer;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * @author zhanglong on 2019-09-13  12:08 上午
  * @version V1.0
  */
-public interface ComputerHandler extends ShardingHandler {
+public interface ComputerHandler {
 
-    default void banchExecut( List<Integer> shardingData ) {
-        shardingData.forEach(this::execut);
+    default void banchExecute( List<Integer> shardingData,
+        Consumer<Object> resultConsumer, Object conditions ) {
+        shardingData.forEach(sharding -> execut(sharding, resultConsumer, conditions));
     }
 
     /**
-     * create by ZhangLong on 2019/11/14 description 写入Map参数中{@link MergeHandler#execut(Integer,
-     * Map)} 结果
-     *
-     * @param sharding 分片参数
+     * created by zhanglong and since  2019/11/15 4:17 下午 该方法是不进行分片处理的，而是直接处理
      */
-    void execut( Integer sharding );
+    void execut( Integer sharding, Consumer<Object> resultConsumer, Object conditions );
+
+    void execut( Consumer<Object> resultConsumer, Object conditions );
+
 
     /**
-     * create by ZhangLong on 2019/11/14 description 补偿数据
+     * create by ZhangLong on 2019/11/14 description 获取处理数据的总量，根据索引或者主键查询
      */
-    void compensate();
+    int count( Object conditions );
 
 }
 

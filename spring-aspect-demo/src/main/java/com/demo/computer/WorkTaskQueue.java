@@ -53,7 +53,7 @@ public final class WorkTaskQueue {
         //监控线程执行任务
         while (countDownLatch.getCount() != 0) {
             FutureTask<Object> worktask = workingTaskQueue.poll();
-            if (worktask.isDone()) {
+            if (Objects.requireNonNull(worktask).isDone()) {
                 countDownLatch.countDown();
                 if (awaitTaskNum > 0) {
                     Runnable worker = workTaskQueue.poll();

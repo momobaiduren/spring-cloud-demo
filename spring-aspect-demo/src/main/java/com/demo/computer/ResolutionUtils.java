@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  * @description: 描述
  */
 @Slf4j
-public final class Sharding {
-    private Sharding(){}
+public final class ResolutionUtils {
+    private ResolutionUtils(){}
     /**
      * description 分片数从1开始执行，如果索引是0的要加1
      */

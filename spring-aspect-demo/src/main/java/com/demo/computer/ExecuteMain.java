@@ -60,7 +60,7 @@ public class ExecuteMain {
 //
 //        });
         AtomicInteger size = new AtomicInteger();
-        ShardingOperation.instance().run(result->{
+        WorkerComputerOperation.instance().run(result->{
             System.out.println(result.size());
             result.forEach((key, va)->{
                 System.out.println("handler>>sharding>>>>>>>"+va.size());
@@ -70,7 +70,7 @@ public class ExecuteMain {
 
                 });
             });
-        }, new ShardingContext<>(MergeHandlerImpl.class, new MergeHandlerImpl(),null));
+        }, new WorkerContext<>(MergeHandlerImpl.class, new MergeHandlerImpl(),null),new WorkerContext<>(MergeHandlerImpl.class, new MergeHandlerImpl(),null));
         System.out.println(size.get());
         System.out.println("耗时："+(System.currentTimeMillis()-x));
 

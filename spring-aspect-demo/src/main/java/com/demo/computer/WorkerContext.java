@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class ShardingContext<H extends ShardingHandler> {
+public class WorkerContext<H extends ComputerHandler> {
     private Class<H> handlerClass;
     private H shardingHander;
     private Object conditions;

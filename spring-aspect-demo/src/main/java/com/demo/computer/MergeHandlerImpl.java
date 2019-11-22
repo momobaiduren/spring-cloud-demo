@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class MergeHandlerImpl implements ShardingHandler {
+public class MergeHandlerImpl implements ComputerHandler{
 
 //    @Override
 //    public void execute( Integer shardingNum, BiConsumer<Integer, List<Apple>> consumerResult, Integer conditions ) {
@@ -36,7 +36,7 @@ public class MergeHandlerImpl implements ShardingHandler {
     @Override
     public void execut( Integer shardingNum, Consumer<Object> resultConsumer, Object conditions ) {
         List<Apple> apples = new ArrayList<>();
-        for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < 1000; i++) {
             Apple apple = new Apple(BigDecimal.ONE);
             apples.add(apple);
         }
@@ -50,6 +50,6 @@ public class MergeHandlerImpl implements ShardingHandler {
 
     @Override
     public int count( Object conditions ) {
-        return 10000;
+        return 20000;
     }
 }
