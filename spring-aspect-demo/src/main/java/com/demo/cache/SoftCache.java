@@ -1,5 +1,6 @@
 package com.demo.cache;
 
+import java.util.concurrent.Executors;
 import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
 
@@ -54,9 +55,6 @@ public class SoftCache<K, V> implements Cache<K,V> {
         Objects.requireNonNull(val, "val could not be null");
         LocalDateTime expireTime = LocalDateTime.now();
         switch (timeUnit) {
-            case SECONDS:
-                expireTime = LocalDateTime.now().plusSeconds(expire);
-                break;
             case MINUTES:
                 expireTime = LocalDateTime.now().plusMinutes(expire);
                 break;
@@ -66,8 +64,9 @@ public class SoftCache<K, V> implements Cache<K,V> {
             case DAYS:
                 expireTime = LocalDateTime.now().plusDays(expire);
                 break;
+            default:
+                expireTime = LocalDateTime.now().plusSeconds(expire);
         }
-//        Objects.requireNonNull(softReferenceCache.get()).putIfAbsent(key, new CacheNode<>(key, val, expireTime, timeUnit));
         CacheNode<K, V> kvCacheNode = Objects.requireNonNull(softReferenceCache.get()).get(key);
         if (Objects.nonNull(kvCacheNode)){
             kvCacheNode.setTimeUnit(timeUnit);
@@ -83,11 +82,10 @@ public class SoftCache<K, V> implements Cache<K,V> {
      * create by ZhangLong on 2019/11/2
      * description 守护线程进行清除处理
      */
-    @Synchronized
-    public void dealSoftCache(){
+    private void dealSoftCache(){
         do {
             switchMonitor.set(false);
-            Thread thread = new Thread(()->{
+            Executors.newSingleThreadExecutor().execute(()->{
                 while (true){
                     Map<K, CacheNode<K, V>> cacheNodes = Objects.requireNonNull(softReferenceCache.get());
                     Iterator<Map.Entry<K, CacheNode<K, V>>> iterator = cacheNodes.entrySet().iterator();
@@ -112,8 +110,6 @@ public class SoftCache<K, V> implements Cache<K,V> {
                     }
                 }
             });
-            thread.setDaemon(true);
-            thread.start();
         }while (switchMonitor.get());
     }
 

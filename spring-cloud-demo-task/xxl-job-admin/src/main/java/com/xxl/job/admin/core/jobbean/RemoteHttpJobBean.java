@@ -25,7 +25,7 @@ public class RemoteHttpJobBean extends QuartzJobBean {
 		// load jobId
 		JobKey jobKey = context.getTrigger().getJobKey();
 		Integer jobId = Integer.valueOf(jobKey.getName());
-
+//new Object().getClass();
 		// trigger
 		JobTriggerPoolHelper.trigger(jobId, TriggerTypeEnum.CRON, -1, null, null);
 	}

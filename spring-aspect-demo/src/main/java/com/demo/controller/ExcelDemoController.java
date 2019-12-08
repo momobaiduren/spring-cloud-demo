@@ -42,7 +42,7 @@ public class ExcelDemoController {
     @PostMapping("exportData")
     public String exportData(HttpServletResponse response) throws RuntimeException {
 //        EasyExcelExecutor.importExcel(demoEasyExcelHandler,file, DemoEntity.class);
-//        EasyExcelExecutor.exportResponse(DemoEntity.class, "zhanglong","zhanglong",data,response);
+        EasyExcelExecutor.exportResponse(DemoEntity.class, "zhanglong","zhanglong",data,response);
         //穿到后台进行处理 这里直接返回了
         return "";
     }
