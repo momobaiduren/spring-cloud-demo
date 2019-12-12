@@ -20,11 +20,11 @@ public class ValidationExecutor {
         this.consumer = consumer;
     }
 
-    public <T> ValidationListResult<T> validateList(List<T> dataList, boolean isThrowErrorExp) {
-        return validateList(dataList, isThrowErrorExp, null);
+    public <T> ValidationListResult<T> validateList(List<T> dataList) {
+        return validateList(dataList, null);
     }
 
-    public <T> ValidationListResult<T> validateList(List<T> dataList, boolean isThrowErrorExp, Validator validator) {
+    public <T> ValidationListResult<T> validateList(List<T> dataList, Validator validator) {
         if (Objects.isNull(validator)) {
             validator = Validation.buildDefaultValidatorFactory().getValidator();
         }
@@ -41,7 +41,7 @@ public class ValidationExecutor {
                     } else {
                         errorMsg.put(cv.getPropertyPath().toString(), cv.getMessage());
                     }
-                    if (isThrowErrorExp){
+                    if (result.isThrowErrorExp){
                         consumer = null;
                         return;
                     }
@@ -76,6 +76,9 @@ public class ValidationExecutor {
                         validationEntityResult.getErrorMsgs().get(constraintViolation.getPropertyPath().toString()) + ";" + constraintViolation.getMessage());
             } else {
                 validationEntityResult.getErrorMsgs().put(constraintViolation.getPropertyPath().toString(), constraintViolation.getMessage());
+            }
+            if (validationEntityResult.isThrowErrorExp){
+                consumer = null;
             }
         }));
         if (Objects.nonNull(consumer)) {
