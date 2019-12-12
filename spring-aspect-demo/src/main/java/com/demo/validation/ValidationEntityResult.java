@@ -1,38 +1,41 @@
 package com.demo.validation;
 
-import javax.xml.bind.ValidationException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author zhanglong
  * @description: 校验单个对象
  * @date 2019-08-3114:44
  */
-public class ValidationEntityResult<T> extends ValidationResult{
+public class ValidationEntityResult<T> extends ValidationResult {
 
     private Map<String, String> errorMsgs = new HashMap<>();
     private T data;
 
-    public boolean hasError(){
+    public boolean hasError() {
         return !errorMsgs.isEmpty();
     }
 
     @Override
-    public void isErrorThrowExp() throws ValidationException {
-        if(this.hasError()) {
-            throw new ValidationException(errorMsgs.toString());
+    public <E extends Exception> void throwErrorExp(Function<String, E> function) throws Exception {
+        if (this.hasError()) {
+            String errmsg = errorMsgs.entrySet().stream().map(Map.Entry::getValue).collect(Collectors.joining(";"));
+            throw function.apply(errmsg);
         }
     }
-    public String errorMsgs(){
+
+    public String errorMsgs() {
         StringBuilder errorMsg = new StringBuilder();
-        errorMsgs.forEach((key, value) ->{
-            errorMsg.append(key).append(value).append(";");
+        errorMsgs.forEach((key, value) -> {
+            errorMsg.append(value).append(";");
         });
         return errorMsg.toString();
     }
 
-    public T get(){
+    public T get() {
         return data;
     }
 
@@ -40,7 +43,7 @@ public class ValidationEntityResult<T> extends ValidationResult{
         return errorMsgs;
     }
 
-    public void setData( T data ) {
+    public void setData(T data) {
         this.data = data;
     }
 }

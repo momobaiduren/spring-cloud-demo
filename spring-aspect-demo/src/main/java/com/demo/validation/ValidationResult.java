@@ -1,6 +1,6 @@
 package com.demo.validation;
 
-import javax.xml.bind.ValidationException;
+import java.util.function.Function;
 
 /**
  * @author zhanglong
@@ -9,6 +9,6 @@ import javax.xml.bind.ValidationException;
  */
 public abstract class ValidationResult {
 
-   public abstract void isErrorThrowExp() throws ValidationException;
+   public abstract  <E extends Exception> void throwErrorExp(Function<String, E> function) throws Exception;
 
 }

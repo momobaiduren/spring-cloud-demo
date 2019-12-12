@@ -16,16 +16,16 @@ public class ValidationExecutor {
 
     private Consumer<ValidationResult> consumer;
 
-    public ValidationExecutor(Consumer<ValidationResult> consumer){
+    public ValidationExecutor(Consumer<ValidationResult> consumer) {
         this.consumer = consumer;
     }
 
-    public <T> ValidationListResult<T> validateList(List<T> dataList){
-        return validateList(dataList,null);
+    public <T> ValidationListResult<T> validateList(List<T> dataList, boolean isThrowErrorExp) {
+        return validateList(dataList, isThrowErrorExp, null);
     }
 
-    public <T> ValidationListResult<T> validateList(List<T> dataList, Validator validator) {
-        if (Objects.isNull(validator)){
+    public <T> ValidationListResult<T> validateList(List<T> dataList, boolean isThrowErrorExp, Validator validator) {
+        if (Objects.isNull(validator)) {
             validator = Validation.buildDefaultValidatorFactory().getValidator();
         }
         ValidationListResult<T> result = new ValidationListResult<>();
@@ -35,44 +35,50 @@ public class ValidationExecutor {
             if (set != null && set.size() != 0) {
                 Map<String, String> errorMsg = new HashMap<>();
                 for (ConstraintViolation<T> cv : set) {
-                    if(errorMsg.containsKey(cv.getPropertyPath().toString())) {
+                    if (errorMsg.containsKey(cv.getPropertyPath().toString())) {
                         errorMsg.put(cv.getPropertyPath().toString(),
-                            errorMsg.get(cv.getPropertyPath().toString())+";"+cv.getMessage());
-                    }else {
+                                errorMsg.get(cv.getPropertyPath().toString()) + ";" + cv.getMessage());
+                    } else {
                         errorMsg.put(cv.getPropertyPath().toString(), cv.getMessage());
                     }
+                    if (isThrowErrorExp){
+                        consumer = null;
+                        return;
+                    }
                 }
-                if(errorMsg.isEmpty()) {
+                if (errorMsg.isEmpty()) {
                     result.getSuccessData().add(t);
-                }else {
+                } else {
                     result.getErrorData().put(t, errorMsg);
                 }
             }
         });
-        if (Objects.nonNull(consumer)){
+        if (Objects.nonNull(consumer)) {
             consumer.accept(result);
         }
         return result;
     }
-    public <T> ValidationEntityResult<T> validateEntity( T data){
+
+    public <T> ValidationEntityResult<T> validateEntity(T data) {
         return validateEntity(data, null);
     }
-    public <T> ValidationEntityResult<T> validateEntity( T data, Validator validator) {
-        if (Objects.isNull(validator)){
+
+    public <T> ValidationEntityResult<T> validateEntity(T data, Validator validator) {
+        if (Objects.isNull(validator)) {
             validator = Validation.buildDefaultValidatorFactory().getValidator();
         }
         ValidationEntityResult<T> validationEntityResult = new ValidationEntityResult<>();
         validationEntityResult.setData(data);
         Set<ConstraintViolation<T>> constraintViolationSet = validator.validate(data, Default.class);
-        Optional.ofNullable(constraintViolationSet).ifPresent(constraintViolations -> constraintViolations.forEach(constraintViolation ->{
-            if(validationEntityResult.getErrorMsgs().containsKey(constraintViolation.getPropertyPath().toString())) {
+        Optional.ofNullable(constraintViolationSet).ifPresent(constraintViolations -> constraintViolations.forEach(constraintViolation -> {
+            if (validationEntityResult.getErrorMsgs().containsKey(constraintViolation.getPropertyPath().toString())) {
                 validationEntityResult.getErrorMsgs().put(constraintViolation.getPropertyPath().toString(),
-                    validationEntityResult.getErrorMsgs().get(constraintViolation.getPropertyPath().toString())+";"+constraintViolation.getMessage());
-            }else {
+                        validationEntityResult.getErrorMsgs().get(constraintViolation.getPropertyPath().toString()) + ";" + constraintViolation.getMessage());
+            } else {
                 validationEntityResult.getErrorMsgs().put(constraintViolation.getPropertyPath().toString(), constraintViolation.getMessage());
             }
         }));
-        if (Objects.nonNull(consumer)){
+        if (Objects.nonNull(consumer)) {
             consumer.accept(validationEntityResult);
         }
         return validationEntityResult;

@@ -106,14 +106,6 @@ public abstract class SoftCache<K, V> implements Cache<K, V> {
                             }
                         }
                     }
-//                    try {
-//                        TimeUnit.SECONDS.sleep(30);
-//                        if (cacheNodes.isEmpty()) {
-//                            TimeUnit.MINUTES.sleep(30);
-//                        }
-//                    } catch (InterruptedException e) {
-//                        log.error(e.getMessage());
-//                    }
                 }
             });
             thread.setDaemon(true);
