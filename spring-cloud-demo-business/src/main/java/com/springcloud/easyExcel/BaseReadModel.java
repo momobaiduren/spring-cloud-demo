@@ -9,7 +9,7 @@ import lombok.Data;
  * @Version V1.0
  */
 @Data
-public abstract class ReadModel extends ExcelModel{
+public abstract class BaseReadModel implements ExcelModel{
 
     @ExcelProperty("错误信息")
     public String errorMsg;
