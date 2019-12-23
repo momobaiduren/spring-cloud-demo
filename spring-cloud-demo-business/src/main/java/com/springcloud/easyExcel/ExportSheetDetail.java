@@ -16,7 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExportSheetDetail<Export extends ExcelModel, Source> {
+public class ExportSheetDetail<Export extends AbstractExcelModel, Source> {
 
     @NotNull(message = "model类类型不能为空")
     private Class<Export> mClass;

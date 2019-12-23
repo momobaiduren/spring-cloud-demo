@@ -2,7 +2,6 @@ package com.springcloud.easyExcel.export;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.springcloud.easyExcel.ExcelModel;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -15,7 +14,7 @@ import java.util.Date;
  * @date 2019-09-0511:08
  */
 @Data
-public class StatementCreditControlExport extends ExcelModel implements Cloneable {
+public class StatementCreditControlExport extends AbstractExcelModel implements Cloneable {
     @ExcelProperty(value = "申请单号")
     private String applyNo;
     @ExcelProperty(value = "供应商编码")

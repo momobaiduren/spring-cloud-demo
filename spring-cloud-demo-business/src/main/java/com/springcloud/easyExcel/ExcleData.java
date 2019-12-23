@@ -12,7 +12,7 @@ import lombok.Data;
  * @author ZhangLong on 2019/10/16  5:56 下午
  * @version V1.0
  */
-public class ExcleData<M extends BaseReadModel> {
+public class ExcleData<M extends AbstractExcelModel> {
 
     private Map<Integer, SheetData> datas = new ConcurrentHashMap<>();
 

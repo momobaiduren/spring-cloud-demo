@@ -43,7 +43,7 @@ public final class EasyExcelExecutor {
      *
      * @param excleDataConsumer 导入数据的消费处理 并且ExcleData非空 description 导入
      */
-    public static <M extends BaseReadModel> void importExcel(
+    public static <M extends AbstractExcelModel> void importExcel(
         Consumer<ExcleData<M>> excleDataConsumer,
         final MultipartFile file, final Class<M> clazz ) {
         ImportSheetDetail<M> importSheetDetail = new ImportSheetDetail<>();
@@ -52,7 +52,7 @@ public final class EasyExcelExecutor {
         importMoreExcel(excleDataConsumer, file, importSheetDetail);
     }
 
-    public static <M extends BaseReadModel> void importExcelAndExportErrorData(
+    public static <M extends AbstractExcelModel> void importExcelAndExportErrorData(
         Consumer<ExcleData<M>> excleDataConsumer,
         final MultipartFile file, final Class<M> clazz ) {
         ImportSheetDetail<M> importSheetDetail = new ImportSheetDetail<>();
@@ -61,7 +61,7 @@ public final class EasyExcelExecutor {
         importMoreExcelAndExportErrorData(excleDataConsumer, file, true, importSheetDetail);
     }
 
-    public static <M extends BaseReadModel> void importMoreExcel(
+    public static <M extends AbstractExcelModel> void importMoreExcel(
         Consumer<ExcleData<M>> excleDataConsumer, final MultipartFile file,
         ImportSheetDetail<M>... importSheetDetails ) {
         importMoreExcelAndExportErrorData(excleDataConsumer, file, false, importSheetDetails);
@@ -74,7 +74,7 @@ public final class EasyExcelExecutor {
      * @param response 不为null实现导出处理 description 导入
      */
     @SuppressWarnings("all")
-    public static <M extends BaseReadModel> void importMoreExcelAndExportErrorData(
+    public static <M extends AbstractExcelModel> void importMoreExcelAndExportErrorData(
         Consumer<ExcleData<M>> excleDataConsumer, final MultipartFile file,
         boolean isErrorMsgRespose, ImportSheetDetail<M>... importSheetDetails ) {
         ExcleData<M> excleData = new ExcleData<>();
@@ -129,7 +129,7 @@ public final class EasyExcelExecutor {
         }
     }
 
-    public static <M extends ExcelModel, S> void exportMoreSheet( String fileName,
+    public static <M extends AbstractExcelModel, S> void exportMoreSheet( String fileName,
         List<ExportSheetDetail<M, S>> sheetDetails ) {
         Objects.requireNonNull(sheetDetails, "导出信息不能为空");
         HttpServletResponse response = Objects.requireNonNull(WebUtils.getResponse());
@@ -172,7 +172,7 @@ public final class EasyExcelExecutor {
      * create by ZhangLong on 2019/10/21 description 导出到服务本地指定文件目录下
      */
     @SuppressWarnings("all")
-    public static <M extends ExcelModel> void exportResponse( Class<M> clazz, File excleFile,
+    public static <M extends AbstractExcelModel> void exportResponse( Class<M> clazz, File excleFile,
         String sheetName,
         List<M> dataList ) {
         Objects.requireNonNull(excleFile, "dataListFunction could not be null");
@@ -201,7 +201,7 @@ public final class EasyExcelExecutor {
      *
      * @description 默认导出第一sheet 标题行为第一行
      */
-    public static <M extends ExcelModel, S> void exportResponse( Class<M> mClass, String fileName,
+    public static <M extends AbstractExcelModel, S> void exportResponse( Class<M> mClass, String fileName,
         String sheetName, List<S> dataList ) {
         ExportSheetDetail<M, S> excelModelExportSheetDetail = new ExportSheetDetail<>(mClass,
             dataList, sheetName, 1, 0);

@@ -1,9 +1,8 @@
 package com.demo.controller;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import lombok.Data;
-
 import javax.validation.constraints.NotNull;
+import lombok.Data;
 
 /**
  * @author zhanglong
@@ -11,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * @date 2019-08-3122:25
  */
 @Data
-public class DemoEntity extends ReadModel {
+public class DemoEntity {
     @ExcelProperty("姓名")
     private String username;
     @NotNull(message = "年龄不能为空")

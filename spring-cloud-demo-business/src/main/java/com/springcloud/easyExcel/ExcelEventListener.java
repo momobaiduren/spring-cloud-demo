@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Data
-public class ExcelEventListener<M extends BaseReadModel> extends AnalysisEventListener<M> {
+public class ExcelEventListener<M extends AbstractExcelModel> extends AnalysisEventListener<M> {
 
     private ExcleData<M> excleData;
 

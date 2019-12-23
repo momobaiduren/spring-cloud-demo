@@ -1,5 +1,6 @@
 package com.demo.validation;
 
+
 /**
  * @author zhanglong
  * @description: 这个类可以是抽象类、也可以是接口（用于表达一个结果集类型的基类）

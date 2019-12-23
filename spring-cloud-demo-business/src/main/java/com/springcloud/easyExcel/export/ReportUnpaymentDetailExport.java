@@ -1,7 +1,6 @@
 package com.springcloud.easyExcel.export;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.springcloud.easyExcel.ExcelModel;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,7 +11,7 @@ import java.math.BigDecimal;
  * @date 2019-09-17  14:55
  */
 @Data
-public class ReportUnpaymentDetailExport extends ExcelModel implements Cloneable {
+public class ReportUnpaymentDetailExport extends AbstractExcelModel implements Cloneable {
     @ExcelProperty("公司编码")
     private String companyCode;
     @ExcelProperty("公司名称")

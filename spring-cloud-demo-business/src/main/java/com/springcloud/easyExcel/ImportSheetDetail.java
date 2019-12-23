@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImportSheetDetail<M extends BaseReadModel> {
+public class ImportSheetDetail<M extends AbstractExcelModel> {
     private Class<M> mClass;
 
     private String sheetName;

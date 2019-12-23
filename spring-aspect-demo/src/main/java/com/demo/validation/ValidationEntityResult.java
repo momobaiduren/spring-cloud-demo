@@ -10,27 +10,23 @@ import java.util.Map;
  */
 public class ValidationEntityResult<T> extends ValidationResult {
 
-    private Map<String, String> errorMsgs = new HashMap<>();
+    private Map<String, String> errorMsg = new HashMap<>();
     private T data;
 
     public boolean hasError() {
-        return !errorMsgs.isEmpty();
+        return !errorMsg.isEmpty();
     }
 
-    public String errorMsgs() {
-        StringBuilder errorMsg = new StringBuilder();
-        errorMsgs.forEach((key, value) -> {
-            errorMsg.append(value).append(";");
-        });
-        return errorMsg.toString();
+    public String errorMsg() {
+        return String.join(";", errorMsg.values());
     }
 
     public T get() {
         return data;
     }
 
-    Map<String, String> getErrorMsgs() {
-        return errorMsgs;
+    Map<String, String> getErrorMsg() {
+        return errorMsg;
     }
 
     public void setData(T data) {
