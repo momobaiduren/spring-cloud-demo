@@ -24,7 +24,7 @@
         <easyexcel>2.0.0-beta1</easyexcel>
         <spring.boot.admin>2.1.6</spring.boot.admin>
         <javaee.api>8.0.1</javaee.api>
-        <spring.version>5.1.8.RELEASE</spring.version>
+        <spring.version>6.0.0</spring.version>
         <common.collections4>4.2</common.collections4>
         <orika>1.5.4</orika>
     </properties>
